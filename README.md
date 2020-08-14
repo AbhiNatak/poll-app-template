@@ -1,30 +1,30 @@
 # Poll App Template
 
-| [Documentation](./wiki/Home.md) | [Deployment guide](./wiki/Deployment-guide.md) | [Architecture](./wiki/Solution-overview.md) |
+| [Documentation](https://github.com/shrivashish/poll-app-template/wiki/Home) | [Deployment guide](https://github.com/shrivashish/poll-app-template/wiki/Deployment-guide) | [Architecture](https://github.com/shrivashish/poll-app-template/wiki/Solution-overview) |
 | ---- | ---- | ---- |
 
 Poll is a custom [Teams message extension](https://docs.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) app that enables users to quickly create and send polls in a chat or a channel to know their team’s opinion. Use this template in Meetings along with group and channels. Poll app is supported across all platforms – Teams desktop, browser, iOS, and Android clients. It is built on Microsoft 365 Action platform (an extension of [Kaizala Action platform](https://docs.microsoft.com/en-us/kaizala/developer-platform))
 
-![Poll Template compose message screen](./wiki/images/PollTemplateCompose.gif)
+![Poll Template compose message screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateCompose.gif)
 
 ### Key features
 * **Poll creation:** Easily create Polls, click **Menu** (…) below the box where you type your message. Enter your poll question in the Poll app followed by at least two choices for answers. You can add as many as 10 choices to a poll. Set a due date for the poll and restrict who can see poll results in **Settings**. When you are done, click **Send Poll** to publish your poll.
 
-![Poll Template Creation screen](./wiki/images/PollTemplateCreation.png)
+![Poll Template Creation screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateCreation.png)
 
 * **Poll response:** To respond to a poll, choose an option on the poll card and click **Submit Vote**. As people in your group or channel vote, you will see updates to the response summary on the poll card.
 
-![Poll Template Submit screen](./wiki/images/PollTemplateSubmit.png)
+![Poll Template Submit screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateSubmit.png)
 
 * **Poll aggregate results:** To see the results of your poll, click View Result. Participation Summary shows the response list along with the participants’ choices. The list of people who didn’t vote on the poll is in the adjacent tab. Click Back to return to the result summary view. Download an image of your poll’s results or a .csv file of the response list by selecting **Download**.
 
-![Poll Template Detail screen](./wiki/images/PollTemplateDetail.png)
+![Poll Template Detail screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateDetail.png)
 
 ## Get started
 
-Begin with the [Solution overview](./wiki/Solution-overview.md) to read about what the app does and how it works.
+Begin with the [Solution overview](https://github.com/shrivashish/poll-app-template/wiki/Solution-overview) to read about what the app does and how it works.
 
-When you're ready to try out Poll, or to use it in your own organization, follow the steps in the [Deployment guide](./wiki/Deployment-guide.md).
+When you're ready to try out Poll, or to use it in your own organization, follow the steps in the [Deployment guide](https://github.com/shrivashish/poll-app-template/wiki/Deployment-guide).
 
 ## Feedback
 
