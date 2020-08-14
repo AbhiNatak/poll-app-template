@@ -1,0 +1,34 @@
+{
+    "id": "<packageId>",
+    "name": "Poll",
+    "description": "Ask a question and get people's opinion",
+    "showLoadingIndicator": true,
+    "provider": {
+        "name": "Microsoft",
+        "websiteUrl": "<websiteUrl>",
+        "privacyUrl": "<privacyUrl>",
+        "termsOfUseUrl": "<termsOfUseUrl>"
+    },
+    "icon": "images/appIcon.png",
+    "actionModel": "actionModel.json",
+    "version": "1.0.0",
+    "views": {
+        "CardView": {
+            "sourceLocation": "cardView.json"
+        },
+        "LaunchView": {
+            "sourceLocation": "CreateView.html",
+            "header": "Create Poll View"
+        },
+        "DetailView": {
+            "sourceLocation": "DetailView.html",
+            "header": "Results view"
+        }
+    },
+    "localizationInfo": {
+        "defaultLocale": "en-us",
+        "localeFiles": {
+            "en-us": "strings/strings.json"
+        }
+    }
+}

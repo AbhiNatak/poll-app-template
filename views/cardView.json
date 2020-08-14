@@ -1,0 +1,105 @@
+{
+    "view": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+            {
+                "id": "expiry",
+                "type": "TextBlock",
+                "text": "${if(equals(action.status, 'Active'), formatString(strings.dueByDate, ('' + dateString(action.expiryTime, 'SHORT') + ' ' + timeString(action.expiryTime))),strings.PollExpired)}",
+                "color": "${if(equals(action.status, 'Active'), 'default','attention')}",
+                "size": "small",
+                "wrap": true
+            },
+            {
+                "id": "ResultVisibility",
+                "type": "TextBlock",
+                "text": "${if(equals(action.dataTables[0].rowsVisibility, 'All'), strings.ResultEveryone, strings.ResultCreator)}",
+                "maxLines": 2,
+                "wrap": true,
+                "isSubtle": true,
+                "size": "small",
+                "spacing": "none"
+            },
+            {
+                "id": "Title",
+                "type": "TextBlock",
+                "text": "**${action.dataTables[0].dataColumns[0].displayName}**",
+                "size": "large",
+                "maxLines": 3,
+                "wrap": true,
+                "weight": "bolder",
+                "spacing": "small"
+            },
+            {
+                "id": "Choices",
+                "type": "Container",
+                "style": "emphasis",
+                "items": [
+                    {
+                        "id": "${action.dataTables[0].dataColumns[0].name}",
+                        "type": "Input.ChoiceSet",
+                        "style": "expanded",
+                        "isMultiSelect": false,
+                        "choices": [
+                            {
+                                "$data": "${action.dataTables[0].dataColumns[0].options}",
+                                "title": "${displayName}",
+                                "value": "${name}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "Summary",
+                "type": "TextBlock",
+                "text": "${if(summary.rowCreatorCount > 0, formatString(strings.OneResponded, summary.rowCreatorCount), strings.BeTheFirstOneToRespond)}",
+                "size": "small",
+                "weight": "bolder",
+                "maxLines": 2,
+                "wrap": true,
+                "spacing": "small"
+            }
+        ],
+        "actions": [
+            {
+                "id": "RespondButton",
+                "$when": "${equals(action.status, 'Active')}",
+                "title": "${strings.Submit}",
+                "command": "SubmitActionDataRow"
+            },
+            {
+                "id": "Result",
+                "title": "${strings.Results}",
+                "command": "LaunchActionPackageView",
+                "parameters": {
+                    "viewName": "DetailView"
+                }
+            }
+        ]
+    },
+    "data": {
+        "strings": {
+            "command": "GetLocalizedStrings"
+        },
+        "action": {
+            "command": "GetAction"
+        },
+        "summary": {
+            "command": "GetActionDataRowsSummary",
+            "parameters": {
+                "addDefaultAggregates": true
+            }
+        },
+        "creator": {
+            "command": "GetSubscriptionMembers",
+            "parameters": {
+                "memberIds": [
+                    "$ActionCreator"
+                ]
+            }
+        }
+    }
+}
