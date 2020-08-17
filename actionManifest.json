@@ -4,7 +4,7 @@
     "description": "Ask a question and get people's opinion",
     "showLoadingIndicator": true,
     "provider": {
-        "name": "Microsoft",
+        "name": "<name>",
         "websiteUrl": "<websiteUrl>",
         "privacyUrl": "<privacyUrl>",
         "termsOfUseUrl": "<termsOfUseUrl>"
