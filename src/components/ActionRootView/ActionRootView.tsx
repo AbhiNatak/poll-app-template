@@ -10,7 +10,7 @@ interface IActionRootViewState {
 }
 
 /**
- * <ActionRootView> component to initialize create or summary view and set the teams currently selected theme 
+ * <ActionRootView> component to initialize create or summary view and set the teams currently selected theme
  */
 export class ActionRootView extends React.Component<any, IActionRootViewState> {
 

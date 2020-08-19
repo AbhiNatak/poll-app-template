@@ -4,6 +4,11 @@ import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "../utils/Utils";
 import './../orchestrators/SummaryOrchectrator';
 import './../mutator/SummaryMutator';
+
+/**
+ * Summary view store containing all the required data  
+ */
+
 export enum ViewType {
     Main,
     ResponderView,

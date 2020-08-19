@@ -28,7 +28,7 @@ export class ResponderView extends React.Component<any, any> {
 
     componentWillMount() {
         let userIds: string[] = [];
-        for (var row of getStore().actionInstanceRows) {
+        for (let row of getStore().actionInstanceRows) {
             userIds.push(row.creatorId);
         }
         fetchUserDetails(userIds);
@@ -88,7 +88,7 @@ export class ResponderView extends React.Component<any, any> {
     render() {
         this.isAnyUserProfilePending = false;
         this.rowsWithUser = [];
-        for (var row of getStore().actionInstanceRows) {
+        for (let row of getStore().actionInstanceRows) {
             this.addUserInfoProps(row);
         }
 
@@ -113,7 +113,7 @@ export class ResponderView extends React.Component<any, any> {
     }
 
     private findSubtitle(id: string): string {
-        for (var item of getStore().actionInstance.dataTables[0].dataColumns[0]
+        for (let item of getStore().actionInstance.dataTables[0].dataColumns[0]
             .options) {
             if (item.name === id) {
                 return item.displayName;
@@ -128,10 +128,10 @@ export class ResponderView extends React.Component<any, any> {
         if (!row || !getStore().actionInstance) {
             return;
         }
-        var userProfile: actionSDK.SubscriptionMember = getStore().userProfile[
+        let userProfile: actionSDK.SubscriptionMember = getStore().userProfile[
             row.creatorId
         ];
-        var optionId =
+        let optionId =
             row.columnValues[
             getStore().actionInstance.dataTables[0].dataColumns[0].name
             ];

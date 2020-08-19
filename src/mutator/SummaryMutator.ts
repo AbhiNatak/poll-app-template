@@ -3,6 +3,10 @@ import getStore, { ViewType } from './../store/SummaryStore';
 import { setProgressStatus, setContext, updateMyRow, pollCloseAlertOpen, pollExpiryChangeAlertOpen, pollDeleteAlertOpen, setDueDate, showMoreOptions, setCurrentView, addActionInstanceRows, updateContinuationToken, updateMemberCount, goBack, updateNonResponders, setIsActionDeleted, updateActionInstance, updateActionInstanceSummary, updateUserProfileInfo } from './../actions/SummaryActions';
 import { Utils } from '../utils/Utils';
 
+/**
+ * Summary view mutators to modify store data on which summmary view relies 
+ */
+
 mutator(setProgressStatus, (msg) => {
     const store = getStore();
     store.progressStatus = {

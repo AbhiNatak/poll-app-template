@@ -1,14 +1,17 @@
-import { Logger } from './../utils/Logger';
+import { setProgressState } from './../actions/CreationActions';
 import { toJS } from 'mobx';
 import { Localizer } from '../utils/Localizer';
 import { orchestrator } from 'satcheljs';
-import { setContext, initialize, setAppInitialized, callActionInstanceCreationAPI, updateTitle, updateChoiceText, setSendingFlag, shouldValidateUI } from '../actions/CreationActions';
-import { fetchCurrentContext } from "../actions/CreationActions";
+import { setContext, initialize, callActionInstanceCreationAPI, updateTitle, updateChoiceText, setSendingFlag, shouldValidateUI } from '../actions/CreationActions';
 import { ProgressState } from '../utils/SharedEnum';
 import getStore from "../store/CreationStore";
 import { Utils } from '../utils/Utils';
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { ActionSdkHelper } from "../helper/ActionSdkHelper";
+
+/**
+ * Creation view orchestrators to do API calls, perform any action on data and dispatch further actions to modify stores in case of any change
+ */
 
 function validateActionInstance(actionInstance: actionSDK.Action): boolean {
     if (actionInstance == null) return false;
@@ -25,7 +28,7 @@ function validateActionInstance(actionInstance: actionSDK.Action): boolean {
     if (actionInstance.dataTables[0].dataColumns[0].options == null) return false;
     if (actionInstance.dataTables[0].dataColumns[0].options.length < 2)
         return false;
-    for (var option of actionInstance.dataTables[0].dataColumns[0].options) {
+    for (let option of actionInstance.dataTables[0].dataColumns[0].options) {
         if (option.displayName == null || option.displayName == "") {
             return false;
         }
@@ -33,19 +36,18 @@ function validateActionInstance(actionInstance: actionSDK.Action): boolean {
     return true;
 }
 
-orchestrator(fetchCurrentContext, async () => {
+orchestrator(initialize, async () => {
+    setProgressState(ProgressState.InProgress);
     let actionContext = await ActionSdkHelper.getActionContext();
-    actionContext.success && setContext(actionContext.context as actionSDK.ActionSdkContext);
-});
-
-orchestrator(initialize, () => {
-    fetchCurrentContext();
-    let response = Localizer.initialize();
-    response ? setAppInitialized(ProgressState.Completed) : setAppInitialized(ProgressState.Failed);
+    if (actionContext.success) {
+        setContext(actionContext.context);
+        let response = await Localizer.initialize();
+        setProgressState(response ? ProgressState.Completed : ProgressState.Failed);
+    }
 });
 
 orchestrator(callActionInstanceCreationAPI, async () => {
-    var actionInstance: actionSDK.Action = {
+    let actionInstance: actionSDK.Action = {
         displayName: "Poll",
         expiryTime: getStore().settings.dueDate,
         dataTables: [
@@ -57,10 +59,10 @@ orchestrator(callActionInstanceCreationAPI, async () => {
         ],
     };
 
-    //create poll question
+    // create poll question
     updateTitle(getStore().title.trim());
 
-    var pollQuestion: actionSDK.ActionDataColumn = {
+    let pollQuestion: actionSDK.ActionDataColumn = {
         name: "0",
         valueType: actionSDK.ActionDataColumnValueType.SingleOption,
         displayName: getStore().title,
@@ -69,10 +71,10 @@ orchestrator(callActionInstanceCreationAPI, async () => {
     actionInstance.dataTables[0].dataColumns[0].options = [];
 
     // Create poll options
-    for (var index = 0; index < getStore().options.length; index++) {
+    for (let index = 0; index < getStore().options.length; index++) {
         updateChoiceText(index, getStore().options[index].trim());
 
-        var pollChoice: actionSDK.ActionDataColumnOption = {
+        let pollChoice: actionSDK.ActionDataColumnOption = {
             name: `${index}`,
             displayName: getStore().options[index],
         };
@@ -102,8 +104,6 @@ function prepareActionInstance(
     if (Utils.isEmptyString(actionInstance.id)) {
         actionInstance.id = Utils.generateGUID();
         actionInstance.createTime = Date.now();
-    }
-    if (Utils.isEmptyObject(actionInstance.subscriptions)) {
     }
     actionInstance.updateTime = Date.now();
     actionInstance.creatorId = actionContext.userId;

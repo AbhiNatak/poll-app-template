@@ -66,7 +66,7 @@ export class UxUtils {
     public static formatDate(selectedDate: Date, locale: string, options?: Intl.DateTimeFormatOptions): string {
         let dateOptions = options ? options : { year: "numeric", month: "long", day: "2-digit", hour: "numeric", minute: "numeric" };
         let formattedDate = selectedDate.toLocaleDateString(locale, dateOptions);
-        //check if M01, M02, ...M12 pattern is present in the string, if pattern is present, using numeric representation of the month instead
+        // check if M01, M02, ...M12 pattern is present in the string, if pattern is present, using numeric representation of the month instead
         if (formattedDate.match(/M[\d]{2}/)) {
             let newOptions = { ...dateOptions, 'month': '2-digit' };
             formattedDate = selectedDate.toLocaleDateString(locale, newOptions);

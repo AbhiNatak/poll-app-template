@@ -8,6 +8,10 @@ import getStore from "../store/SummaryStore";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { ActionSdkHelper } from "../helper/ActionSdkHelper";
 
+/**
+ * Summary view orchestrators to fetch data for current action, perform any action on that data and dispatch further actions to modify stores
+ */
+
 const handleErrorResponse = (error: actionSDK.ApiError) => {
     if (error && error.code == "404") {
         setIsActionDeleted(true);
@@ -128,7 +132,7 @@ orchestrator(fetchUserDetails, async (msg) => {
     let userIds: string[] = [];
 
     // fetch only those user profiles that are not present in the store
-    for (var userId of msg.userIds) {
+    for (let userId of msg.userIds) {
         if (
             !getStore().userProfile.hasOwnProperty(userId) ||
             !getStore().userProfile[userId].displayName
@@ -152,7 +156,7 @@ orchestrator(fetchUserDetails, async (msg) => {
                 let userProfile: {
                     [key: string]: actionSDK.SubscriptionMember;
                 } = {};
-                for (var userId of response.memberIdsNotFound) {
+                for (let userId of response.memberIdsNotFound) {
                     userProfile[userId] = { id: userId, displayName: null };
                 }
                 updateUserProfileInfo(userProfile);
@@ -160,7 +164,7 @@ orchestrator(fetchUserDetails, async (msg) => {
         } else if (!response.success) {
             handleErrorResponse(response.error);
             let userProfile: { [key: string]: actionSDK.SubscriptionMember } = {};
-            for (var userId of userIds) {
+            for (let userId of userIds) {
                 userProfile[userId] = { id: userId, displayName: null };
             }
             updateUserProfileInfo(userProfile);
@@ -188,12 +192,12 @@ orchestrator(fetchActionInstanceRows, async (msg) => {
 
             if (response.success) {
                 let rows: actionSDK.ActionDataRow[] = [];
-                for (var row of response.dataRows) {
+                for (let row of response.dataRows) {
                     rows.push(row);
                 }
 
                 let userIds: string[] = [];
-                for (var row of rows) {
+                for (let row of rows) {
                     userIds.push(row.creatorId);
                 }
 
@@ -250,7 +254,7 @@ orchestrator(closePoll, async () => {
         };
 
         setProgressStatus({ closeActionInstance: ProgressState.InProgress });
-        var actionInstanceUpdateInfo: actionSDK.ActionUpdateInfo = {
+        let actionInstanceUpdateInfo: actionSDK.ActionUpdateInfo = {
             id: getStore().context.actionId,
             version: getStore().actionInstance.version,
             status: actionSDK.ActionStatus.Closed,
@@ -313,7 +317,7 @@ orchestrator(updateDueDate, async (actionMessage) => {
         };
 
         setProgressStatus({ updateActionInstance: ProgressState.InProgress });
-        var actionInstanceUpdateInfo: actionSDK.ActionUpdateInfo = {
+        let actionInstanceUpdateInfo: actionSDK.ActionUpdateInfo = {
             id: getStore().context.actionId,
             version: getStore().actionInstance.version,
             expiryTime: actionMessage.dueDate,

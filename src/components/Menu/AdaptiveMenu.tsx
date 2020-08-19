@@ -99,7 +99,7 @@ export class AdaptiveMenu extends React.Component<IAdaptiveMenuProps, IAdaptiveM
     private getMenu() {
         let menuItems: AdaptiveMenuItem[];
         menuItems = Object.assign([], this.props.menuItems);
-        for (var i = 0; i < menuItems.length; i++) {
+        for (let i = 0; i < menuItems.length; i++) {
             menuItems[i].className = "menu-item " + menuItems[i].className;
         }
         return (

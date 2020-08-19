@@ -7,9 +7,7 @@ import {
     callActionInstanceCreationAPI,
     updateSettings,
     goToPage,
-    setContext,
-    shouldValidateUI,
-    fetchCurrentContext
+    shouldValidateUI
 } from "./../../actions/CreationActions";
 import "./creation.scss";
 import getStore, { Page } from "./../../store/CreationStore";
@@ -30,17 +28,19 @@ import { ActionSdkHelper } from "../../helper/ActionSdkHelper";
 
 /**
  * <CreationPage> component for create view of poll app 
+ * @observer decorator on the component this is what tells MobX to rerender the component whenever the data it relies on changes.
  */
-@observer
+@observer 
 export default class CreationPage extends React.Component<any, any> {
 
     private settingsFooterComponentRef: HTMLElement;
     private validationErrorQuestionRef: HTMLElement;
 
     render() {
-        if (getStore().isInitialized === ProgressState.NotStarted) {
+        if (getStore().progressState === ProgressState.NotStarted
+            || getStore().progressState == ProgressState.InProgress) {
             return <Loader />;
-        } else if (getStore().isInitialized === ProgressState.Failed) {
+        } else if (getStore().progressState === ProgressState.Failed) {
             ActionSdkHelper.hideLoadingIndicator();
             return (
                 <ErrorView
@@ -48,12 +48,6 @@ export default class CreationPage extends React.Component<any, any> {
                     buttonTitle={Localizer.getString("Close")}
                 />
             );
-        }
-
-        if (getStore().initPending) {
-            // Initialize
-            fetchCurrentContext();
-            return <Loader />;
         } else {
             // Render View
             ActionSdkHelper.hideLoadingIndicator();
@@ -110,11 +104,11 @@ export default class CreationPage extends React.Component<any, any> {
         let choiceOptions = [];
         let accessibilityAnnouncementString: string = "";
         let focusChoiceOnError: boolean = false;
-        //validation of title and choices that it should not be blank setting this flag to true while creating action instance only
+        // validation of title and choices that it should not be blank setting this flag to true while creating action instance only
         if (getStore().shouldValidate) {
             questionEmptyError = getStore().title == "" ? Localizer.getString("TitleBlankError") : null;
             if (getStore().options.length >= 2) {
-                for (var option of getStore().options) {
+                for (let option of getStore().options) {
                     optionsError.push((option == null || option == "") ? Localizer.getString("BlankChoiceError") : "");
                 }
             }
@@ -210,7 +204,7 @@ export default class CreationPage extends React.Component<any, any> {
     }
 
     /**
-     * Settings page view for mobile 
+     * Settings page view for mobile
      */
     renderSettingsPageForMobile() {
         let navBarComponentProps: INavBarComponentProps = {
@@ -270,7 +264,7 @@ export default class CreationPage extends React.Component<any, any> {
         let resultVisibility = getStore().settings.resultVisibility;
         if (dueDate) {
             let dueDateString: string;
-            let dueDateValues: Number[];
+            let dueDateValues: number[];
             let dueIn: {} = Utils.getTimeRemaining(dueDate);
             if (dueIn[Utils.YEARS] > 0) {
                 dueDateString = dueIn[Utils.YEARS] == 1 ? "DueInYear" : "DueInYears";
@@ -305,7 +299,7 @@ export default class CreationPage extends React.Component<any, any> {
                 dueDateValues = [dueIn[Utils.HOURS]];
             }
             else {
-                dueDateString = dueIn["minutes"] == 1 ? "DueInMinute" : "DueInMinutes";
+                dueDateString = dueIn[Utils.MINUTES] == 1 ? "DueInMinute" : "DueInMinutes";
                 dueDateValues = [dueIn[Utils.MINUTES]];
             }
             settingsStrings.push(Localizer.getString(dueDateString, ...dueDateValues));

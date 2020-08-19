@@ -68,7 +68,7 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
         
         // if any input is blank while submitting action then there will be entry in optionError
         for (let i = 0; i < (maxOptions > this.props.options.length ? this.props.options.length : maxOptions); i++) {
-            var errorString = this.props.optionsError && this.props.optionsError.length > i ? this.props.optionsError[i] : "";
+            let errorString = this.props.optionsError && this.props.optionsError.length > i ? this.props.optionsError[i] : "";
             if (errorString.length > 0 && this.props.focusOnError && !focusOnErrorSet) {
                 this.currentFocus = i;
                 focusOnErrorSet = true;

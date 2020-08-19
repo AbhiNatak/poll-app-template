@@ -21,6 +21,13 @@ export interface ITimePickerViewState {
     prevMinTimeInMinutes: number;
 }
 
+export interface TimePickerItem {
+    hours: number;
+    minutes: number;
+    value: string;
+    asString: string;
+}
+
 /**
  * <TimePickerView> Component to provide time input
  */
@@ -59,10 +66,10 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
         let timePickerList: TimePickerItem[] = [];
         for (let i = 0; i < 24; i++) {
             if (!minTimeInMinutes || i * 60 > minTimeInMinutes) {
-                timePickerList.push(new TimePickerItem(i, 0, locale));
+                timePickerList.push(TimePickerView.getTimePickerItem(i, 0, locale));
             }
             if (!minTimeInMinutes || i * 60 + 30 > minTimeInMinutes) {
-                timePickerList.push(new TimePickerItem(i, 30, locale));
+                timePickerList.push(TimePickerView.getTimePickerItem(i, 30, locale));
             }
         }
         return timePickerList;
@@ -106,7 +113,7 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
                         if (!this.isTimeValid(valueInMinutes)) {
                             return;
                         }
-                        let selectedTime: TimePickerItem = new TimePickerItem(Math.floor(valueInMinutes / 60), valueInMinutes % 60, this.props.locale);
+                        let selectedTime: TimePickerItem = TimePickerView.getTimePickerItem(Math.floor(valueInMinutes / 60), valueInMinutes % 60, this.props.locale);
                         this.setState({
                             selectedTimePickerItem: selectedTime
                         });
@@ -248,21 +255,21 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
         }
         return false;
     }
-}
 
-class TimePickerItem {
-    hours: number;
-    minutes: number;
-    value: string;
-    asString: string;
-    constructor(hours: number, minutes: number, locale: string = navigator.language) {
-        this.hours = hours;
-        this.minutes = minutes;
-
-        this.value = this.hours + ":" + this.minutes;
+    static getTimePickerItem(hours: number, minutes: number, locale: string = navigator.language): TimePickerItem {
+        let timePickerItem: TimePickerItem = {
+            hours: hours,
+            minutes: minutes,
+            value: hours + ":" + minutes,
+            asString: null
+        };
         let date = new Date();
-        date.setHours(this.hours);
-        date.setMinutes(this.minutes);
-        this.asString = date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: true });
+        date.setHours(hours);
+        date.setMinutes(minutes);
+        timePickerItem.asString = date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: true });
+        return timePickerItem;
     }
 }
+
+    
+    

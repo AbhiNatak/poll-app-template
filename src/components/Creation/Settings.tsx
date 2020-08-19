@@ -77,7 +77,7 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
      * Rendering due date section for settings view
      */
     private renderDueBySection() {
-        //handling mobile view differently
+        // handling mobile view differently
         let className = this.props.renderForMobile ? "due-by-pickers-container date-time-equal" : "settings-indentation";
         return (
             <Flex className="settings-item-margin" role="group" aria-label={this.getString("dueBy")} column gap="gap.smaller">

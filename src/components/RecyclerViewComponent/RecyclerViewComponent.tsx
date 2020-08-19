@@ -37,9 +37,9 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
     }
 
     private initialize(props: IRecyclerViewComponentProps<T>) {
-        //Create the layout provider
-        //First method: Given an index return the type of item e.g ListItemType1, ListItemType2 in case you have variety of items in your list/grid
-        //Second: Given a type and object set the height and width for that type on given object
+        // Create the layout provider
+        // First method: Given an index return the type of item e.g ListItemType1, ListItemType2 in case you have variety of items in your list/grid
+        // Second: Given a type and object set the height and width for that type on given object
         this.layoutProvider = new LayoutProvider(
             (index: number) => {
                 if (this.props.showHeader && index == 0) {

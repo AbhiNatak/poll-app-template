@@ -48,7 +48,7 @@ export class TabView extends React.Component<any, any> {
     }
 
     render() {
-        var participation: string =
+        let participation: string =
             getStore().actionSummary.rowCount == 1
                 ? Localizer.getString(
                     "ParticipationIndicatorSingular",

@@ -63,14 +63,14 @@ export default class SummaryView extends React.Component<any, any> {
      * Method that will return the UI component of response of current user
      */
     private getMyResponseContainer(): JSX.Element {
-        var myResponse: string = "";
+        let myResponse: string = "";
 
         // User name
-        var currentUserProfile: actionSDK.SubscriptionMember = getStore().context
+        let currentUserProfile: actionSDK.SubscriptionMember = getStore().context
             ? getStore().userProfile[getStore().context.userId]
             : null;
 
-        var myUserName = (currentUserProfile && currentUserProfile.displayName) ? currentUserProfile.displayName : Localizer.getString("You");
+        let myUserName = (currentUserProfile && currentUserProfile.displayName) ? currentUserProfile.displayName : Localizer.getString("You");
 
         // Showing shimmer effect till we get data from API
         if (
@@ -208,7 +208,7 @@ export default class SummaryView extends React.Component<any, any> {
             getStore().progressStatus.actionInstance == ProgressState.Completed &&
             getStore().progressStatus.actionInstanceSummary == ProgressState.Completed
         ) {
-            var optionsWithResponseCount: IBarChartItem[] = [];
+            let optionsWithResponseCount: IBarChartItem[] = [];
 
             for (let option of getStore().actionInstance.dataTables[0].dataColumns[0]
                 .options) {
@@ -232,8 +232,8 @@ export default class SummaryView extends React.Component<any, any> {
                     ]
                 );
                 const optionsCopy = optionsWithResponseCount;
-                for (var i = 0; i < optionsWithResponseCount.length; i++) {
-                    var option = optionsWithResponseCount[i];
+                for (let i = 0; i < optionsWithResponseCount.length; i++) {
+                    let option = optionsWithResponseCount[i];
                     let optionCount = pollResultData[option.id] || 0;
 
                     let percentage: number = Math.round(
@@ -284,8 +284,8 @@ export default class SummaryView extends React.Component<any, any> {
         let memberCount: number = getStore().memberCount
             ? getStore().memberCount
             : 0;
-        var participationInfoItems: IBarChartItem[] = [];
-        var participationPercentage = memberCount
+        let participationInfoItems: IBarChartItem[] = [];
+        let participationPercentage = memberCount
             ? Math.round((rowCount / memberCount) * 100)
             : 0;
         participationInfoItems.push({
@@ -295,7 +295,7 @@ export default class SummaryView extends React.Component<any, any> {
             quantity: rowCount,
             hideStatistics: true,
         });
-        var participation: string =
+        let participation: string =
             rowCount == 1
                 ? Localizer.getString(
                     "ParticipationIndicatorSingular",
@@ -310,11 +310,10 @@ export default class SummaryView extends React.Component<any, any> {
 
         let showShimmer: boolean = false;
         if (
-            getStore().progressStatus.memberCount == ProgressState.Completed &&
-            getStore().progressStatus.actionInstance == ProgressState.Completed &&
-            getStore().progressStatus.actionInstanceSummary == ProgressState.Completed
+            getStore().progressStatus.memberCount != ProgressState.Completed ||
+            getStore().progressStatus.actionInstance != ProgressState.Completed ||
+            getStore().progressStatus.actionInstanceSummary != ProgressState.Completed
         ) {
-        } else {
             showShimmer = true;
         }
         return (
@@ -433,7 +432,7 @@ export default class SummaryView extends React.Component<any, any> {
         }
 
         if (getStore().actionInstance.status == actionSDK.ActionStatus.Closed) {
-            var expiry: number = getStore().actionInstance.updateTime
+            let expiry: number = getStore().actionInstance.updateTime
                 ? getStore().actionInstance.updateTime
                 : getStore().actionInstance.expiryTime;
             return Localizer.getString(
@@ -532,7 +531,7 @@ export default class SummaryView extends React.Component<any, any> {
     }
 
     private downloadImage() {
-        var bodyContainerDiv = document.getElementById("bodyContainer") as HTMLDivElement;
+        let bodyContainerDiv = document.getElementById("bodyContainer") as HTMLDivElement;
         let backgroundColorOfResultsImage: string = UxUtils.getBackgroundColorForTheme(
             getStore().context.theme
         );
@@ -546,7 +545,7 @@ export default class SummaryView extends React.Component<any, any> {
                     "PollResult",
                     getStore().actionInstance.dataTables[0].dataColumns[0].displayName
                 ).substring(0, Constants.ACTION_RESULT_FILE_NAME_MAX_LENGTH) + ".png";
-            var base64Image = canvas.toDataURL("image/png");
+            let base64Image = canvas.toDataURL("image/png");
             if (window.navigator.msSaveBlob) {
                 window.navigator.msSaveBlob(canvas.msToBlob(), fileName);
             } else {

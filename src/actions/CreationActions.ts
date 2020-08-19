@@ -14,17 +14,14 @@ export enum PollCreationAction {
     updateSettings = "updateSettings",
     shouldValidateUI = "shouldValidateUI",
     setSendingFlag = "setSendingFlag",
-    setAppInitialized = "setAppInitialized",
+    setProgressState = "setProgressState",
     goToPage = "goToPage",
-    callActionInstanceCreationAPI = "callActionInstanceCreationAPI",
-    fetchCurrentContext = "fetchCurrentContext"
+    callActionInstanceCreationAPI = "callActionInstanceCreationAPI"
 }
 
 export let initialize = action(PollCreationAction.initialize);
 
 export let callActionInstanceCreationAPI = action(PollCreationAction.callActionInstanceCreationAPI);
-
-export let fetchCurrentContext = action(PollCreationAction.fetchCurrentContext);
 
 export let setContext = action(PollCreationAction.setContext, (context: actionSDK.ActionSdkContext) => ({
     context: context
@@ -55,7 +52,7 @@ export let updateSettings = action(PollCreationAction.updateSettings, (settingPr
     settingProps: settingProps
 }));
 
-export let setAppInitialized = action(PollCreationAction.setAppInitialized, (state: ProgressState) => ({
+export let setProgressState = action(PollCreationAction.setProgressState, (state: ProgressState) => ({
     state: state
 }));
 

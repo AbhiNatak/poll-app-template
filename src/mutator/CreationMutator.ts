@@ -1,18 +1,20 @@
 import { mutator } from 'satcheljs';
-import { setContext, setSendingFlag, goToPage, updateTitle, setAppInitialized, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI, addChoice } from './../actions/CreationActions';
+import { setContext, setSendingFlag, goToPage, updateTitle, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI, addChoice, setProgressState } from './../actions/CreationActions';
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from '../utils/Utils';
 import getStore from "../store/CreationStore";
 
+/**
+ * Creation view mutators to modify store data on which create view relies 
+ */
+
 mutator(setContext, (msg) => {
     const store = getStore();
     store.context = msg.context;
-    store.initPending = false;
-    if (!Utils.isEmptyObject(store.context.viewData)) {
-        const viewData = JSON.parse(store.context.viewData);
-        const actionInstance: actionSDK.Action = viewData["actionInstance"];
-        getStore().title =
-            actionInstance.dataTables[0].dataColumns[0].displayName;
+    if (!Utils.isEmptyObject(store.context.lastSessionData)) {
+        const lastSessionData = store.context.lastSessionData;
+        const actionInstance: actionSDK.Action = lastSessionData.action;
+        getStore().title = actionInstance.dataTables[0].dataColumns[0].displayName;
         let options = actionInstance.dataTables[0].dataColumns[0].options;
         // clearing the options since it is always initialize with 2 empty options.
         getStore().options = [];
@@ -20,10 +22,7 @@ mutator(setContext, (msg) => {
             getStore().options.push(option.displayName);
         });
 
-        if (
-            actionInstance.dataTables[0].rowsVisibility ===
-            actionSDK.Visibility.Sender
-        ) {
+        if (actionInstance.dataTables[0].rowsVisibility === actionSDK.Visibility.Sender) {
             getStore().settings.resultVisibility = actionSDK.Visibility.Sender;
         } else {
             getStore().settings.resultVisibility = actionSDK.Visibility.All;
@@ -42,8 +41,6 @@ mutator(goToPage, (msg) => {
     const store = getStore();
     store.currentPage = msg.page;
 });
-
-
 
 mutator(addChoice, () => {
     const store = getStore();
@@ -81,7 +78,7 @@ mutator(updateSettings, (msg) => {
     store.settings = msg.settingProps;
 });
 
-mutator(setAppInitialized, (msg) => {
+mutator(setProgressState, (msg) => {
     const store = getStore();
-    store.isInitialized = msg.state;
+    store.progressState = msg.state;
 });

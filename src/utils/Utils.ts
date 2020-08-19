@@ -27,7 +27,7 @@ export namespace Utils {
             return true;
         }
 
-        var isEmpty = false;
+        let isEmpty = false;
 
         if (typeof obj === "number" || typeof obj === "boolean") {
             isEmpty = false;
@@ -44,31 +44,25 @@ export namespace Utils {
     }
 
     export function getTimeRemaining(deadLineDate: Date): {} {
-        var now = new Date().getTime();
-        var deadLineTime = deadLineDate.getTime();
+        let now = new Date().getTime();
+        let deadLineTime = deadLineDate.getTime();
 
-        var minutes: number = 0;
-        var hours: number = 0;
-        var days: number = 0;
-        var weeks: number = 0;
-        var months: number = 0;
-        var years: number = 0;
+        let minutes: number = 0;
+        let hours: number = 0;
+        let days: number = 0;
+        let weeks: number = 0;
+        let months: number = 0;
+        let years: number = 0;
 
-        var diff = Math.abs(deadLineTime - now);
+        let diff = Math.abs(deadLineTime - now);
         if (diff > 0) {
-            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-            var days = Math.floor(
-                (diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24)
-            );
-            var weeks = Math.floor(
-                (diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7)
-            );
-            var months = Math.floor(
-                (diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30)
-            );
-            var years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+            weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24 * 7));
+            months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
         }
         return {
             YEARS: years,
@@ -100,7 +94,7 @@ export namespace Utils {
 
     export function downloadContent(fileName: string, data: string) {
         if (data && fileName) {
-            var a = document.createElement("a");
+            let a = document.createElement("a");
             a.href = data;
             a.download = fileName;
             document.body.appendChild(a);

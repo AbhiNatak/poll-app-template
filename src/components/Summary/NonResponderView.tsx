@@ -22,12 +22,12 @@ export class NonResponderView extends React.Component {
     }
 
     render() {
-        var rowsWithUser: IUserInfoViewProps[] = [];
+        let rowsWithUser: IUserInfoViewProps[] = [];
         if (getStore().progressStatus.nonResponder == ProgressState.InProgress) {
             return <Loader />;
         }
         if (getStore().progressStatus.nonResponder == ProgressState.Completed) {
-            for (var userProfile of getStore().nonResponders) {
+            for (let userProfile of getStore().nonResponders) {
                 userProfile = getStore().userProfile[userProfile.id];
 
                 if (userProfile) {

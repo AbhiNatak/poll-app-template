@@ -11,6 +11,7 @@ import { ActionSdkHelper } from "../../helper/ActionSdkHelper";
 
 /**
  * <SummaryPage> component to render data for summary page 
+ * @observer decorator on the component this is what tells MobX to rerender the component whenever the data it relies on changes.
  */
 @observer
 export default class SummaryPage extends React.Component<any, any> {

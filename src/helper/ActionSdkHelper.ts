@@ -130,7 +130,7 @@ export class ActionSdkHelper {
     /**
      * Method to update action instance data 
      * @param data object of data we want modify
-    */
+     */
     public static async updateActionInstance(actionUpdateInfo: actionSDK.ActionUpdateInfo) {
         let getUpdateActionRequest = new actionSDK.UpdateAction.Request(actionUpdateInfo);
         try {

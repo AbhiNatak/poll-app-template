@@ -6,6 +6,10 @@ import { ProgressState } from "./../utils/SharedEnum";
 import './../orchestrators/CreationOrchestrator';
 import './../mutator/CreationMutator';
 
+/**
+ * Creation view store containing all the required data  
+ */
+
 export enum Page {
     Main,
     Settings,
@@ -13,20 +17,18 @@ export enum Page {
 
 interface IPollCreationStore {
     context: actionSDK.ActionSdkContext;
-    initPending: boolean;
+    progressState: ProgressState;
     title: string;
     maxOptions: number;
     options: string[];
     settings: ISettingsComponentProps;
     shouldValidate: boolean;
     sendingAction: boolean;
-    isInitialized: ProgressState;
     currentPage: Page;
 }
 
 const store: IPollCreationStore = {
     context: null,
-    initPending: true,
     title: "",
     maxOptions: 10,
     options: ["", ""],
@@ -38,7 +40,7 @@ const store: IPollCreationStore = {
     shouldValidate: false,
     sendingAction: false,
     currentPage: Page.Main,
-    isInitialized: ProgressState.NotStarted,
+    progressState: ProgressState.NotStarted
 };
 
 export default createStore<IPollCreationStore>("cerationStore", store);
