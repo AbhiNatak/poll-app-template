@@ -3,7 +3,7 @@
     "name": "Poll",
     "description": "Ask a question and get people's opinion",
     "showLoadingIndicator": true,
-    "provider": {
+    "developer": {
         "name": "<name>",
         "websiteUrl": "<websiteUrl>",
         "privacyUrl": "<privacyUrl>",
@@ -83,5 +83,20 @@
             "zh-cn": "strings/zh-cn/strings.json",
             "zh-tw": "strings/zh-tw/strings.json"
         }
+    },
+    "msTeamsProps": {
+        "name": {
+            "short": "Poll",
+            "full": "Poll"
+        },
+        "description": {
+            "short": "Ask a question",
+            "full": "Ask a question and get people's opinion"
+        },
+        "icons": {
+            "color": "images/appIcon.png",
+            "outline": "images/outline.png"
+        },
+        "accentColor": "#4464ee"
     }
 }

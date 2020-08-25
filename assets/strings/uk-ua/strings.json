@@ -100,14 +100,14 @@
   "OneResponded": "{0} відповів(ла)",
   "CreateNewPoll": "Створення опитування",
   "ResultsTitle": "Подання результатів",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Створення опитування",
+  "$manifest.composeExtensions[0].commands[0].title": "Створення опитування",
   "$manifest.description.full": "Дізнайтесь думку своєї команди, створивши опитування в чаті або на каналі.\n• Знайдіть програму в \"…\" під полем створення повідомлення\n• Введіть ваші запитання й варіанти відповідей — і все готово 👍🏻\n• Слідкуйте за перебігом опитування, відстежуючи відповіді\n• Завантажте результати опитування, щоб надати спільний доступ своїм співробітникам",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Поставте запитання та дізнайтеся думки людей",
+  "$manifest.name.full": "Опитування",
+  "$manifest.name.short": "Опитування",
+  "$manifest.activities.activityTypes[0].description": "Сповіщення про нагадування щодо опитування",
+  "$manifest.activities.activityTypes[1].description": "Хтось відповідає на ваше опитування",
+  "$manifest.activities.activityTypes[2].description": "Результати опитування опубліковано",
+  "$manifest.activities.activityTypes[3].description": "Щоденний дайджест про стан відповідей на опитування"
 }

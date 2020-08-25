@@ -100,14 +100,14 @@
   "OneResponded": "{0} ने प्रतिसाद दिया",
   "CreateNewPoll": "कोई नया पोल बनाएँ",
   "ResultsTitle": "परिणाम दृश्य",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "कोई नया पोल बनाएँ",
+  "$manifest.composeExtensions[0].commands[0].title": "कोई नया पोल बनाएँ",
   "$manifest.description.full": "किसी चैट या चैनल में एक मतदान बनाकर अपनी टीम की राय प्राप्त करें.\n• सन्देश लिखें बॉक्स के अंतर्गत \"…\" में ऐप को ढूँढे.\n• अपना प्रश्न और अपने विकल्प दर्ज करें और आप आगे के लिए तैयार हैं 👍🏻\n• प्रतिसादों को ट्रैक करके सहभागिता के शीर्ष पर बने रहें \n• अपने सहकर्मियों के साथ साझा करने के लिए मतदान परिणाम डाउनलोड करें",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "कोई प्रश्न पूछें और लोगों की राय प्राप्त करें",
+  "$manifest.name.full": "पोल",
+  "$manifest.name.short": "पोल",
+  "$manifest.activities.activityTypes[0].description": "पोल रिमाइंडर सूचना",
+  "$manifest.activities.activityTypes[1].description": "कोई आपके पोल का प्रतिसाद देता है",
+  "$manifest.activities.activityTypes[2].description": "पोल परिणाम आ गया है",
+  "$manifest.activities.activityTypes[3].description": "पोल प्रतिसाद स्थिति का रोज़ाना डाइजेस्ट"
 }

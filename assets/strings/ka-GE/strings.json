@@ -100,14 +100,14 @@
   "OneResponded": "{0} ნაპასუხებია",
   "CreateNewPoll": "ახალი გამოკითხვის შექმნა",
   "ResultsTitle": "შედეგის ნახვა",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "ახალი გამოკითხვის შექმნა",
+  "$manifest.composeExtensions[0].commands[0].title": "ახალი გამოკითხვის შექმნა",
   "$manifest.description.full": "გაიგეთ თქვენი გუნდის აზრი, გამოკითხვის შექმნით, ჩატსა ან არხში.​\n• იპოვეთ აპი „…“-ში, შეტყობინების შექმნის უჯრის ქვეშ​\n• შეიყვანეთ შეკითხვები და ვარიანტები და შეგიძლიათ დაიწყოთ 👍🏻​\n• აკონტროლეთ მონაწილეობა პასუხებზე თვალყურის დევნებით​\n• ჩამოტვირთეთ გამოკითხვის შედეგი და გაუზიარეთ ის თანამშრომლებს",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "დასვით შეკითხვა და გაიგეთ ხალხის აზრი",
+  "$manifest.name.full": "გამოკითხვა",
+  "$manifest.name.short": "გამოკითხვა",
+  "$manifest.activities.activityTypes[0].description": "გამოკითხვის შემხსენებლის შეტყობინება",
+  "$manifest.activities.activityTypes[1].description": "ვიღაც პასუხობს თქვენს გამოკითხვას",
+  "$manifest.activities.activityTypes[2].description": "გამოკითხვის შედეგი გამოტანილია",
+  "$manifest.activities.activityTypes[3].description": "პასუხების სტატუსის ყოველდღიური შეჯამება"
 }

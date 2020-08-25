@@ -100,14 +100,14 @@
   "OneResponded": "{0} atsakė",
   "CreateNewPoll": "Kurti naują apklausą",
   "ResultsTitle": "Rezultatų rodinys",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Kurti naują apklausą",
+  "$manifest.composeExtensions[0].commands[0].title": "Kurti naują apklausą",
   "$manifest.description.full": "Sužinokite savo komandos nuomonę, sukurdami apklausą pokalbyje arba kanale.\n• Raskite programą pasirinkę …“ po pranešimo kūrimo lauku\n• Įveskite savo klausimą ir pasirinkimus ir tai viskas 👍🏻\n• Matykite, kaip vyksta dalyvavimas, stebėdami atsakymus\n• Atsisiųskite apklausos rezultatą, kad galėtumėte bendrinti su kolegomis",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Užduokite klausimą ir sužinokite žmonių nuomonę",
+  "$manifest.name.full": "Apklausa",
+  "$manifest.name.short": "Apklausa",
+  "$manifest.activities.activityTypes[0].description": "Trumposios apklausos priminimo pranešimas",
+  "$manifest.activities.activityTypes[1].description": "Kažkas reaguoja į jūsų trumpąją apklausą",
+  "$manifest.activities.activityTypes[2].description": "Trumposios apklausos rezultatas yra išėjimas",
+  "$manifest.activities.activityTypes[3].description": "Dienos trumposios apklausos atsakymų būsenos suvestinė"
 }

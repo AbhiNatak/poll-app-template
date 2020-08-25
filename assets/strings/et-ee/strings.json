@@ -100,14 +100,14 @@
   "OneResponded": "{0} vastas",
   "CreateNewPoll": "Uue küsitluse loomine",
   "ResultsTitle": "Tulemivaade",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Koosta uus küsitlus",
+  "$manifest.composeExtensions[0].commands[0].title": "Koosta uus küsitlus",
   "$manifest.description.full": "Töörühma liikmete arvamuste teadasaamiseks saate tekstvestluses või kanalis luua küsitluse.\n• Otsige rakendus üles sõnumi koostamise välja all asuva ikooni „…“ kaudu\n• Sisestage küsimus ja vastusevariandid ja võibki alustada 👍🏻\n• Vastuste jälgimine aitab osalusel silma peal hoida\n• Töökaaslastega jagamiseks saab küsitluse tulemused alla laadida",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Esitage küsimus ja vaadake, mida inimesed arvavad",
+  "$manifest.name.full": "Küsitlus",
+  "$manifest.name.short": "Küsitlus",
+  "$manifest.activities.activityTypes[0].description": "Küsitluse meeldetuletuse teatis",
+  "$manifest.activities.activityTypes[1].description": "Keegi vastab teie küsitlusele",
+  "$manifest.activities.activityTypes[2].description": "Küsitluse tulemused on teada",
+  "$manifest.activities.activityTypes[3].description": "Küsitluse vastuste oleku päevakokkuvõte"
 }

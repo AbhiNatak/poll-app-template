@@ -100,14 +100,14 @@
   "OneResponded": "Użytkownik {0} udzielił odpowiedzi",
   "CreateNewPoll": "Utwórz nową ankietę",
   "ResultsTitle": "Widok wyników",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Utwórz nową ankietę",
+  "$manifest.composeExtensions[0].commands[0].title": "Utwórz nową ankietę",
   "$manifest.description.full": "Poznaj opinie swojego zespołu, tworząc sondę na czacie lub kanale.\n• Znajdź aplikację w folderze „…” poniżej pola redagowania wiadomości\n• Wprowadź pytania oraz możliwe wybory i gotowe 👍🏻\n• Monitoruj uczestnictwo przez śledzenie odpowiedzi\n• Pobierz wyniki sondy, aby udostępnić je współpracownikom",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Zadaj pytanie i uzyskaj opinię innych osób",
+  "$manifest.name.full": "Ankieta",
+  "$manifest.name.short": "Ankieta",
+  "$manifest.activities.activityTypes[0].description": "Powiadomienie z przypomnieniem o sondzie",
+  "$manifest.activities.activityTypes[1].description": "Ktoś odpowie na sondę",
+  "$manifest.activities.activityTypes[2].description": "Dostępne są wyniki sondy",
+  "$manifest.activities.activityTypes[3].description": "Podsumowanie dzienne stanu odpowiedzi na sondę"
 }

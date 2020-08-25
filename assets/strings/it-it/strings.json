@@ -100,14 +100,14 @@
   "OneResponded": "{0} ha risposto",
   "CreateNewPoll": "Crea un nuovo sondaggio",
   "ResultsTitle": "Visualizzazione risultato",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Crea un nuovo Sondaggio",
+  "$manifest.composeExtensions[0].commands[0].title": "Crea un nuovo Sondaggio",
   "$manifest.description.full": "Crea un sondaggio in una chat o in un canale per ricevere le opinioni del team.\n• Trova l'app in \"…\" nella casella di composizione del messaggio\n• Inserisci la domanda, le relative scelte e continua 👍🏻\n• Rimani aggiornato sul livello di partecipazione tenendo traccia delle risposte\n• Scarica i risultati del sondaggio per condividerli con i colleghi",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Fai una domanda e ottieni l'opinione delle persone",
+  "$manifest.name.full": "Sondaggio",
+  "$manifest.name.short": "Sondaggio",
+  "$manifest.activities.activityTypes[0].description": "Notifica promemoria sondaggio",
+  "$manifest.activities.activityTypes[1].description": "Qualcuno risponde al sondaggio",
+  "$manifest.activities.activityTypes[2].description": "Il risultato del sondaggio è disponibile",
+  "$manifest.activities.activityTypes[3].description": "Riepilogo giornaliero dello stato delle risposte al sondaggio"
 }

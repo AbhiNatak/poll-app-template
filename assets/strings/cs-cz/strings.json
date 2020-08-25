@@ -100,14 +100,14 @@
   "OneResponded": "{0} odpověděl(a).",
   "CreateNewPoll": "Vytvořit nové hlasování",
   "ResultsTitle": "Zobrazení výsledků",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Vytvořit nové hlasování",
+  "$manifest.composeExtensions[0].commands[0].title": "Vytvořit nové hlasování",
   "$manifest.description.full": "Zjistěte názor týmu vytvořením hlasování v chatu nebo kanálu.\n• Najděte aplikaci v „…“ pod polem pro psaní zpráv.\n• Zadejte otázku a volby a budete hotovi.👍🏻\n• Mějte přehled o účasti sledováním odpovědí.\n• Stáhněte si výsledky hlasování a nasdílejte je se spolupracovníky.",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Můžete se ostatních na něco zeptat a získat jejich názor.",
+  "$manifest.name.full": "Hlasování",
+  "$manifest.name.short": "Hlasování",
+  "$manifest.activities.activityTypes[0].description": "Oznámení s připomenutím hlasování",
+  "$manifest.activities.activityTypes[1].description": "Někdo odpoví v rámci vašeho hlasování.",
+  "$manifest.activities.activityTypes[2].description": "Výsledek hlasování je k dispozici.",
+  "$manifest.activities.activityTypes[3].description": "Denní přehled stavu odpovědí v hlasování"
 }

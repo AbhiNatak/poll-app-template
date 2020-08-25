@@ -103,11 +103,11 @@
   "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Yeni Anket oluştur",
   "$manifest.composeExtensions[0].commands[0].title": "Yeni Anket oluştur",
   "$manifest.description.full": "Bir sohbet veya kanalda anket oluşturarak ekibinizin görüşlerini alın.\n• Uygulamayı \"…\" içinde ileti oluşturma kutusunun altında bulun\n• Sorunuzu ve seçimlerinizi girin, işte hepsi bu 👍🏻\n• Yanıtları izleyerek katılım konusunda bilgi sahibi olun\n• İş arkadaşlarınızla paylaşmak için anket sonucunu indirin",
-  "$manifest.description.short": "Ask a question and get people's opinion",
+  "$manifest.description.short": "Soru sorma ve başkalarının fikirlerini öğrenme",
   "$manifest.name.full": "Anket",
   "$manifest.name.short": "Anket",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.activities.activityTypes[0].description": "Anket anımsatıcısı bildirimi",
+  "$manifest.activities.activityTypes[1].description": "Birisi anketinize yanıt veriyor",
+  "$manifest.activities.activityTypes[2].description": "Anket sonucu yayınlandı",
+  "$manifest.activities.activityTypes[3].description": "Anket yanıt durumunun günlük özeti"
 }

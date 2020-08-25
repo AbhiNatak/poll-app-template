@@ -103,11 +103,11 @@
   "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Créer un nouveau sondage",
   "$manifest.composeExtensions[0].commands[0].title": "Créer un nouveau sondage",
   "$manifest.description.full": "Obtenez l’opinion de votre équipe en créant un sondage dans une conversation ou un canal.\n• Recherchez l’application dans «…» sous la zone de composition du message\n• Entrez votre question et vos choix et vous êtes prêt à aller plus loin👍🏻\n• Restez au niveau de la participation en suivant les réponses\n• Télécharger les résultats du sondage pour les partager avec vos collègues",
-  "$manifest.description.short": "Ask a question and get people's opinion",
+  "$manifest.description.short": "Poser une question et solliciter l'avis des autres",
   "$manifest.name.full": "Sondage",
   "$manifest.name.short": "Sondage",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.activities.activityTypes[0].description": "Notification de rappel de sondage",
+  "$manifest.activities.activityTypes[1].description": "Une personne répond à votre sondage",
+  "$manifest.activities.activityTypes[2].description": "Les résultats du sondage sont prêts",
+  "$manifest.activities.activityTypes[3].description": "Synthèse quotidienne sur l'état des réponses au sondage"
 }

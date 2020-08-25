@@ -100,14 +100,14 @@
   "OneResponded": "{0} svarade",
   "CreateNewPoll": "Skapa en ny omröstning",
   "ResultsTitle": "Resultatvy",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Skapa en ny omröstning",
+  "$manifest.composeExtensions[0].commands[0].title": "Skapa en ny omröstning",
   "$manifest.description.full": "Ta reda på teamets åsikter genom att skapa en omröstning i en chatt eller kanal.\n• Hitta appen i \"…\" under skrivrutan för meddelanden\n• Skriv din fråga och ange alternativen, och sedan är det färdigt 👍🏻\n• Håll koll på deltagandet genom att spåra svar\n• Ladda ned omröstningsresultatet och dela det med kollegorna",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
-  "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
-  "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.description.short": "Ställ en fråga och få reda på vad människor tycker",
+  "$manifest.name.full": "Omröstning",
+  "$manifest.name.short": "Omröstning",
+  "$manifest.activities.activityTypes[0].description": "Påminnelse om omröstning",
+  "$manifest.activities.activityTypes[1].description": "Någon svarar på din omröstning",
+  "$manifest.activities.activityTypes[2].description": "Resultatet av omröstningen är klar",
+  "$manifest.activities.activityTypes[3].description": "Daglig sammandrag av omröstningens svar"
 }

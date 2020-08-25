@@ -198,13 +198,16 @@
   "_composeExtensions[0].commands[0].taskInfo.title.comment": "{MaxLength=64}",
   "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
   "_composeExtensions[0].commands[0].title.comment": "{MaxLength=32}",
-  "$manifest.description.full": "Get your team's opinion by creating a poll in a chat or channel.​\n• Find the app in \"…\" under the message compose box​\n• Enter your question and choices and you're good to go 👍🏻​\n• Stay on top of participation by tracking responses​\n• Download poll result to share with your co-workers",
-  "_description.full.comment": "\n is used for new lines, and • and 👍🏻 are used as unicode",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
+  "$manifest.description": "Get your team's opinion by creating a poll in a chat or channel.​\n• Find the app in \"…\" under the message compose box​\n• Enter your question and choices and you're good to go 👍🏻​\n• Stay on top of participation by tracking responses​\n• Download poll result to share with your co-workers",
+  "$manifest.name": "Poll",
   "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
   "$manifest.activities.activityTypes[1].description": "Someone responds to your poll",
   "$manifest.activities.activityTypes[2].description": "Poll result is out",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status",
+
+  "$manifest.msTeamsProps.description.full": "Ask a question and get people's opinion",
+  "$manifest.msTeamsProps.description.short": "Ask a question",
+  "$manifest.msTeamsProps.name.full": "Poll",
+  "$manifest.msTeamsProps.name.short": "Poll"
+
 }

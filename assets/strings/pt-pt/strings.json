@@ -100,14 +100,14 @@
   "OneResponded": "{0} respondeu",
   "CreateNewPoll": "Criar uma nova votação",
   "ResultsTitle": "Vista de resultados",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Create a new Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Create a new Poll",
+  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Criar uma nova votação",
+  "$manifest.composeExtensions[0].commands[0].title": "Criar uma nova votação",
   "$manifest.description.full": "Obtenha a opinião da sua equipa ao criar um inquérito numa conversa ou num canal.\n• Encontre a aplicação no símbolo \"…\" por baixo da caixa de composição de mensagens\n• Introduza a sua pergunta e as opções de resposta e já está 👍🏻\n• Mantenha-se a par da participação ao monitorizar as respostas \n• Transfira o resultado do inquérito para partilhar com os seus colegas",
-  "$manifest.description.short": "Ask a question and get people's opinion",
-  "$manifest.name.full": "Poll",
-  "$manifest.name.short": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Poll reminder notification",
+  "$manifest.description.short": "Faça uma pergunta e conheça a opinião das pessoas",
+  "$manifest.name.full": "Votação",
+  "$manifest.name.short": "Votação",
+  "$manifest.activities.activityTypes[0].description": "Notificação de lembrete de votação",
   "$manifest.activities.activityTypes[1].description": "Alguém responde à sua votação",
   "$manifest.activities.activityTypes[2].description": "O resultado da votação está disponível",
-  "$manifest.activities.activityTypes[3].description": "Daily digest of poll response status"
+  "$manifest.activities.activityTypes[3].description": "Resumo diário do estado de resposta à votação"
 }
