@@ -22,8 +22,9 @@ export class Localizer {
      * @param args any arguments which needs to passed
      */
     public static getString(id: string, ...args: any[]): string {
-        if (this.jsonObject && this.jsonObject[id])
+        if (this.jsonObject && this.jsonObject[id]) {
             return this.getStringInternal(this.jsonObject[id], ...args);
+        }
         return this.getStringInternal(id, ...args);
     }
 

@@ -1,4 +1,4 @@
-import { DayOfWeek } from 'office-ui-fabric-react/lib/Calendar';
+import { DayOfWeek } from "office-ui-fabric-react/lib/Calendar";
 
 export class Constants {
     // ASCII value for carriage return
@@ -6,22 +6,22 @@ export class Constants {
     public static readonly ESCAPE_ASCII_VALUE = 27;
 
     public static readonly ACTION_INSTANCE_INDEFINITE_EXPIRY = -1;
-    
+
     // some OS doesn't support long filenames, so capping the action's title length to this number
     public static readonly ACTION_RESULT_FILE_NAME_MAX_LENGTH: number = 50;
 
     public static readonly FOCUSABLE_ITEMS = {
-        All: ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', '[tabindex="0"]'],
-        LINK: 'a[href]',
-        AREA_LINK: 'area[href]',
-        INPUT: 'input:not([disabled])',
-        SELECT: 'select:not([disabled])',
-        TEXTAREA: 'textarea:not([disabled])',
-        BUTTON: 'button:not([disabled])',
+        All: ["a[href]", "area[href]", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", "button:not([disabled])", '[tabindex="0"]'],
+        LINK: "a[href]",
+        AREA_LINK: "area[href]",
+        INPUT: "input:not([disabled])",
+        SELECT: "select:not([disabled])",
+        TEXTAREA: "textarea:not([disabled])",
+        BUTTON: "button:not([disabled])",
         TAB: '[tabindex="0"]'
-    }
+    };
 
-    // The following is a map of locales to their corresponding first day of the week. 
+    // The following is a map of locales to their corresponding first day of the week.
     // This map only contains locales which do not have Sunday as their first day of the week.
     // The source for this data is moment-with-locales.js version 2.24.0
     // Note: The keys in this map should be in lowercase
@@ -124,12 +124,12 @@ export class Constants {
         "x-pseudo": DayOfWeek.Monday,
         "yo": DayOfWeek.Monday,
         "zh-cn": DayOfWeek.Monday
-    }
+    };
 
     public static readonly colors = {
-        defaultBackgroundColor: '#fff',
-        darkBackgroundColor: '#252423',
-        contrastBackgroundColor: 'black'
-    }
+        defaultBackgroundColor: "#fff",
+        darkBackgroundColor: "#252423",
+        contrastBackgroundColor: "black"
+    };
 
 }

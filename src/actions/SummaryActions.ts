@@ -1,10 +1,8 @@
 
-
 import { action } from "satcheljs";
 import { SummaryProgressStatus, ViewType } from "../store/SummaryStore";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 
-const LOG_TAG = "PollSummary";
 export enum HttpStatusCode {
     Unauthorized = 401,
     NotFound = 404,
@@ -44,7 +42,6 @@ export enum PollSummaryAction {
     updateActionInstance = "updateActionInstance",
     updateActionInstanceSummary = "updateActionInstanceSummary",
 }
-
 
 export let initialize = action(PollSummaryAction.initialize);
 

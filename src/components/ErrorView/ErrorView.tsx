@@ -1,5 +1,5 @@
 import * as React from "react";
-import './ErrorView.scss';
+import "./ErrorView.scss";
 import {
     Flex,
     Text,
@@ -23,7 +23,7 @@ export class ErrorView extends React.Component<IErrorViewProps, any> {
     render() {
 
         let image: string = this.props.image;
-        if (Utils.isEmptyString(this.props.image)) {
+        if (Utils.isEmpty(this.props.image)) {
             image = "./images/genericError.png";
         }
         return (
@@ -31,7 +31,7 @@ export class ErrorView extends React.Component<IErrorViewProps, any> {
                 <Flex column className="error-view-container">
                     <img src={image} className="error-view-image" />
                     <Text className="error-view-title">{this.props.title}</Text>
-                    {!Utils.isEmptyString(this.props.subtitle) && <Text className="error-view-subtitle">{this.props.subtitle}</Text>}
+                    {!Utils.isEmpty(this.props.subtitle) && <Text className="error-view-subtitle">{this.props.subtitle}</Text>}
                 </Flex>
                 <Button
                     primary

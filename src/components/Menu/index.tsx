@@ -1,1 +1,1 @@
-export { AdaptiveMenu, IAdaptiveMenuProps, AdaptiveMenuRenderStyle, AdaptiveMenuItem } from './AdaptiveMenu';
+export { AdaptiveMenu, IAdaptiveMenuProps, AdaptiveMenuRenderStyle, AdaptiveMenuItem } from "./AdaptiveMenu";

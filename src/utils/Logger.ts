@@ -1,3 +1,7 @@
+
+/**
+ * Logger component with info and error log levels
+ */
 export class Logger {
 
     public static logInfo(message: string) {

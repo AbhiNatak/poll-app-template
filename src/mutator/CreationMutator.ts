@@ -1,17 +1,17 @@
-import { mutator } from 'satcheljs';
-import { setContext, setSendingFlag, goToPage, updateTitle, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI, addChoice, setProgressState } from './../actions/CreationActions';
+import { mutator } from "satcheljs";
+import { setContext, setSendingFlag, goToPage, updateTitle, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI, addChoice, setProgressState } from "./../actions/CreationActions";
 import * as actionSDK from "@microsoft/m365-action-sdk";
-import { Utils } from '../utils/Utils';
+import { Utils } from "../utils/Utils";
 import getStore from "../store/CreationStore";
 
 /**
- * Creation view mutators to modify store data on which create view relies 
+ * Creation view mutators to modify store data on which create view relies
  */
 
 mutator(setContext, (msg) => {
     const store = getStore();
     store.context = msg.context;
-    if (!Utils.isEmptyObject(store.context.lastSessionData)) {
+    if (!Utils.isEmpty(store.context.lastSessionData)) {
         const lastSessionData = store.context.lastSessionData;
         const actionInstance: actionSDK.Action = lastSessionData.action;
         getStore().title = actionInstance.dataTables[0].dataColumns[0].displayName;
@@ -30,7 +30,6 @@ mutator(setContext, (msg) => {
         getStore().settings.dueDate = actionInstance.expiryTime;
     }
 });
-
 
 mutator(setSendingFlag, () => {
     const store = getStore();

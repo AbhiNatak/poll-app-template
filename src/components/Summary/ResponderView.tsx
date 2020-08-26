@@ -2,7 +2,7 @@ import * as React from "react";
 import getStore from "./../../store/SummaryStore";
 import { observer } from "mobx-react";
 import { fetchActionInstanceRows, fetchUserDetails } from "./../../actions/SummaryActions";
-import { Loader, Flex, Text, FocusZone, RetryIcon, ListItem, Avatar } from '@fluentui/react-northstar';
+import { Loader, Flex, Text, FocusZone, RetryIcon, ListItem, Avatar } from "@fluentui/react-northstar";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "../../utils/Utils";
 import { Localizer } from "../../utils/Localizer";
@@ -35,6 +35,33 @@ export class ResponderView extends React.Component<any, any> {
         if (getStore().actionInstanceRows.length == 0) {
             fetchActionInstanceRows(true);
         }
+    }
+
+    render() {
+        this.isAnyUserProfilePending = false;
+        this.rowsWithUser = [];
+        for (let row of getStore().actionInstanceRows) {
+            this.addUserInfoProps(row);
+        }
+
+        return (
+            <FocusZone className="zero-padding" isCircularNavigation={true}>
+                <Flex column className="list-container" gap="gap.small">
+                    <RecyclerViewComponent
+                        data={this.rowsWithUser}
+                        rowHeight={48}
+                        showFooter={getStore().progressStatus.actionInstanceRow.toString()}
+                        onRowRender={(
+                            type: RecyclerViewType,
+                            index: number,
+                            props: IUserInfoViewProps
+                        ): JSX.Element => {
+                            return this.onRowRender(type, index, props);
+                        }}
+                    />
+                </Flex>
+            </FocusZone>
+        );
     }
 
     private onRowRender(
@@ -81,35 +108,8 @@ export class ResponderView extends React.Component<any, any> {
                     headerMedia={userProps.date}
                     content={userProps.subtitle}
                 />
-            </div>)
+            </div>);
         }
-    }
-
-    render() {
-        this.isAnyUserProfilePending = false;
-        this.rowsWithUser = [];
-        for (let row of getStore().actionInstanceRows) {
-            this.addUserInfoProps(row);
-        }
-
-        return (
-            <FocusZone className="zero-padding" isCircularNavigation={true}>
-                <Flex column className="list-container" gap="gap.small">
-                    <RecyclerViewComponent
-                        data={this.rowsWithUser}
-                        rowHeight={48}
-                        showFooter={getStore().progressStatus.actionInstanceRow.toString()}
-                        onRowRender={(
-                            type: RecyclerViewType,
-                            index: number,
-                            props: IUserInfoViewProps
-                        ): JSX.Element => {
-                            return this.onRowRender(type, index, props);
-                        }}
-                    />
-                </Flex>
-            </FocusZone>
-        );
     }
 
     private findSubtitle(id: string): string {

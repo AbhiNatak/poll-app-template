@@ -1,6 +1,6 @@
 import * as React from "react";
 import getStore from "../../store/SummaryStore";
-import { Flex, Loader, FocusZone, ListItem, Avatar } from '@fluentui/react-northstar';
+import { Flex, Loader, FocusZone, ListItem, Avatar } from "@fluentui/react-northstar";
 import { observer } from "mobx-react";
 import { fetchNonReponders } from "../../actions/SummaryActions";
 import { ProgressState } from "./../../utils/SharedEnum";
@@ -57,7 +57,7 @@ export class NonResponderView extends React.Component {
                                         header={userProps.userName}
                                     />
                                 </div>
-                            )
+                            );
                         }}
                     />
                 </Flex>

@@ -1,1 +1,1 @@
-export { NavBarComponent, INavBarComponentProps, INavBarItem } from './NavBarComponent';
+export { NavBarComponent, INavBarComponentProps, INavBarItem } from "./NavBarComponent";

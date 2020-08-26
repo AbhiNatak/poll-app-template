@@ -1,10 +1,10 @@
-import { mutator } from 'satcheljs';
-import getStore, { ViewType } from './../store/SummaryStore';
-import { setProgressStatus, setContext, updateMyRow, pollCloseAlertOpen, pollExpiryChangeAlertOpen, pollDeleteAlertOpen, setDueDate, showMoreOptions, setCurrentView, addActionInstanceRows, updateContinuationToken, updateMemberCount, goBack, updateNonResponders, setIsActionDeleted, updateActionInstance, updateActionInstanceSummary, updateUserProfileInfo } from './../actions/SummaryActions';
-import { Utils } from '../utils/Utils';
+import { mutator } from "satcheljs";
+import getStore, { ViewType } from "./../store/SummaryStore";
+import { setProgressStatus, setContext, updateMyRow, pollCloseAlertOpen, pollExpiryChangeAlertOpen, pollDeleteAlertOpen, setDueDate, showMoreOptions, setCurrentView, addActionInstanceRows, updateContinuationToken, updateMemberCount, goBack, updateNonResponders, setIsActionDeleted, updateActionInstance, updateActionInstanceSummary, updateUserProfileInfo } from "./../actions/SummaryActions";
+import { Utils } from "../utils/Utils";
 
 /**
- * Summary view mutators to modify store data on which summmary view relies 
+ * Summary view mutators to modify store data on which summmary view relies
  */
 
 mutator(setProgressStatus, (msg) => {
@@ -96,7 +96,7 @@ mutator(goBack, () => {
 mutator(updateNonResponders, (msg) => {
     const store = getStore();
     const nonResponderList = msg.nonResponders;
-    if (!Utils.isEmptyObject(nonResponderList) && nonResponderList.length > 0) {
+    if (!Utils.isEmpty(nonResponderList) && nonResponderList.length > 0) {
         nonResponderList.sort((object1, object2) => {
             if (object1.displayName < object2.displayName) {
                 return -1;

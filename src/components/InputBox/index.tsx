@@ -1,1 +1,1 @@
-export {InputBox, IInputBoxProps} from './InputBox';
+export {InputBox, IInputBoxProps} from "./InputBox";

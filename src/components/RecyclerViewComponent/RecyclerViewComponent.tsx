@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RecyclerListView, DataProvider, LayoutProvider, BaseItemAnimator } from 'recyclerlistview/web';
+import { RecyclerListView, DataProvider, LayoutProvider } from "recyclerlistview/web";
 
 export interface IRecyclerViewComponentProps<T> {
     rowHeight: number;
@@ -36,6 +36,21 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
         return true;
     }
 
+    render() {
+        // for each item in list rowRenderer method will be called that will provide the UI element to render for that item
+        return (
+            <RecyclerListView
+                key={this.props.gridWidth}
+                rowHeight={this.props.rowHeight}
+                layoutProvider={this.layoutProvider}
+                dataProvider={this.dataProvider}
+                rowRenderer={(type: RecyclerViewType, data: T, index: number): JSX.Element => {
+                    return this.props.onRowRender(type, index, data);
+                }}
+            />
+        );
+    }
+
     private initialize(props: IRecyclerViewComponentProps<T>) {
         // Create the layout provider
         // First method: Given an index return the type of item e.g ListItemType1, ListItemType2 in case you have variety of items in your list/grid
@@ -53,8 +68,7 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
             (type: number, dim: any) => {
                 if (this.props.gridWidth) {
                     dim.width = this.props.gridWidth;
-                }
-                else {
+                } else {
                     dim.width = window.innerWidth;
                 }
                 dim.height = this.props.rowHeight;
@@ -75,20 +89,5 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
             dataRow.push(props.showFooter);
         }
         this.dataProvider = this.dataProvider.cloneWithRows(dataRow);
-    }
-
-    render() {
-        // for each item in list rowRenderer method will be called that will provide the UI element to render for that item
-        return (
-                <RecyclerListView
-                    key={this.props.gridWidth}
-                    rowHeight={this.props.rowHeight}
-                    layoutProvider={this.layoutProvider}
-                    dataProvider={this.dataProvider}
-                    rowRenderer={(type: RecyclerViewType, data: T, index: number): JSX.Element => {
-                        return this.props.onRowRender(type, index, data);
-                    }}
-                />
-            );
     }
 }

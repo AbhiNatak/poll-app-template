@@ -1,8 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
-import './RadioGroupMobile.scss';
-import { CircleIcon, Flex, AcceptIcon } from '@fluentui/react-northstar';
-
+import "./RadioGroupMobile.scss";
+import { CircleIcon, Flex, AcceptIcon } from "@fluentui/react-northstar";
 
 export interface IRadioGroupMobileProps {
     checkedValue: string;
@@ -36,7 +35,7 @@ export class RadioGroupMobile extends React.PureComponent<IRadioGroupMobileProps
     getRadioItem(item): JSX.Element {
         let isChecked: boolean = item.value == this.props.checkedValue;
         return (
-            <Flex className="radio-item-container" key={item.key} onClick={() => { this.props.onCheckedValueChange(item.value) }}>
+            <Flex className="radio-item-container" key={item.key} onClick={() => { this.props.onCheckedValueChange(item.value); }}>
                 <div role="radio" aria-checked={isChecked} className={"radio-item-content " + item.className}>{item.label}</div>
                 <div className="checkmark-icons-container">
                     <CircleIcon className="checkmark-icon checkmark-bg-icon" styles={isChecked ? ({ theme: { siteVariables } }) => ({

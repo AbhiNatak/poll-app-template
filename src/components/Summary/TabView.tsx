@@ -2,7 +2,7 @@ import * as React from "react";
 import { ResponderView } from "./ResponderView";
 import getStore, { ViewType } from "./../../store/SummaryStore";
 import { NonResponderView } from "./NonResponderView";
-import { Flex, ChevronStartIcon, Text, Menu, ArrowLeftIcon } from '@fluentui/react-northstar';
+import { Flex, ChevronStartIcon, Text, Menu, ArrowLeftIcon } from "@fluentui/react-northstar";
 import {
     setCurrentView,
     goBack
@@ -20,31 +20,6 @@ import { INavBarComponentProps, NavBarComponent } from "../NavBarComponent";
 export class TabView extends React.Component<any, any> {
     componentDidMount() {
         UxUtils.setFocus(document.body, Constants.FOCUSABLE_ITEMS.All);
-    }
-
-    private getItems() {
-        return [
-            {
-                key: "responders",
-                role: "tab",
-                "aria-selected": getStore().currentView == ViewType.ResponderView,
-                "aria-label": Localizer.getString("Responders"),
-                content: Localizer.getString("Responders"),
-                onClick: () => {
-                    setCurrentView(ViewType.ResponderView);
-                },
-            },
-            {
-                key: "nonResponders",
-                role: "tab",
-                "aria-selected": getStore().currentView == ViewType.NonResponderView,
-                "aria-label": Localizer.getString("NonResponders"),
-                content: Localizer.getString("NonResponders"),
-                onClick: () => {
-                    setCurrentView(ViewType.NonResponderView);
-                },
-            },
-        ];
     }
 
     render() {
@@ -83,6 +58,31 @@ export class TabView extends React.Component<any, any> {
                 {this.getFooterElement()}
             </Flex>
         );
+    }
+
+    private getItems() {
+        return [
+            {
+                key: "responders",
+                role: "tab",
+                "aria-selected": getStore().currentView == ViewType.ResponderView,
+                "aria-label": Localizer.getString("Responders"),
+                content: Localizer.getString("Responders"),
+                onClick: () => {
+                    setCurrentView(ViewType.ResponderView);
+                },
+            },
+            {
+                key: "nonResponders",
+                role: "tab",
+                "aria-selected": getStore().currentView == ViewType.NonResponderView,
+                "aria-label": Localizer.getString("NonResponders"),
+                content: Localizer.getString("NonResponders"),
+                onClick: () => {
+                    setCurrentView(ViewType.NonResponderView);
+                },
+            },
+        ];
     }
 
     private getFooterElement() {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./ActionRootView.scss";
-import { Provider, teamsTheme, teamsDarkTheme, teamsHighContrastTheme, ThemePrepared } from '@fluentui/react-northstar'
+import { Provider, teamsTheme, teamsDarkTheme, teamsHighContrastTheme, ThemePrepared } from "@fluentui/react-northstar";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "./../../utils/Utils";
 import { ActionSdkHelper } from "../../helper/ActionSdkHelper";
@@ -56,7 +56,7 @@ export class ActionRootView extends React.Component<any, IActionRootViewState> {
         );
     }
 
-    // This will get the current selected theme by user from action context and set the theme for task module  
+    // This will get the current selected theme by user from action context and set the theme for task module
     private getTheme(): ThemePrepared {
         switch (this.state.hostContext.theme) {
             case "contrast":

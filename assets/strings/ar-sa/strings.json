@@ -44,13 +44,11 @@
   "ClosePoll": "إغلاق الاستطلاع الرأي",
   "DeletePoll": "حذف الاستقصاء",
   "ClosePollConfirmation": "هل تريد بالتأكيد إغلاق هذا الاستقصاء؟",
-  "ReminderFeatureNotAvailablePollConfirmation": "ستتوفر هذه الميزة قريباً",
   "DeletePollConfirmation": "هل تريد بالتأكيد حذف هذا الاستقصاء؟",
   "Participation": "المشاركة {0}%",
   "BarPercentage": "{0}%",
   "ParticipationIndicatorSingular": "استجاب {0} من {1}",
   "ParticipationIndicatorPlural": "استجاب {0} من {1}",
-  "SendReminder": "إرسال تذكير",
   "Responders": "المستجيبون",
   "NonResponders": "حتى يستجيب",
   "NotResponded": "لم تستجب بعد",
@@ -98,16 +96,22 @@
   "Results": "عرض النتيجة",
   "BeTheFirstOneToRespond": "كن أول مَن يُجري هذا الاستقصاء",
   "OneResponded": "استجاب {0}",
+  "TwoResponded": "{0} and {1} responded",
+  "ThreeResponded": "{0}, {1} and {2} responded",
+  "ThreeAndOneOtherResponded": "{0}, {1}, {2} and 1 other responded",
+  "ThreeAndOthersResponded": "{0}, {1}, {2} and {3} others responded",
   "CreateNewPoll": "إنشاء استقصاء جديد",
   "ResultsTitle": "عرض النتائج",
   "$manifest.composeExtensions[0].commands[0].taskInfo.title": "إنشاء استقصاء جديد",
   "$manifest.composeExtensions[0].commands[0].title": "إنشاء استقصاء جديد",
-  "$manifest.description.full": "تعرف على آراء فريقك من خلال إنشاء استقصاء في الدردشة أو القناة.\n• يمكنك الحصول على التطبيق من \"…\" ضمن مربع إنشاء الرسالة\n• أدخل السؤال والاختيارات وبهذا ستتمكن من ذلك 👍🏻\n• ابق على اطلاع بحيثيات المشاركات من خلال تتبع الاستجابات\n• قم بتنزيل نتائج الاستقصاء لمشاركتها مع زملاء العمل",
-  "$manifest.description.short": "طرح سؤال والحصول على آراء الأشخاص",
-  "$manifest.name.full": "استقصاء",
-  "$manifest.name.short": "استقصاء",
+  "$manifest.description": "Get your team's opinion by creating a poll in a chat or channel.​\n• Find the app in \"…\" under the message compose box​\n• Enter your question and choices and you're good to go 👍🏻​\n• Stay on top of participation by tracking responses​\n• Download poll result to share with your co-workers",
+  "$manifest.name": "Poll",
   "$manifest.activities.activityTypes[0].description": "إعلام تذكير الاستطلاع",
   "$manifest.activities.activityTypes[1].description": "يستجيب شخص ما لاستطلاعك",
   "$manifest.activities.activityTypes[2].description": "ظهرت نتيجة الاستطلاع",
-  "$manifest.activities.activityTypes[3].description": "ملخص يومي لحالة الاستجابة للاستطلاع"
+  "$manifest.activities.activityTypes[3].description": "ملخص يومي لحالة الاستجابة للاستطلاع",
+  "$manifest.msTeamsProps.description.full": "Ask a question and get people's opinion",
+  "$manifest.msTeamsProps.description.short": "Ask a question",
+  "$manifest.msTeamsProps.name.full": "Poll",
+  "$manifest.msTeamsProps.name.short": "Poll"
 }

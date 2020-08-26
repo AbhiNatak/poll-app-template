@@ -1,1 +1,1 @@
-export {RecyclerViewComponent, RecyclerViewType} from './RecyclerViewComponent';
+export {RecyclerViewComponent, RecyclerViewType} from "./RecyclerViewComponent";

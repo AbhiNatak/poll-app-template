@@ -12,7 +12,7 @@ import {
 import "./creation.scss";
 import getStore, { Page } from "./../../store/CreationStore";
 import { observer } from "mobx-react";
-import { Flex, FlexItem, CircleIcon, Button, Loader, ArrowLeftIcon, SettingsIcon, Text } from '@fluentui/react-northstar';
+import { Flex, FlexItem, CircleIcon, Button, Loader, ArrowLeftIcon, SettingsIcon, Text } from "@fluentui/react-northstar";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Localizer } from "../../utils/Localizer";
 import { Utils } from "../../utils/Utils";
@@ -27,10 +27,10 @@ import { Constants } from "./../../utils/Constants";
 import { ActionSdkHelper } from "../../helper/ActionSdkHelper";
 
 /**
- * <CreationPage> component for create view of poll app 
+ * <CreationPage> component for create view of poll app
  * @observer decorator on the component this is what tells MobX to rerender the component whenever the data it relies on changes.
  */
-@observer 
+@observer
 export default class CreationPage extends React.Component<any, any> {
 
     private settingsFooterComponentRef: HTMLElement;
@@ -53,7 +53,7 @@ export default class CreationPage extends React.Component<any, any> {
             ActionSdkHelper.hideLoadingIndicator();
             if (UxUtils.renderingForMobile()) {
                 // this will load the setting view where user can change due date and result visibility
-                if (getStore().currentPage == Page.Settings) {
+                if (getStore().currentPage === Page.Settings) {
                     return this.renderSettingsPageForMobile();
                 } else {
                     return (
@@ -73,8 +73,9 @@ export default class CreationPage extends React.Component<any, any> {
                             goToPage(Page.Main);
                             setTimeout(
                                 function () {
-                                    if (this.settingsFooterComponentRef)
+                                    if (this.settingsFooterComponentRef) {
                                         this.settingsFooterComponentRef.focus();
+                                    }
                                 }.bind(this),
                                 0
                             );
@@ -115,10 +116,12 @@ export default class CreationPage extends React.Component<any, any> {
 
             if (questionEmptyError) {
                 accessibilityAnnouncementString = questionEmptyError;
-                this.validationErrorQuestionRef && this.validationErrorQuestionRef.focus();
+                if (this.validationErrorQuestionRef) {
+                    this.validationErrorQuestionRef.focus();
+                }
             } else {
                 for (let error in optionsError) {
-                    if (!Utils.isEmptyString(error)) {
+                    if (!Utils.isEmpty(error)) {
                         accessibilityAnnouncementString = Localizer.getString(
                             "BlankChoiceError"
                         );
@@ -151,7 +154,7 @@ export default class CreationPage extends React.Component<any, any> {
                         this.validationErrorQuestionRef = element;
                     }}
                     input={{
-                        className: 'title-box'
+                        className: "title-box"
                     }}
                     showError={questionEmptyError != null}
                     errorText={questionEmptyError}
@@ -232,8 +235,8 @@ export default class CreationPage extends React.Component<any, any> {
     }
 
     /**
-     * Helper function to provide footer for main page 
-     * @param isMobileView true or false based of whether its for mobile view or not 
+     * Helper function to provide footer for main page
+     * @param isMobileView true or false based of whether its for mobile view or not
      */
     renderFooterSection(isMobileView?: boolean) {
         let className = isMobileView ? "" : "footer-layout";
@@ -269,20 +272,16 @@ export default class CreationPage extends React.Component<any, any> {
             if (dueIn[Utils.YEARS] > 0) {
                 dueDateString = dueIn[Utils.YEARS] == 1 ? "DueInYear" : "DueInYears";
                 dueDateValues = [dueIn[Utils.YEARS]];
-            }
-            else if (dueIn[Utils.MONTHS] > 0) {
+            } else if (dueIn[Utils.MONTHS] > 0) {
                 dueDateString = dueIn[Utils.MONTHS] == 1 ? "DueInMonth" : "DueInMonths";
                 dueDateValues = [dueIn[Utils.MONTHS]];
-            }
-            else if (dueIn[Utils.WEEKS] > 0) {
+            } else if (dueIn[Utils.WEEKS] > 0) {
                 dueDateString = dueIn[Utils.WEEKS] == 1 ? "DueInWeek" : "DueInWeeks";
                 dueDateValues = [dueIn[Utils.WEEKS]];
-            }
-            else if (dueIn[Utils.DAYS] > 0) {
+            } else if (dueIn[Utils.DAYS] > 0) {
                 dueDateString = dueIn[Utils.DAYS] == 1 ? "DueInDay" : "DueInDays";
                 dueDateValues = [dueIn[Utils.DAYS]];
-            }
-            else if (dueIn[Utils.HOURS] > 0 && dueIn[Utils.MINUTES] > 0) {
+            } else if (dueIn[Utils.HOURS] > 0 && dueIn[Utils.MINUTES] > 0) {
                 if (dueIn[Utils.HOURS] == 1 && dueIn[Utils.MINUTES] == 1) {
                     dueDateString = "DueInHourAndMinute";
                 } else if (dueIn[Utils.HOURS] == 1) {
@@ -293,12 +292,10 @@ export default class CreationPage extends React.Component<any, any> {
                     dueDateString = "DueInHoursAndMinutes";
                 }
                 dueDateValues = [dueIn[Utils.HOURS], dueIn[Utils.MINUTES]];
-            }
-            else if (dueIn[Utils.HOURS] > 0) {
+            } else if (dueIn[Utils.HOURS] > 0) {
                 dueDateString = dueIn[Utils.HOURS] == 1 ? "DueInHour" : "DueInHours";
                 dueDateValues = [dueIn[Utils.HOURS]];
-            }
-            else {
+            } else {
                 dueDateString = dueIn[Utils.MINUTES] == 1 ? "DueInMinute" : "DueInMinutes";
                 dueDateValues = [dueIn[Utils.MINUTES]];
             }
@@ -311,7 +308,7 @@ export default class CreationPage extends React.Component<any, any> {
             settingsStrings.push(Localizer.getString(visibilityString));
         }
 
-        return settingsStrings.join(", ");
+        return settingsStrings.join(". ");
     }
 
     /**

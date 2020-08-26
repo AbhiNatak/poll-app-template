@@ -23,7 +23,7 @@ export interface IBarChartItem {
 }
 
 /**
- * <BarChartComponent> component to show progress bar in summary view 
+ * <BarChartComponent> component to show progress bar in summary view
  */
 export class BarChartComponent extends React.PureComponent<IBarChartComponentProps> {
 
@@ -56,7 +56,7 @@ export class BarChartComponent extends React.PureComponent<IBarChartComponentPro
                                     <FlexItem push>
                                         <Text aria-hidden={true} content={optionCount} size="small" weight="bold" />
                                     </FlexItem>
-                                    <Text aria-hidden={true} aria-label={percentageString} content={'(' + percentageString + ')'} size="small" />
+                                    <Text aria-hidden={true} aria-label={percentageString} content={"(" + percentageString + ")"} size="small" />
                                 </>}
                         </Flex>
                     </ShimmerContainer>

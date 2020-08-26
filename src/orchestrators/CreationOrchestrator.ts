@@ -1,11 +1,11 @@
-import { setProgressState } from './../actions/CreationActions';
-import { toJS } from 'mobx';
-import { Localizer } from '../utils/Localizer';
-import { orchestrator } from 'satcheljs';
-import { setContext, initialize, callActionInstanceCreationAPI, updateTitle, updateChoiceText, setSendingFlag, shouldValidateUI } from '../actions/CreationActions';
-import { ProgressState } from '../utils/SharedEnum';
+import { setProgressState } from "./../actions/CreationActions";
+import { toJS } from "mobx";
+import { Localizer } from "../utils/Localizer";
+import { orchestrator } from "satcheljs";
+import { setContext, initialize, callActionInstanceCreationAPI, updateTitle, updateChoiceText, setSendingFlag, shouldValidateUI } from "../actions/CreationActions";
+import { ProgressState } from "../utils/SharedEnum";
 import getStore from "../store/CreationStore";
-import { Utils } from '../utils/Utils';
+import { Utils } from "../utils/Utils";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { ActionSdkHelper } from "../helper/ActionSdkHelper";
 
@@ -14,28 +14,25 @@ import { ActionSdkHelper } from "../helper/ActionSdkHelper";
  */
 
 function validateActionInstance(actionInstance: actionSDK.Action): boolean {
-    if (actionInstance == null) return false;
-    if (
-        actionInstance.dataTables[0].dataColumns == null ||
-        actionInstance.dataTables[0].dataColumns.length <= 0
-    )
+    if (actionInstance == null) { return false; }
+
+    let dataColumns = actionInstance.dataTables[0].dataColumns;
+    if (!dataColumns || dataColumns.length <= 0 || !dataColumns[0].displayName || dataColumns[0].displayName == "" ||
+        !dataColumns[0].options || dataColumns[0].options.length < 2) {
         return false;
-    if (
-        actionInstance.dataTables[0].dataColumns[0].displayName == null ||
-        actionInstance.dataTables[0].dataColumns[0].displayName == ""
-    )
-        return false;
-    if (actionInstance.dataTables[0].dataColumns[0].options == null) return false;
-    if (actionInstance.dataTables[0].dataColumns[0].options.length < 2)
-        return false;
-    for (let option of actionInstance.dataTables[0].dataColumns[0].options) {
-        if (option.displayName == null || option.displayName == "") {
+    }
+
+    for (let option of dataColumns[0].options) {
+        if (!option.displayName || option.displayName == "") {
             return false;
         }
     }
     return true;
 }
 
+/**
+ * Initialization of createion view fetching action context and localization details
+ */
 orchestrator(initialize, async () => {
     setProgressState(ProgressState.InProgress);
     let actionContext = await ActionSdkHelper.getActionContext();
@@ -82,11 +79,8 @@ orchestrator(callActionInstanceCreationAPI, async () => {
     }
 
     // Set poll responses visibility
-    if (getStore().settings.resultVisibility === actionSDK.Visibility.Sender) {
-        actionInstance.dataTables[0].rowsVisibility = actionSDK.Visibility.Sender;
-    } else {
-        actionInstance.dataTables[0].rowsVisibility = actionSDK.Visibility.All;
-    }
+    actionInstance.dataTables[0].rowsVisibility = getStore().settings.resultVisibility === actionSDK.Visibility.Sender ?
+        actionSDK.Visibility.Sender : actionSDK.Visibility.All;
 
     if (validateActionInstance(actionInstance)) {
         setSendingFlag();
@@ -97,11 +91,8 @@ orchestrator(callActionInstanceCreationAPI, async () => {
     }
 });
 
-function prepareActionInstance(
-    actionInstance: actionSDK.Action,
-    actionContext: actionSDK.ActionSdkContext
-) {
-    if (Utils.isEmptyString(actionInstance.id)) {
+function prepareActionInstance(actionInstance: actionSDK.Action, actionContext: actionSDK.ActionSdkContext) {
+    if (Utils.isEmpty(actionInstance.id)) {
         actionInstance.id = Utils.generateGUID();
         actionInstance.createTime = Date.now();
     }
@@ -109,12 +100,9 @@ function prepareActionInstance(
     actionInstance.creatorId = actionContext.userId;
     actionInstance.actionPackageId = actionContext.actionPackageId;
     actionInstance.version = actionInstance.version || 1;
-    actionInstance.dataTables[0].rowsEditable =
-        actionInstance.dataTables[0].rowsEditable || true;
-    actionInstance.dataTables[0].canUserAddMultipleRows =
-        actionInstance.dataTables[0].canUserAddMultipleRows || false;
-    actionInstance.dataTables[0].rowsVisibility =
-        actionInstance.dataTables[0].rowsVisibility || actionSDK.Visibility.All;
+    actionInstance.dataTables[0].rowsEditable = actionInstance.dataTables[0].rowsEditable || true;
+    actionInstance.dataTables[0].canUserAddMultipleRows = actionInstance.dataTables[0].canUserAddMultipleRows || false;
+    actionInstance.dataTables[0].rowsVisibility = actionInstance.dataTables[0].rowsVisibility || actionSDK.Visibility.All;
 
     let isPropertyExists: boolean = false;
 

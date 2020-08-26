@@ -3,13 +3,16 @@ import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "../utils/Utils";
 import { ISettingsComponentProps } from "./../components/Creation/Settings";
 import { ProgressState } from "./../utils/SharedEnum";
-import './../orchestrators/CreationOrchestrator';
-import './../mutator/CreationMutator';
+import "./../orchestrators/CreationOrchestrator";
+import "./../mutator/CreationMutator";
 
 /**
- * Creation view store containing all the required data  
+ * Creation view store containing all the required data
  */
 
+/**
+ * Enum for two main component of creation view (main page and settings page)
+ */
 export enum Page {
     Main,
     Settings,
@@ -30,16 +33,16 @@ interface IPollCreationStore {
 const store: IPollCreationStore = {
     context: null,
     title: "",
-    maxOptions: 10,
+    maxOptions: 10, // max choice we can have in poll
     options: ["", ""],
     settings: {
-        resultVisibility: actionSDK.Visibility.All,
-        dueDate: Utils.getDefaultExpiry(7).getTime(),
+        resultVisibility: actionSDK.Visibility.All,   // result of poll will be visible to everyone
+        dueDate: Utils.getDefaultExpiry(7).getTime(), // default due date for poll is one week
         strings: null,
     },
     shouldValidate: false,
     sendingAction: false,
-    currentPage: Page.Main,
+    currentPage: Page.Main,  // change currentPage value to switch b/w diff components
     progressState: ProgressState.NotStarted
 };
 

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Flex, Text } from '@fluentui/react-northstar';
-import './NavBarComponent.scss';
+import * as React from "react";
+import { Flex } from "@fluentui/react-northstar";
+import "./NavBarComponent.scss";
 
 export interface INavBarItem {
     title?: string;
@@ -43,7 +43,7 @@ export class NavBarComponent extends React.PureComponent<INavBarComponentProps> 
                 className={navBarItemClassName}
                 role="button"
                 aria-label={navBarItem.ariaLabel}
-                onClick={() => { navBarItem.onClick() }}
+                onClick={() => { navBarItem.onClick(); }}
                 tabIndex={0}
             >
                 {navBarItem.icon}

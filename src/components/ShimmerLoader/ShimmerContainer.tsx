@@ -1,20 +1,20 @@
 import * as React from "react";
-import './Shimmer.scss';
+import "./Shimmer.scss";
 
 export interface IShimmerProps {
-    // Profile image circular shimmer will be shown with radius 32px 
+    // Profile image circular shimmer will be shown with radius 32px
     showProfilePic?: boolean;
 
-    // Shimmer will be shown with 100% height and width given in 0th element in width prop 
+    // Shimmer will be shown with 100% height and width given in 0th element in width prop
     fill?: boolean;
 
-    // Number of line to be shown 
+    // Number of line to be shown
     lines?: number;
 
-    // Width of each line and default is 100% if it is not given 
+    // Width of each line and default is 100% if it is not given
     width?: string[];
 
-    // If true or not given, shimmer will be shown else the child componnent will be shown 
+    // If true or not given, shimmer will be shown else the child componnent will be shown
     showShimmer?: boolean;
 }
 
@@ -39,7 +39,6 @@ export class ShimmerContainer extends React.PureComponent<IShimmerProps> {
             </div>
         );
     }
-
 
     getShimmerLoader() {
         let lineShimmer: JSX.Element[] = [];

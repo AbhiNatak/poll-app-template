@@ -365,7 +365,7 @@ export default class SummaryView extends React.Component<any, any> {
     }
 
     /**
-     * Return UI for due date and dropdown 
+     * Return UI for due date and dropdown
      */
     private getHeaderContainer(): JSX.Element {
         let actionInstanceStatusString = this.getActionInstanceStatusString();
@@ -462,7 +462,7 @@ export default class SummaryView extends React.Component<any, any> {
     }
 
     /**
-     * Method for UI component of download button 
+     * Method for UI component of download button
      */
     private getFooterView(): JSX.Element {
         if (getStore().progressStatus.actionInstance != ProgressState.Completed) {
@@ -505,7 +505,7 @@ export default class SummaryView extends React.Component<any, any> {
                     }}
 
                     primary
-                    toggleButton={{ 'aria-label': 'more-options' }}
+                    toggleButton={{ "aria-label": "more-options" }}
                     onMainButtonClick={() => this.downloadImage()}
                 />
             </Flex>
@@ -681,10 +681,11 @@ export default class SummaryView extends React.Component<any, any> {
                     if (
                         getStore().progressStatus.updateActionInstance !=
                         ProgressState.InProgress
-                    )
+                    ) {
                         setProgressStatus({
                             updateActionInstance: ProgressState.NotStarted,
                         });
+                    }
                     pollExpiryChangeAlertOpen(true);
                 },
             };
@@ -698,10 +699,11 @@ export default class SummaryView extends React.Component<any, any> {
                     if (
                         getStore().progressStatus.deleteActionInstance !=
                         ProgressState.InProgress
-                    )
+                    ) {
                         setProgressStatus({
                             closeActionInstance: ProgressState.NotStarted,
                         });
+                    }
                     pollCloseAlertOpen(true);
                 },
             };
@@ -716,10 +718,11 @@ export default class SummaryView extends React.Component<any, any> {
                     if (
                         getStore().progressStatus.deleteActionInstance !=
                         ProgressState.InProgress
-                    )
+                    ) {
                         setProgressStatus({
                             deleteActionInstance: ProgressState.NotStarted,
                         });
+                    }
                     pollDeleteAlertOpen(true);
                 },
             };
@@ -869,5 +872,5 @@ export default class SummaryView extends React.Component<any, any> {
                 ) : null}
             </Flex>
         );
-    };
+    }
 }

@@ -1,25 +1,25 @@
-import * as React from 'react';
-import { Calendar, DayOfWeek } from 'office-ui-fabric-react/lib/Calendar';
-import './DatePickerView.scss';
-import { registerIcons } from '@uifabric/styling';
-import { Input, Popup, FocusTrapZone, CalendarIcon, ChevronStartIcon, ChevronEndMediumIcon} from '@fluentui/react-northstar';
-import { Constants } from './../../utils/Constants';
-import { UxUtils } from './../../utils/UxUtils';
+import * as React from "react";
+import { Calendar, DayOfWeek } from "office-ui-fabric-react/lib/Calendar";
+import "./DatePickerView.scss";
+import { registerIcons } from "@uifabric/styling";
+import { Input, Popup, FocusTrapZone, CalendarIcon, ChevronStartIcon, ChevronEndIcon } from "@fluentui/react-northstar";
+import { Constants } from "./../../utils/Constants";
+import { UxUtils } from "./../../utils/UxUtils";
 
 registerIcons({
     icons: {
-        'chevronLeft': <ChevronStartIcon />,
-        'chevronRight': <ChevronEndMediumIcon />
+        "chevronLeft": <ChevronStartIcon />,
+        "chevronRight": <ChevronEndIcon />
     }
 });
 
 let dayPickerStrings = {
-    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    prevMonthAriaLabel: 'Previous month',
-    nextMonthAriaLabel: 'Next month',
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    shortMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    shortDays: ["S", "M", "T", "W", "T", "F", "S"],
+    prevMonthAriaLabel: "Previous month",
+    nextMonthAriaLabel: "Next month",
     goToToday: ""
 };
 
@@ -60,7 +60,7 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
         return {
             showCalendar: state.showCalendar,
             selectedDate: props.date
-        }
+        };
     }
 
     public render(): JSX.Element {
@@ -81,9 +81,9 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
                     }}
                     type="date"
                     aria-label={this.state.selectedDate ? this.state.selectedDate.toLocaleDateString(this.props.locale, {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric'
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
                     }) : null}
                     className="hidden-date-input-mob"
                     disabled={this.props.disabled}
@@ -115,8 +115,8 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
                 trigger={this.renderDatePickerPreviewView()}
                 content={
                     <FocusTrapZone
-                        /* 
-                            This traps the focus within the Calendar component below. 
+                        /*
+                            This traps the focus within the Calendar component below.
                             On clicking outside the calendar, the calendar is dismissed.
                             Special handling is added for Esc key to dismiss the calendar using keyboard.
                         */
@@ -139,8 +139,8 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
                             showGoToToday={false}
                             minDate={this.props.minDate}
                             navigationIcons={{
-                                leftNavigation: 'chevronLeft',
-                                rightNavigation: 'chevronRight'
+                                leftNavigation: "chevronLeft",
+                                rightNavigation: "chevronRight"
                             }}
                         />
                     </FocusTrapZone>
@@ -154,7 +154,7 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
         if (this.props.renderForMobile) {
             wrapperClassName += " date-input-view-mob";
         }
-        let dateOptions: Intl.DateTimeFormatOptions = { month: 'short', day: '2-digit', year: 'numeric' };
+        let dateOptions: Intl.DateTimeFormatOptions = { month: "short", day: "2-digit", year: "numeric" };
         if (this.props.disabled) {
             wrapperClassName += " cursor-default";
         }
@@ -162,9 +162,9 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
         let inputWrapperProps = {
             tabIndex: -1,
             "aria-label": (this.props.renderForMobile && this.state.selectedDate) ? this.state.selectedDate.toLocaleDateString(this.props.locale, {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
+                month: "short",
+                day: "numeric",
+                year: "numeric"
             }) + ". " + this.props.placeholder : null,
             onClick: () => {
                 this.onDatePickerPreviewTap();
@@ -212,7 +212,10 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
         if (!this.isValidDate(date)) {
             return;
         }
-        this.props.onSelectDate && this.props.onSelectDate(date);
+
+        if (this.props.onSelectDate) {
+            this.props.onSelectDate(date);
+        }
         this.setState({
             showCalendar: false,
             selectedDate: date
@@ -227,7 +230,7 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
                 if (date.getMonth() > this.props.minDate.getMonth()) {
                     return true;
                 } else if (date.getMonth() == this.props.minDate.getMonth()) {
-                    return (date.getDate() >= this.props.minDate.getDate())
+                    return (date.getDate() >= this.props.minDate.getDate());
                 } else {
                     return false;
                 }
@@ -244,14 +247,14 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
         let locale: string = this.props.locale;
 
         for (let i = 0; i < 7; i++) {
-            dayPickerStrings.days[i] = date.toLocaleDateString(locale, { weekday: 'long' });
-            dayPickerStrings.shortDays[i] = date.toLocaleDateString(locale, { weekday: 'narrow' });
+            dayPickerStrings.days[i] = date.toLocaleDateString(locale, { weekday: "long" });
+            dayPickerStrings.shortDays[i] = date.toLocaleDateString(locale, { weekday: "narrow" });
             date.setDate(date.getDate() + 1);
         }
 
         for (let i = 0; i < 12; i++) {
-            dayPickerStrings.months[i] = date.toLocaleDateString(locale, { month: 'long' });
-            dayPickerStrings.shortMonths[i] = date.toLocaleDateString(locale, { month: 'short' });
+            dayPickerStrings.months[i] = date.toLocaleDateString(locale, { month: "long" });
+            dayPickerStrings.shortMonths[i] = date.toLocaleDateString(locale, { month: "short" });
             date.setMonth(date.getMonth() + 1);
         }
     }

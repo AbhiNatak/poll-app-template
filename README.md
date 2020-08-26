@@ -3,20 +3,20 @@
 | [Documentation](https://github.com/shrivashish/poll-app-template/wiki/Home) | [Deployment guide](https://github.com/shrivashish/poll-app-template/wiki/Deployment-guide) | [Architecture](https://github.com/shrivashish/poll-app-template/wiki/Solution-overview) |
 | ---- | ---- | ---- |
 
-Poll is a custom [Teams message extension](https://docs.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) app that enables users to quickly create and send polls in a chat or a channel to know their team’s opinion. Use this template in Meetings along with group and channels. Poll app is supported across all platforms – Teams desktop, browser, iOS, and Android clients. It is built on Microsoft 365 Action platform (an extension of [Kaizala Action platform](https://docs.microsoft.com/en-us/kaizala/developer-platform))
+Poll is a custom [Teams message extension](https://docs.microsoft.com/en-us/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) app that enables users to quickly create and send polls in a chat or a channel to know their team’s opinion. Poll app is supported across all platforms – Teams desktop, browser, iOS, and Android clients. It is ready for deployment as part of your existing Microsoft 365 subscription
 
 ![Poll Template compose message screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateCompose.gif)
 
 ### Key features
-* **Poll creation:** Easily create Polls, click **Menu** (…) below the box where you type your message. Enter your poll question in the Poll app followed by at least two choices for answers. You can add as many as 10 choices to a poll. Set a due date for the poll and restrict who can see poll results in **Settings**. When you are done, click **Send Poll** to publish your poll.
+* **Poll creation:** Easily create Polls, click **Menu (…)** below the box where you type your message. Enter your poll question in the Poll app followed by at least two choices for answers. You can add as many as 10 choices to a poll. Set a due date for the poll and restrict who can see poll results in **Settings**. When you are done, click **Send Poll** to publish your poll. 
 
 ![Poll Template Creation screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateCreation.png)
 
-* **Poll response:** To respond to a poll, choose an option on the poll card and click **Submit Vote**. As people in your group or channel vote, you will see updates to the response summary on the poll card.
+* **Poll response:** To respond to a poll, choose an option on the poll card and click **Submit Vote**. As people in your group or channel vote, you will see updates to the response summary on the poll card.
 
 ![Poll Template Submit screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateSubmit.png)
 
-* **Poll aggregate results:** To see the results of your poll, click View Result. Participation Summary shows the response list along with the participants’ choices. The list of people who didn’t vote on the poll is in the adjacent tab. Click Back to return to the result summary view. Download an image of your poll’s results or a .csv file of the response list by selecting **Download**.
+* **Poll aggregate results:** To see the aggregate results of your poll, click **View Result**. Participation Summary shows the response list along with the participants’ choices and the list of people who didn’t vote on the poll. Also, download an image of your poll’s results or a .csv file of the response list by selecting **Download**.
 
 ![Poll Template Detail screen](https://github.com/shrivashish/poll-app-template/wiki/images/PollTemplateDetail.png)
 
@@ -38,7 +38,7 @@ This app template is provided under the [MIT License](./LICENSE) terms.  In addi
 
 - You are responsible for complying with all applicable privacy and security regulations related to use, collection and handling of any personal data by your app. This includes complying with all internal privacy and security policies of your organization if your app is developed to be sideloaded internally within your organization.
 
-- Where applicable, you may be responsible for data related incidents or data subject requests for data collected through your app.
+- Where applicable, you may be responsible for data related incidents or data subject requests for data collected through your app. 
 
 - Any trademarks or registered trademarks of Microsoft in the United States and/or other countries and logos included in this repository are the property of Microsoft, and the license for this project does not grant you rights to use any Microsoft names, logos or trademarks outside of this repository. Microsoft’s general trademark guidelines can be found [here](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general.aspx).
 
@@ -46,7 +46,7 @@ This app template is provided under the [MIT License](./LICENSE) terms.  In addi
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 

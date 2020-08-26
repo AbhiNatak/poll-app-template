@@ -70,7 +70,7 @@ module.exports = (env) => {
                 ]
             }]
         }
-    }
+    };
 
     // Webpack plugins
     config.plugins = [];
@@ -113,7 +113,7 @@ module.exports = (env) => {
         config.mode = 'development';
         config.devtool = 'cheap-module-source-map';
     } else {
-        config.mode = 'production'
+        config.mode = 'production';
     }
 
     if (env.watch === 'true') {

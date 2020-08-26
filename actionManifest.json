@@ -18,7 +18,7 @@
         },
         "LaunchView": {
             "sourceLocation": "CreateView.html",
-            "header": "Create Poll View"
+            "header": "Create Poll"
         },
         "DetailView": {
             "sourceLocation": "DetailView.html",

@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 import { Menu, Text, Flex, Dialog } from "@fluentui/react-northstar";
-import './AdaptiveMenu.scss';
+import "./AdaptiveMenu.scss";
 
 export enum AdaptiveMenuRenderStyle {
     MENU,
@@ -50,6 +50,18 @@ export class AdaptiveMenu extends React.Component<IAdaptiveMenuProps, IAdaptiveM
         }
     }
 
+    getAdaptiveMenuItemComponent(menuItem) {
+        return (
+            <div role="menuitem" tabIndex={0}
+                className="actionsheet-item-container" key={menuItem.key}
+                onClick={() => { menuItem.onClick(); }}
+            >
+                {menuItem.icon}
+                <Text className="actionsheet-item-label" content={menuItem.content} />
+            </div>
+        );
+    }
+
     private getActionSheet() {
         return (
             <>
@@ -60,7 +72,7 @@ export class AdaptiveMenu extends React.Component<IAdaptiveMenuProps, IAdaptiveM
                     open={this.state.menuOpen}
                     className="hide-default-dialog-container"
                     content={
-                        <Flex className="actionsheet-view-bg" onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }) }}>
+                        <Flex className="actionsheet-view-bg" onClick={() => { this.setState({ menuOpen: !this.state.menuOpen }); }}>
                             {this.getDismissButtonForActionSheet()}
                             <Flex role="menu" column className="actionsheet-view-container">
                                 {this.getActionSheetItems()}
@@ -90,7 +102,7 @@ export class AdaptiveMenu extends React.Component<IAdaptiveMenuProps, IAdaptiveM
                 tabIndex={0}
                 aria-label={this.props.dismissMenuAriaLabel}
                 onClick={() => {
-                    this.setState({ menuOpen: !this.state.menuOpen })
+                    this.setState({ menuOpen: !this.state.menuOpen });
                 }}
             />
         );
@@ -122,19 +134,6 @@ export class AdaptiveMenu extends React.Component<IAdaptiveMenuProps, IAdaptiveM
                 }
             />
         );
-    }
-
-
-    getAdaptiveMenuItemComponent(menuItem) {
-        return (
-            <div role="menuitem" tabIndex={0}
-                className="actionsheet-item-container" key={menuItem.key}
-                onClick={() => { menuItem.onClick() }}
-            >
-                {menuItem.icon}
-                <Text className="actionsheet-item-label" content={menuItem.content} />
-            </div>
-        )
     }
 
 }

@@ -27,7 +27,7 @@ export interface IChoiceContainerProps {
 }
 
 /**
- * <ChoiceContainer> component to add choice input box in creation view 
+ * <ChoiceContainer> component to add choice input box in creation view
  */
 export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> {
 
@@ -45,7 +45,7 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
     getDeleteIconProps(i: number): ShorthandValue<BoxProps> {
         if (this.props.options.length > 2) {
             return {
-                content: <TrashCanIcon className="choice-trash-can" outline={true} aria-hidden='false' title={this.props.options[i].deleteChoiceLabel}
+                content: <TrashCanIcon className="choice-trash-can" outline={true} aria-hidden="false" title={this.props.options[i].deleteChoiceLabel}
                     onClick={() => {
                         if (this.currentFocus == this.props.options.length - 1) {
                             setTimeout((() => {
@@ -55,7 +55,7 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                         this.props.onDeleteChoice(i);
                     }} />,
                 ...UxUtils.getTabKeyProps()
-            }
+            };
         }
         return null;
     }
@@ -64,8 +64,8 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
         let items: JSX.Element[] = [];
         let maxOptions: number = (this.props.limit && this.props.limit > 0) ? this.props.limit : Number.MAX_VALUE;
         let focusOnErrorSet: boolean = false;
-        let className: string = 'item-content';
-        
+        let className: string = "item-content";
+
         // if any input is blank while submitting action then there will be entry in optionError
         for (let i = 0; i < (maxOptions > this.props.options.length ? this.props.options.length : maxOptions); i++) {
             let errorString = this.props.optionsError && this.props.optionsError.length > i ? this.props.optionsError[i] : "";
@@ -77,8 +77,9 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                 <div key={"option" + i} className="choice-item">
                     <InputBox
                         ref={(inputBox) => {
-                            if (inputBox && i == this.currentFocus)
+                            if (inputBox && i == this.currentFocus) {
                                 inputBox.focus();
+                            }
                         }}
                         fluid
                         input={{ className }}
@@ -112,7 +113,7 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
         }
         return (
             <div
-                className='choice-container'
+                className="choice-container"
                 onBlur={(e) => {
                     this.currentFocus = -1;
                 }}>

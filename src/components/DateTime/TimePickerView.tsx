@@ -1,9 +1,9 @@
 
-import * as React from 'react';
-import { Popup, Input, List, ListProps, FocusTrapZone, ChevronDownIcon } from '@fluentui/react-northstar';
-import './TimePickerView.scss';
-import { Constants } from './../../utils/Constants';
-import { UxUtils } from './../../utils/UxUtils';
+import * as React from "react";
+import { Popup, Input, List, ListProps, FocusTrapZone, ChevronDownIcon } from "@fluentui/react-northstar";
+import "./TimePickerView.scss";
+import { Constants } from "./../../utils/Constants";
+import { UxUtils } from "./../../utils/UxUtils";
 
 export interface ITimePickerViewProps {
     placeholder?: string;
@@ -59,7 +59,7 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
             selectedTimePickerItem: TimePickerView.listContainsItem(timePickerList, state.selectedTimePickerItem) ? state.selectedTimePickerItem : timePickerList[0],
             timePickerItemsList: timePickerList,
             prevMinTimeInMinutes: props.minTimeInMinutes
-        }
+        };
     }
 
     static getTimePickerList(minTimeInMinutes: number, locale: string): TimePickerItem[] {
@@ -149,8 +149,8 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
                 content={
                     timePickerItems.length > 0 &&
                     <FocusTrapZone
-                        /* 
-                            This traps the focus within the List component below. 
+                        /*
+                            This traps the focus within the List component below.
                             On clicking outside the list, the list is dismissed.
                             Special handling is added for Esc key to dismiss the list using keyboard.
                         */
@@ -171,7 +171,9 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
                                         showPicker: !this.state.showPicker,
                                         selectedTimePickerItem: selectedItem
                                     });
-                                    this.props.onTimeChange && this.props.onTimeChange(selectedItem.hours * 60 + selectedItem.minutes);
+                                    if (this.props.onTimeChange) {
+                                        this.props.onTimeChange(selectedItem.hours * 60 + selectedItem.minutes);
+                                    }
                                 }}
                             />
                         </div>
@@ -212,7 +214,7 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
             <Input
                 input={{ ...inputProps }}
                 wrapper={{ ...inputWrapperProps }}
-                icon={<ChevronDownIcon outline onClick={() => { this.onTimePickerPreviewTap() }} />}
+                icon={<ChevronDownIcon outline onClick={() => { this.onTimePickerPreviewTap(); }} />}
                 className={wrapperClassName}
             />
         );
@@ -266,10 +268,7 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
         let date = new Date();
         date.setHours(hours);
         date.setMinutes(minutes);
-        timePickerItem.asString = date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: true });
+        timePickerItem.asString = date.toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", hour12: true });
         return timePickerItem;
     }
 }
-
-    
-    

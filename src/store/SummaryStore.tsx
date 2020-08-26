@@ -1,14 +1,17 @@
-import { createStore } from 'satcheljs';
-import { ProgressState } from './../utils/SharedEnum';
+import { createStore } from "satcheljs";
+import { ProgressState } from "./../utils/SharedEnum";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "../utils/Utils";
-import './../orchestrators/SummaryOrchectrator';
-import './../mutator/SummaryMutator';
+import "./../orchestrators/SummaryOrchectrator";
+import "./../mutator/SummaryMutator";
 
 /**
- * Summary view store containing all the required data  
+ * Summary view store containing all the required data
  */
 
+/**
+ * Enum to define three component of summary view (main page, responder and non-responder tab)
+ */
 export enum ViewType {
     Main,
     ResponderView,
@@ -81,6 +84,6 @@ const store: IPollSummaryStore = {
         currentContext: ProgressState.NotStarted,
     },
     isActionDeleted: false
-}
+};
 
-export default createStore<IPollSummaryStore>('summaryStore', store);
+export default createStore<IPollSummaryStore>("summaryStore", store);

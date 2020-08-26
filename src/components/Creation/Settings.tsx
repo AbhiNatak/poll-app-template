@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { UxUtils } from './../../utils/UxUtils';
+import * as React from "react";
+import { UxUtils } from "./../../utils/UxUtils";
 import "./Settings.scss";
 import { DateTimePickerView } from "../DateTime";
 import { RadioGroupMobile } from "../RadioGroupMobile";
 import * as actionSDK from "@microsoft/m365-action-sdk";
-import { Flex, Text, ChevronStartIcon, RadioGroup } from '@fluentui/react-northstar';
+import { Flex, Text, ChevronStartIcon, RadioGroup } from "@fluentui/react-northstar";
 
 export interface ISettingsComponentProps {
     dueDate: number;
@@ -57,7 +57,7 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
                     {this.renderSettings()}
                     {this.props.onBack && this.getBackElement()}
                 </Flex>
-            )
+            );
         }
     }
 
@@ -70,7 +70,7 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
                 {this.renderDueBySection()}
                 {this.renderResultVisibilitySection()}
             </Flex>
-        )
+        );
     }
 
     /**
@@ -107,7 +107,7 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
         let radioProps = {
             checkedValue: this.settingProps.resultVisibility,
             items: this.getVisibilityItems(this.getString("resultsVisibleToAll"), this.getString("resultsVisibleToSender")),
-        }
+        };
 
         // handling radio group differently for mobile by using custom RadioGroupMobile component
         let radioComponent = this.props.renderForMobile ?
@@ -118,7 +118,7 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
             <RadioGroup vertical {...radioProps} onCheckedValueChange={(e, props) => {
                 this.settingProps.resultVisibility = props.value as actionSDK.Visibility;
                 this.props.onChange(this.settingProps);
-            }} />
+            }} />;
 
         return (
             <Flex
@@ -173,6 +173,6 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
                 value: actionSDK.Visibility.Sender,
                 className: "settings-radio-item-last"
             },
-        ]
+        ];
     }
 }
