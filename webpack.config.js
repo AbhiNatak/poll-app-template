@@ -87,24 +87,26 @@ module.exports = (env) => {
         }));
     }
     // Process other assets
-    var copyAssets = [
-        {
-            from: 'actionManifest.json',
-            to: path.resolve(__dirname, 'output')
-        },
-        {
-            from: 'actionModel.json',
-            to: path.resolve(__dirname, 'output')
-        },
-        {
-            from: 'views',
-            to: path.resolve(__dirname, 'output')
-        },
-        {
-            from: 'assets',
-            to: path.resolve(__dirname, 'output')
-        }
-    ];
+    var copyAssets = {
+        patterns: [
+            {
+                from: 'actionManifest.json',
+                to: path.resolve(__dirname, 'output')
+            },
+            {
+                from: 'actionModel.json',
+                to: path.resolve(__dirname, 'output')
+            },
+            {
+                from: 'views',
+                to: path.resolve(__dirname, 'output')
+            },
+            {
+                from: 'assets',
+                to: path.resolve(__dirname, 'output')
+            }
+        ]
+    };
 
     config.plugins.push(new CopyWebpackPlugin(copyAssets));
     config.plugins.push(new CleanWebpackPlugin());

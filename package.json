@@ -6,9 +6,9 @@
         "build": "webpack --env.mode=pord --env.watch=false",
         "start": "webpack --env.mode=dev --env.watch=true",
         "zip": "cd ./output && bestzip ./ActionPackage.zip *",
-        "create": "npm run build && npm run zip && upload-action-package -z ./output/ActionPackage.zip -t ./output/ -e https://edog.actions.office365.com",
-        "update": "npm run build && npm run zip && upload-action-package -z ./output/ActionPackage.zip -e https://edog.actions.office365.com",
-        "inner-loop": "create-inner-loop -p <packageId> -d ./output -e https://edog.actions.office365.com",
+        "deploy": "npm run build && npm run zip && upload-action-package -z ./output/ActionPackage.zip -t ./output/",
+        "update-teams-app": "npm run build && npm run zip && upload-action-package -z ./output/ActionPackage.zip",
+        "inner-loop": "create-inner-loop -p <packageId> -d ./output",
         "lint": "tslint -c tslint.json -p tsconfig.json --fix"
     },
     "dependencies": {
@@ -32,7 +32,7 @@
         "@types/react-dom": "16.8.0",
         "action-package-deploy": "^1.0.17",
         "bestzip": "^2.1.6",
-        "copy-webpack-plugin": "5.0.3",
+        "copy-webpack-plugin": "^6.0.3",
         "html-webpack-plugin": "3.2.0",
         "node-sass": "^4.14.1",
         "sass-loader": "7.1.0",
@@ -41,6 +41,6 @@
         "tslint-microsoft-contrib": "^6.2.0",
         "typescript": "3.5.3",
         "webpack": "4.37.0",
-        "webpack-cli": "3.2.3"
+        "webpack-cli": "^3.3.12"
     }
 }

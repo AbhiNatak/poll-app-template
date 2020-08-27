@@ -1,3 +1,4 @@
+import { toJS } from "mobx";
 import { Logger } from "./../utils/Logger";
 import { Constants } from "../utils/Constants";
 import { Localizer } from "../utils/Localizer";
@@ -82,7 +83,7 @@ orchestrator(fetchMemberCount, async (msg) => {
     if (memberCount == ProgressState.NotStarted || memberCount == ProgressState.Failed) {
         setProgressStatus({ memberCount: ProgressState.InProgress });
 
-        let response = await ActionSdkHelper.getSubscriptionMemberCount(getStore().context.subscription);
+        let response = await ActionSdkHelper.getSubscriptionMemberCount(toJS(getStore().context.subscription));
         if (response.success) {
             updateMemberCount(response.memberCount);
             setProgressStatus({ memberCount: ProgressState.Completed });
@@ -143,7 +144,7 @@ orchestrator(fetchUserDetails, async (msg) => {
         }
     }
     if (userIds.length > 0) {
-        let response = await ActionSdkHelper.getSubscriptionMembers(getStore().context.subscription, userIds);
+        let response = await ActionSdkHelper.getSubscriptionMembers(toJS(getStore().context.subscription), userIds);
 
         if (response.success && response.members) {
             let users: {
