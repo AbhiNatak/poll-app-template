@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} y {3} más respondieron",
   "CreateNewPoll": "Crear una encuesta nueva",
   "ResultsTitle": "Vista de resultados",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Crear una encuesta nueva",
-  "$manifest.composeExtensions[0].commands[0].title": "Crear una encuesta nueva",
-  "$manifest.description": "Obtén la opinión de tu equipo creando un sondeo en un chat o canal.​\n•Encuentra la aplicación en \"...\" bajo el cuadro de redacción del mensaje​\n•Escribe tu pregunta y tus opciones y estarás listo para comenzar 👍🏻​\n• Mantente al tanto de la participación rastreando las respuestas​\n•Descarga los resultados del sondeo para compartirlos con tus compañeros de trabajo",
   "$manifest.name": "Encuesta",
-  "$manifest.activities.activityTypes[0].description": "Notificación de recordatorio de encuesta",
-  "$manifest.activities.activityTypes[1].description": "Alguien responde a la encuesta",
-  "$manifest.activities.activityTypes[2].description": "El resultado del sondeo está listo",
-  "$manifest.activities.activityTypes[3].description": "Resumen diario del estado de respuesta de encuesta",
-  "$manifest.msTeamsProps.description.full": "Formula una pregunta y recibe la opinión de los usuarios.",
-  "$manifest.msTeamsProps.description.short": "Formular una pregunta",
+  "$manifest.views.LaunchView.header": "Crear sondeo",
+  "$manifest.description": "Formula una pregunta y recibe la opinión de los usuarios.",
+  "$manifest.msTeamsProps.name.short": "Encuesta",
   "$manifest.msTeamsProps.name.full": "Encuesta",
-  "$manifest.msTeamsProps.name.short": "Encuesta"
+  "$manifest.msTeamsProps.description.short": "Formula una pregunta y recibe la opinión de los usuarios.",
+  "$manifest.msTeamsProps.description.full": "Recibe la opinión de tu equipo creando una encuesta en un chat o un canal.​ Encuentra la aplicación en '…' debajo del cuadro de redacción del mensaje​. Escribe la pregunta y las opciones y ya estás listo para empezar. Mantente informado de la participación haciendo un seguimiento de las respuestas. Descarga los resultados de la encuesta y compártelos con tus compañeros de trabajo."
 }

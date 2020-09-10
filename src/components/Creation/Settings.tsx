@@ -5,6 +5,7 @@ import { DateTimePickerView } from "../DateTime";
 import { RadioGroupMobile } from "../RadioGroupMobile";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Flex, Text, ChevronStartIcon, RadioGroup } from "@fluentui/react-northstar";
+import { Localizer } from "../../utils/Localizer";
 
 export interface ISettingsComponentProps {
     dueDate: number;
@@ -142,11 +143,13 @@ export class Settings extends React.PureComponent<ISettingsComponentProps> {
     private getBackElement() {
         return (
             <Flex className="footer-layout" gap={"gap.smaller"}>
-                <Flex vAlign="center" className="pointer-cursor" {...UxUtils.getTabKeyProps()} onClick={() => {
-                    this.props.onBack();
-                }} >
+                <Flex vAlign="center" className="pointer-cursor" {...UxUtils.getTabKeyProps()}
+                    onClick={() => {
+                        this.props.onBack();
+                    }}
+                >
                     <ChevronStartIcon xSpacing="after" size="small" />
-                    <Text content={"Back"} />
+                    <Text content={Localizer.getString("Back")} />
                 </Flex>
             </Flex>
         );

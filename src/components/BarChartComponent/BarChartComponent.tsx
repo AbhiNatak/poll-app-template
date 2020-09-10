@@ -33,7 +33,8 @@ export class BarChartComponent extends React.PureComponent<IBarChartComponentPro
             let item: IBarChartItem = this.props.items[i];
             let optionCount = item.quantity;
             let percentage: number = Math.round(this.props.totalQuantity != 0 ? (optionCount / this.props.totalQuantity * 100) : 0);
-            let percentageString: string = this.props.getBarPercentageString ? this.props.getBarPercentageString(percentage) : percentage + "%";
+            let percentageString: string = this.props.getBarPercentageString
+                ? this.props.getBarPercentageString(percentage) : percentage + "%";
             let className = "option-container";
             if (this.props.onItemClicked && optionCount > 0) {
                 className = className + " pointer-cursor";
@@ -50,19 +51,23 @@ export class BarChartComponent extends React.PureComponent<IBarChartComponentPro
                 >
                     <ShimmerContainer lines={1} width={["50%"]} showShimmer={!!this.props.showShimmer}>
                         <Flex gap="gap.small" vAlign="center">
-                            <Text aria-hidden={true} content={item.title} size="medium" className={item.titleClassName} truncated />
-                            {!item.hideStatistics &&
+                            <Text aria-hidden={true} content={item.title} size="medium" className={item.titleClassName}  />
+                            {
+                                !item.hideStatistics &&
                                 <>
                                     <FlexItem push>
                                         <Text aria-hidden={true} content={optionCount} size="small" weight="bold" />
                                     </FlexItem>
-                                    <Text aria-hidden={true} aria-label={percentageString} content={"(" + percentageString + ")"} size="small" />
-                                </>}
+                                    <Text aria-hidden={true} aria-label={percentageString}
+                                        content={"(" + percentageString + ")"} size="small"/>
+                                </>
+                            }
                         </Flex>
                     </ShimmerContainer>
                     <ShimmerContainer lines={1} showShimmer={!!this.props.showShimmer}>
                         <div className="option-bar">
-                            <div className={item.className + " option-percent"} style={{ width: (optionCount / this.props.totalQuantity * 100) + "%" }} />
+                            <div className={item.className + " option-percent"}
+                                style={{ width: (optionCount / this.props.totalQuantity * 100) + "%" }} />
                         </div>
                     </ShimmerContainer>
                 </div>

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Tumugon sina {0}, {1}, {2} at ang {3} pa",
   "CreateNewPoll": "Gumawa ng bagong poll",
   "ResultsTitle": "View ng resulta",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Gumawa ng bagong Poll",
-  "$manifest.composeExtensions[0].commands[0].title": "Gumawa ng bagong Poll",
-  "$manifest.description": "kunin ang opinyon ng iyong team sa pamamagitan ng paggawa ng poll sa isang chat o channel.\n• Hanapin ang app sa \"…\" sa ilalim ng kahon ng pasulat ng mensahe\n• Ipasok ang iyong mga tanong at mga pagpipilian at handa ka na 👍🏻\n• Manataling nakatuon sa partisipasyon sa pamamagitan ng pagsubaybay sa mga tugon \n• Mag-download ng resulta ng poll para maibahagi sa iyong mga katrabaho",
   "$manifest.name": "Poll",
-  "$manifest.activities.activityTypes[0].description": "Abiso ng paalala ng poll",
-  "$manifest.activities.activityTypes[1].description": "May sumagot sa iyong poll",
-  "$manifest.activities.activityTypes[2].description": "Lumabas na ang resulta ng poll",
-  "$manifest.activities.activityTypes[3].description": "Pang-araw-araw na buod ng katayuan ng tugon sa poll",
-  "$manifest.msTeamsProps.description.full": "Magtanong at kunin ang opinyon ng mga tao",
-  "$manifest.msTeamsProps.description.short": "Magtanong",
+  "$manifest.views.LaunchView.header": "Gumawa ng Poll",
+  "$manifest.description": "Magtanong at kunin ang opinyon ng mga tao",
+  "$manifest.msTeamsProps.name.short": "Poll",
   "$manifest.msTeamsProps.name.full": "Poll",
-  "$manifest.msTeamsProps.name.short": "Poll"
+  "$manifest.msTeamsProps.description.short": "Magtanong at kunin ang opinyon ng mga tao",
+  "$manifest.msTeamsProps.description.full": "Kunin ang opinyon ng iyong team sa pamamagitan ng paggawa ng poll sa isang chat o channel.​ Hanapin ang app sa '…' sa ilalim ng kahon ng pagsulat ng mensahe​. Ipasok ang iyong mga tanong at pagpipilian at handa ka na. Manataling nakatuon sa partisipasyon sa pamamagitan ng pagsubaybay sa mga tugon. I-download ang resulta ng poll para maibahagi sa iyong mga katrabaho."
 }

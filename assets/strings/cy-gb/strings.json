@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Mae {0}, {1}, {2} a {3} arall wedi ymateb",
   "CreateNewPoll": "Creu pôl piniwn newydd",
   "ResultsTitle": "Gwedd canlyniad",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Creu Pôl Piniwn newydd",
-  "$manifest.composeExtensions[0].commands[0].title": "Creu Pôl Piniwn newydd",
-  "$manifest.description": "Cael barn eich tîm drwy greu pôl piniwn mewn sgwrs neu sianel.\n• Dewch o hyd i’r ap yn \"…\" o dan flwch cyfansoddi’r neges\n• Rhowch eich cwestiwn a’ch dewisiadau a rydych chi’n barod i fynd 👍🏻\n• Cadwch olwg ar gyfranogiad drwy dracio ymatebion\n• Lawrlwythwch canlyniad y pôl piniwn i rannu â’ch cydweithwyr",
   "$manifest.name": "Pôl Piniwn",
-  "$manifest.activities.activityTypes[0].description": "Hysbysiad atgoffwr pôl piniwn",
-  "$manifest.activities.activityTypes[1].description": "Mae rhywun yn ymateb i'ch pôl piniwn",
-  "$manifest.activities.activityTypes[2].description": "Mae canlyniad y pôl piniwn ar gael",
-  "$manifest.activities.activityTypes[3].description": "Crynhoad dyddiol o statws ymatebion pôl piniwn",
-  "$manifest.msTeamsProps.description.full": "Gofynnwch gwestiwn a chael barn pobl",
-  "$manifest.msTeamsProps.description.short": "Gofyn cwestiwn",
+  "$manifest.views.LaunchView.header": "Creu Pôl Piniwn",
+  "$manifest.description": "Gofyn cwestiwn a chael barn pobl",
+  "$manifest.msTeamsProps.name.short": "Pôl Piniwn",
   "$manifest.msTeamsProps.name.full": "Pôl Piniwn",
-  "$manifest.msTeamsProps.name.short": "Pôl Piniwn"
+  "$manifest.msTeamsProps.description.short": "Gofyn cwestiwn a chael barn pobl",
+  "$manifest.msTeamsProps.description.full": "Cael barn eich tîm drwy greu pôl piniwn mewn sgwrs neu sianel.​ Dewch o hyd i’r ap yn '…' o dan flwch cyfansoddi’r neges​. Rhowch eich cwestiwn a’ch dewisiadau a rydych chi’n barod i fynd. Cadwch olwg ar gyfranogiad drwy dracio ymatebion. Llwythwch ganlyniad y pôl piniwn i lawr i'w rannu â’ch cydweithwyr"
 }

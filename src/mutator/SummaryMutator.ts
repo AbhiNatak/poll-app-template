@@ -1,6 +1,10 @@
 import { mutator } from "satcheljs";
 import getStore, { ViewType } from "./../store/SummaryStore";
-import { setProgressStatus, setContext, updateMyRow, pollCloseAlertOpen, pollExpiryChangeAlertOpen, pollDeleteAlertOpen, setDueDate, showMoreOptions, setCurrentView, addActionInstanceRows, updateContinuationToken, updateMemberCount, goBack, updateNonResponders, setIsActionDeleted, updateActionInstance, updateActionInstanceSummary, updateUserProfileInfo } from "./../actions/SummaryActions";
+import {
+    setProgressStatus, setContext, updateMyRow, pollCloseAlertOpen, pollExpiryChangeAlertOpen, pollDeleteAlertOpen, setDueDate,
+    showMoreOptions, setCurrentView, addActionInstanceRows, updateContinuationToken, updateMemberCount, goBack, updateNonResponders,
+    setIsActionDeleted, updateActionInstance, updateActionInstanceSummary, updateUserProfileInfo
+} from "./../actions/SummaryActions";
 import { Utils } from "../utils/Utils";
 
 /**
@@ -67,7 +71,7 @@ mutator(updateContinuationToken, (msg) => {
 
 mutator(updateUserProfileInfo, (msg) => {
     const store = getStore();
-    store.userProfile = (<any>Object).assign(store.userProfile, msg.userProfileMap);
+    store.userProfile = Object.assign(store.userProfile, msg.userProfileMap);
 });
 
 mutator(updateMemberCount, (msg) => {

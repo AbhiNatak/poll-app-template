@@ -25,9 +25,7 @@ export class RadioGroupMobile extends React.PureComponent<IRadioGroupMobileProps
         let radioItemViews: JSX.Element[] = [];
         this.props.items.forEach((item) => {
             let radioItem: JSX.Element = this.getRadioItem(item);
-            if (radioItem) {
-                radioItemViews.push(radioItem);
-            }
+            radioItemViews.push(radioItem);
         });
         return radioItemViews;
     }
@@ -36,7 +34,9 @@ export class RadioGroupMobile extends React.PureComponent<IRadioGroupMobileProps
         let isChecked: boolean = item.value == this.props.checkedValue;
         return (
             <Flex className="radio-item-container" key={item.key} onClick={() => { this.props.onCheckedValueChange(item.value); }}>
-                <div role="radio" aria-checked={isChecked} className={"radio-item-content " + item.className}>{item.label}</div>
+                <div role="radio" aria-checked={isChecked} className={"radio-item-content " + item.className}>
+                    {item.label}
+                </div>
                 <div className="checkmark-icons-container">
                     <CircleIcon className="checkmark-icon checkmark-bg-icon" styles={isChecked ? ({ theme: { siteVariables } }) => ({
                         color: siteVariables.colorScheme.brand.foreground,

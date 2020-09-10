@@ -1,5 +1,8 @@
 import { mutator } from "satcheljs";
-import { setContext, setSendingFlag, goToPage, updateTitle, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI, addChoice, setProgressState } from "./../actions/CreationActions";
+import {
+    setContext, setSendingFlag, goToPage, updateTitle, updateSettings, updateChoiceText, deleteChoice, shouldValidateUI,
+    addChoice, setProgressState
+} from "./../actions/CreationActions";
 import * as actionSDK from "@microsoft/m365-action-sdk";
 import { Utils } from "../utils/Utils";
 import getStore from "../store/CreationStore";
@@ -22,11 +25,9 @@ mutator(setContext, (msg) => {
             getStore().options.push(option.displayName);
         });
 
-        if (actionInstance.dataTables[0].rowsVisibility === actionSDK.Visibility.Sender) {
-            getStore().settings.resultVisibility = actionSDK.Visibility.Sender;
-        } else {
-            getStore().settings.resultVisibility = actionSDK.Visibility.All;
-        }
+        getStore().settings.resultVisibility = (actionInstance.dataTables[0].rowsVisibility === actionSDK.Visibility.Sender) ?
+            actionSDK.Visibility.Sender : actionSDK.Visibility.All;
+
         getStore().settings.dueDate = actionInstance.expiryTime;
     }
 });

@@ -124,6 +124,22 @@
     }
 }
 
-.zero-padding {
-  padding: 0px !important
+.user-info-view {
+  padding: 4px 16px 0px 0px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.user-profile-pic {
+  flex-shrink: 0;
+}
+
+.word-break {
+  word-break: break-all
 }

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} e mais {3} pessoas responderam",
   "CreateNewPoll": "Criar uma nova votação",
   "ResultsTitle": "Modo de exibição de resultado",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Criar uma nova Votação",
-  "$manifest.composeExtensions[0].commands[0].title": "Criar uma nova Votação",
-  "$manifest.description": "Obtenha a opinião da sua equipe, criando uma votação em um chat ou canal.\n• Encontre o aplicativo em \"…\" na caixa de texto de redação de mensagem\n• Insira sua pergunta e opções de resposta e tudo pronto 👍🏻\n• Mantenha-se informado sobre a participação rastreando as respostas\n• Baixe o resultado da votação para compartilhar com seus colegas de trabalho",
   "$manifest.name": "Votação",
-  "$manifest.activities.activityTypes[0].description": "Notificação de lembrete de votação",
-  "$manifest.activities.activityTypes[1].description": "Alguém responde à sua votação",
-  "$manifest.activities.activityTypes[2].description": "O resultado da votação saiu",
-  "$manifest.activities.activityTypes[3].description": "Resumo diário do status de resposta da votação",
-  "$manifest.msTeamsProps.description.full": "Faça uma pergunta e obtenha a opinião das pessoas",
-  "$manifest.msTeamsProps.description.short": "Faça uma pergunta",
+  "$manifest.views.LaunchView.header": "Criar Votações",
+  "$manifest.description": "Faça uma pergunta e obtenha a opinião das pessoas",
+  "$manifest.msTeamsProps.name.short": "Votação",
   "$manifest.msTeamsProps.name.full": "Votações",
-  "$manifest.msTeamsProps.name.short": "Votação"
+  "$manifest.msTeamsProps.description.short": "Faça uma pergunta e obtenha a opinião das pessoas",
+  "$manifest.msTeamsProps.description.full": "Obtenha a opinião da sua equipe, criando uma votação em um chat ou canal.​ Encontre o aplicativo em '…'  na caixa de texto de redação de mensagem​. Insira sua pergunta e opções e tudo pronto. Mantenha-se informado sobre a participação rastreando as respostas. Baixe o resultado da votação para compartilhar com seus colegas de trabalho."
 }

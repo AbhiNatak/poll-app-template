@@ -225,6 +225,7 @@ orchestrator(fetchNonReponders, async () => {
 
         if (response.success) {
             let userProfile: { [key: string]: actionSDK.SubscriptionMember } = {};
+            response.nonParticipants = response.nonParticipants || [];
             response.nonParticipants.forEach(
                 (user: actionSDK.SubscriptionMember) => {
                     userProfile[user.id] = user;

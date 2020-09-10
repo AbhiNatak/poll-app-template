@@ -56,7 +56,8 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
         }
         let timePickerList: TimePickerItem[] = TimePickerView.getTimePickerList(props.minTimeInMinutes, props.locale);
         return {
-            selectedTimePickerItem: TimePickerView.listContainsItem(timePickerList, state.selectedTimePickerItem) ? state.selectedTimePickerItem : timePickerList[0],
+            selectedTimePickerItem: TimePickerView.listContainsItem(timePickerList, state.selectedTimePickerItem)
+                ? state.selectedTimePickerItem : timePickerList[0],
             timePickerItemsList: timePickerList,
             prevMinTimeInMinutes: props.minTimeInMinutes
         };
@@ -89,10 +90,7 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
 
     render() {
         return (
-            this.props.renderForMobile ?
-                this.renderTimePickerForMobile()
-                :
-                this.renderTimePickerForWebOrDesktop()
+            this.props.renderForMobile ? this.renderTimePickerForMobile() : this.renderTimePickerForWebOrDesktop()
         );
     }
 
@@ -113,7 +111,8 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
                         if (!this.isTimeValid(valueInMinutes)) {
                             return;
                         }
-                        let selectedTime: TimePickerItem = TimePickerView.getTimePickerItem(Math.floor(valueInMinutes / 60), valueInMinutes % 60, this.props.locale);
+                        let selectedTime: TimePickerItem =
+                            TimePickerView.getTimePickerItem(Math.floor(valueInMinutes / 60), valueInMinutes % 60, this.props.locale);
                         this.setState({
                             selectedTimePickerItem: selectedTime
                         });
@@ -191,7 +190,8 @@ export class TimePickerView extends React.Component<ITimePickerViewProps, ITimeP
 
         let inputWrapperProps = {
             tabIndex: -1,
-            "aria-label": (this.props.renderForMobile && this.state.selectedTimePickerItem) ? this.state.selectedTimePickerItem.asString + ". " + this.props.placeholder : null,
+            "aria-label": (this.props.renderForMobile && this.state.selectedTimePickerItem)
+                ? this.state.selectedTimePickerItem.asString + ". " + this.props.placeholder : null,
             onClick: () => {
                 this.onTimePickerPreviewTap();
             },

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} und {3} andere haben geantwortet.",
   "CreateNewPoll": "Neue Umfrage erstellen",
   "ResultsTitle": "Ergebnisanzeige",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Neue Abstimmung erstellen",
-  "$manifest.composeExtensions[0].commands[0].title": "Neue Abstimmung erstellen",
-  "$manifest.description": "Holen Sie sich die Meinung Ihres Teams, indem Sie in einem Chat oder Kanal eine Umfrage erstellen.\n• Suchen Sie die App in \"…\" unter dem Feld zum Verfassen von Nachrichten\n• Geben Sie Ihre Frage und Auswahl ein, und jetzt kann es weiter gehen 👍🏻\n• Bleiben Sie auf dem Laufenden, indem Sie Antworten nachverfolgen\n• Laden Sie das Umfrageergebnis herunter, um es mit Ihren Kollegen zu teilen",
   "$manifest.name": "Abstimmung",
-  "$manifest.activities.activityTypes[0].description": "Benachrichtigung zur Erinnerung an eine Abstimmung",
-  "$manifest.activities.activityTypes[1].description": "Jemand antwortet auf Ihre Abstimmung",
-  "$manifest.activities.activityTypes[2].description": "Abstimmungsergebnis ist veröffentlicht",
-  "$manifest.activities.activityTypes[3].description": "Tägliche Zusammenfassung zum Status der Antworten auf eine Abstimmung",
-  "$manifest.msTeamsProps.description.full": "Eine Frage stellen und die Meinung der Leute einholen",
-  "$manifest.msTeamsProps.description.short": "Frage stellen",
+  "$manifest.views.LaunchView.header": "Umfrage erstellen",
+  "$manifest.description": "Eine Frage stellen und die Meinung der Leute einholen",
+  "$manifest.msTeamsProps.name.short": "Abstimmung",
   "$manifest.msTeamsProps.name.full": "Abstimmung",
-  "$manifest.msTeamsProps.name.short": "Abstimmung"
+  "$manifest.msTeamsProps.description.short": "Eine Frage stellen und die Meinung der Leute einholen",
+  "$manifest.msTeamsProps.description.full": "Holen Sie sich die Meinung Ihres Teams, indem Sie in einem Chat oder Kanal eine Umfrage erstellen.​ Suchen Sie die App in \"…\" unter dem Feld zum Verfassen von Nachrichten​. Geben Sie Ihre Frage und Auswahl ein, und es kann weitergehen. Bleiben Sie auf dem Laufenden, indem Sie Antworten nachverfolgen. Laden Sie das Umfrageergebnis herunter, um es mit Ihren Kollegen zu teilen."
 }

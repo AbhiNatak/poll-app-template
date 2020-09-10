@@ -28,12 +28,9 @@ export default class SummaryPage extends React.Component<any, any> {
             );
         }
 
-        if (
-            getStore().progressStatus.actionInstance == ProgressState.Failed ||
-            getStore().progressStatus.actionInstanceSummary == ProgressState.Failed ||
-            getStore().progressStatus.localizationState == ProgressState.Failed ||
-            getStore().progressStatus.memberCount == ProgressState.Failed
-        ) {
+        let progressStatus = getStore().progressStatus;
+        if (progressStatus.actionInstance == ProgressState.Failed || progressStatus.actionInstanceSummary == ProgressState.Failed ||
+            progressStatus.localizationState == ProgressState.Failed || progressStatus.memberCount == ProgressState.Failed) {
             ActionSdkHelper.hideLoadingIndicator();
             return (
                 <ErrorView
@@ -47,13 +44,14 @@ export default class SummaryPage extends React.Component<any, any> {
         return this.getView();
     }
 
+    /**
+     * Method to return the view based on the user selection
+     */
     private getView(): JSX.Element {
-        if (getStore().currentView == ViewType.Main) {
+        let currentView = getStore().currentView;
+        if (currentView == ViewType.Main) {
             return <SummaryView />;
-        } else if (
-            getStore().currentView == ViewType.ResponderView ||
-            getStore().currentView == ViewType.NonResponderView
-        ) {
+        } else if (currentView == ViewType.ResponderView || currentView == ViewType.NonResponderView) {
             return <TabView />;
         }
     }

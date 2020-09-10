@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "ნაპასუხებია {0}, {1}, {2} და {3} სხვა",
   "CreateNewPoll": "ახალი გამოკითხვის შექმნა",
   "ResultsTitle": "შედეგის ნახვა",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "ახალი გამოკითხვის შექმნა",
-  "$manifest.composeExtensions[0].commands[0].title": "ახალი გამოკითხვის შექმნა",
-  "$manifest.description": "გაიგეთ თქვენი გუნდის აზრი, გამოკითხვის შექმნით, ჩატსა ან არხში.​\n• იპოვეთ აპი „…“-ში, შეტყობინების შექმნის უჯრის ქვეშ​\n• შეიყვანეთ შეკითხვები და ვარიანტები და შეგიძლიათ დაიწყოთ 👍🏻​\n• აკონტროლეთ მონაწილეობა პასუხებზე თვალყურის დევნებით​\n• ჩამოტვირთეთ გამოკითხვის შედეგი და გაუზიარეთ ის თანამშრომლებს",
   "$manifest.name": "გამოკითხვა",
-  "$manifest.activities.activityTypes[0].description": "გამოკითხვის შემხსენებლის შეტყობინება",
-  "$manifest.activities.activityTypes[1].description": "ვიღაც პასუხობს თქვენს გამოკითხვას",
-  "$manifest.activities.activityTypes[2].description": "გამოკითხვის შედეგი გამოტანილია",
-  "$manifest.activities.activityTypes[3].description": "პასუხების სტატუსის ყოველდღიური შეჯამება",
-  "$manifest.msTeamsProps.description.full": "დასვით შეკითხვა და გაიგეთ ხალხის აზრი",
-  "$manifest.msTeamsProps.description.short": "დასვით შეკითხვა",
+  "$manifest.views.LaunchView.header": "გამოკითხვის შექმნა",
+  "$manifest.description": "დასვით შეკითხვა და გაიგეთ ხალხის აზრი",
+  "$manifest.msTeamsProps.name.short": "გამოკითხვა",
   "$manifest.msTeamsProps.name.full": "გამოკითხვა",
-  "$manifest.msTeamsProps.name.short": "გამოკითხვა"
+  "$manifest.msTeamsProps.description.short": "დასვით შეკითხვა და გაიგეთ ხალხის აზრი",
+  "$manifest.msTeamsProps.description.full": "გაიგეთ თქვენი გუნდის აზრი, ჩატში ან არხზე გამოკითხვის შექმნით.​ იპოვეთ აპი „…“-ში, შეტყობინების შექმნის უჯრის ქვეშ​. შეიყვანეთ თქვენი შეკითხვა და ვარიანტები და შეგიძლიათ დაიწყოთ. აკონტროლეთ მონაწილეობა პასუხებზე თვალყურის დევნებით. ჩამოტვირთეთ გამოკითხვის შედეგი და გაუზიარეთ ის თანამშრომლებს."
 }

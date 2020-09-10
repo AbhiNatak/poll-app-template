@@ -91,8 +91,8 @@
             "full": "Poll"
         },
         "description": {
-            "short": "Ask a question",
-            "full": "Ask a question and get people's opinion"
+            "short": "Ask a question and get people's opinion",
+            "full": "Get your team's opinion by creating a poll in a chat or channel.​ Find the app in '…' under the message compose box​. Enter your question and choices and you're good to go. Stay on top of participation by tracking responses. Download poll result to share with your co-workers."
         },
         "icons": {
             "color": "images/appIcon.png",

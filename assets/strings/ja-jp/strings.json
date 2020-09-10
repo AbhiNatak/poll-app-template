@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0} さん、{1} さん、{2} さんとその他 {3} 人が回答しました",
   "CreateNewPoll": "新しい投票を作成",
   "ResultsTitle": "結果ビュー",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "新しい投票を作成",
-  "$manifest.composeExtensions[0].commands[0].title": "新しい投票を作成",
-  "$manifest.description": "チャットまたはチャネルで投票を作成して、チームの意見を聞いてください。\n• メッセージ作成ボックスの下の「…」でアプリを検索します\n• 質問と選択肢を入力すれば、準備完了です👍🏻\n• 回答を追跡して参加状況を把握します\n• 同僚と共有するための投票結果をダウンロードします",
   "$manifest.name": "投票",
-  "$manifest.activities.activityTypes[0].description": "投票リマインダーの通知",
-  "$manifest.activities.activityTypes[1].description": "誰かがあなたの投票に応答します",
-  "$manifest.activities.activityTypes[2].description": "投票結果が出ています",
-  "$manifest.activities.activityTypes[3].description": "投票応答状態の日刊ダイジェスト",
-  "$manifest.msTeamsProps.description.full": "質問をして、人々の意見を集めます",
-  "$manifest.msTeamsProps.description.short": "質問を入力",
+  "$manifest.views.LaunchView.header": "投票を作成",
+  "$manifest.description": "質問をして、人々の意見を集めます",
+  "$manifest.msTeamsProps.name.short": "投票",
   "$manifest.msTeamsProps.name.full": "投票",
-  "$manifest.msTeamsProps.name.short": "投票"
+  "$manifest.msTeamsProps.description.short": "質問をして、人々の意見を集めます",
+  "$manifest.msTeamsProps.description.full": "チャットまたはチャネルで投票を作成して、チームの意見を聞いてください。​メッセージ作成ボックスの下の「…」でアプリを検索します​。質問と選択肢を入力すれば、準備完了です。回答を追跡して参加状況を把握します。同僚と共有するための投票結果をダウンロードします。"
 }

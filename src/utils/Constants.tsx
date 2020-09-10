@@ -10,6 +10,9 @@ export class Constants {
     // some OS doesn't support long filenames, so capping the action's title length to this number
     public static readonly ACTION_RESULT_FILE_NAME_MAX_LENGTH: number = 50;
 
+    public static readonly POLL_TITLE_MAX_LENGTH: number = 240;
+    public static readonly POLL_CHOICE_MAX_LENGTH: number = 360;
+
     public static readonly FOCUSABLE_ITEMS = {
         All: ["a[href]", "area[href]", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", "button:not([disabled])", '[tabindex="0"]'],
         LINK: "a[href]",

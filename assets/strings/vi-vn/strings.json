@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} và {3} người khác đã phản hồi",
   "CreateNewPoll": "Tạo cuộc thăm dò ý kiến mới",
   "ResultsTitle": "Dạng xem kết quả",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Tạo Thăm dò ý kiến mới",
-  "$manifest.composeExtensions[0].commands[0].title": "Tạo Thăm dò ý kiến mới",
-  "$manifest.description": "Lấy ý kiến của nhóm của bạn bằng cách tạo thăm dò ý kiến trong cuộc trò chuyện hoặc kênh.\n• Tìm ứng dụng trong \"…\" bên dưới hộp soạn thảo thư\n• Nhập câu hỏi cùng các lựa chọn và bạn đã hoàn tất 👍🏻\n• Luôn cập nhật tình hình tham gia khảo sát bằng cách theo dõi phản hồi\n• Tải xuống kết quả thăm dò ý kiến để chia sẻ với các đồng nghiệp",
   "$manifest.name": "Thăm dò ý kiến",
-  "$manifest.activities.activityTypes[0].description": "Thông báo lời nhắc cuộc thăm dò ý kiến",
-  "$manifest.activities.activityTypes[1].description": "Ai đó phản hồi cuộc thăm dò ý kiến của bạn",
-  "$manifest.activities.activityTypes[2].description": "Đã có kết quả thăm dò ý kiến",
-  "$manifest.activities.activityTypes[3].description": "Điểm tin hàng ngày về tình trạng phản hồi cuộc thăm dò ý kiến",
-  "$manifest.msTeamsProps.description.full": "Đặt câu hỏi và nhận ý kiến của mọi người",
-  "$manifest.msTeamsProps.description.short": "Đặt câu hỏi",
+  "$manifest.views.LaunchView.header": "Tạo cuộc thăm dò ý kiến",
+  "$manifest.description": "Đặt câu hỏi và thu thập ý kiến của mọi người",
+  "$manifest.msTeamsProps.name.short": "Thăm dò ý kiến",
   "$manifest.msTeamsProps.name.full": "Thăm dò ý kiến",
-  "$manifest.msTeamsProps.name.short": "Thăm dò ý kiến"
+  "$manifest.msTeamsProps.description.short": "Đặt câu hỏi và thu thập ý kiến của mọi người",
+  "$manifest.msTeamsProps.description.full": "Thu thập ý kiến nhóm của bạn bằng cách tạo thăm dò ý kiến trong cuộc trò chuyện hoặc kênh.​ Tìm ứng dụng trong “…” bên dưới hộp soạn thảo thư​. Nhập câu hỏi cùng các lựa chọn và bạn đã hoàn tất. Luôn cập nhật tình hình tham gia khảo sát bằng cách theo dõi phản hồi. Tải xuống kết quả thăm dò ý kiến để chia sẻ với các đồng nghiệp của bạn."
 }

@@ -118,10 +118,8 @@ export class DateTimePickerView extends React.Component<IDateTimePickerViewProps
         let isSelectedDateToday: boolean = false;
         let today = new Date();
         if (givenDate) {
-            isSelectedDateToday =
-                givenDate.getDate() == today.getDate() &&
-                givenDate.getMonth() == today.getMonth() &&
-                givenDate.getFullYear() == today.getFullYear();
+            isSelectedDateToday = givenDate.getDate() == today.getDate() && givenDate.getMonth() == today.getMonth()
+                && givenDate.getFullYear() == today.getFullYear();
         }
 
         let minTime: number = 0;

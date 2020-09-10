@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} ir dar {3} atsakė",
   "CreateNewPoll": "Kurti naują apklausą",
   "ResultsTitle": "Rezultatų rodinys",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Kurti naują apklausą",
-  "$manifest.composeExtensions[0].commands[0].title": "Kurti naują apklausą",
-  "$manifest.description": "Sužinokite savo komandos nuomonę, sukurdami apklausą pokalbyje arba kanale.\n• Raskite programą pasirinkę …“ po pranešimo kūrimo lauku\n• Įveskite savo klausimą ir pasirinkimus ir tai viskas 👍🏻\n• Matykite, kaip vyksta dalyvavimas, stebėdami atsakymus\n• Atsisiųskite apklausos rezultatą, kad galėtumėte bendrinti su kolegomis",
   "$manifest.name": "Apklausa",
-  "$manifest.activities.activityTypes[0].description": "Trumposios apklausos priminimo pranešimas",
-  "$manifest.activities.activityTypes[1].description": "Kažkas reaguoja į jūsų trumpąją apklausą",
-  "$manifest.activities.activityTypes[2].description": "Trumposios apklausos rezultatas yra išėjimas",
-  "$manifest.activities.activityTypes[3].description": "Dienos trumposios apklausos atsakymų būsenos suvestinė",
-  "$manifest.msTeamsProps.description.full": "Užduokite klausimą ir sužinokite žmonių nuomonę",
-  "$manifest.msTeamsProps.description.short": "Užduoti klausimą",
+  "$manifest.views.LaunchView.header": "Kurti apklausą",
+  "$manifest.description": "Užduokite klausimą ir sužinokite žmonių nuomonę",
+  "$manifest.msTeamsProps.name.short": "Apklausa",
   "$manifest.msTeamsProps.name.full": "Apklausa",
-  "$manifest.msTeamsProps.name.short": "Apklausa"
+  "$manifest.msTeamsProps.description.short": "Užduokite klausimą ir sužinokite žmonių nuomonę",
+  "$manifest.msTeamsProps.description.full": "Sužinokite savo komandos nuomonę, sukurdami apklausą pokalbyje arba kanale.​ Raskite programą pasirinkę …“ po pranešimo kūrimo lauku​. Įveskite savo klausimą ir pasirinkimus ir tai viskas. Matykite, kaip vyksta dalyvavimas, stebėdami atsakymus. Atsisiųskite apklausos rezultatą, kad galėtumėte bendrinti su kolegomis."
 }

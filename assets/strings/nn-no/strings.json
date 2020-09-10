@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} og {3} andre svarte",
   "CreateNewPoll": "Opprett ei ny undersøking",
   "ResultsTitle": "Resultatvising",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Opprett ei ny avstemming",
-  "$manifest.composeExtensions[0].commands[0].title": "Opprett ei ny avstemming",
-  "$manifest.description": "Få meiningane til teamet ved å opprette ei undersøking i ein chat eller kanal.\n• Finn appen i «…» under boksen for meldingsskriving\n• Skriv inn spørsmålet og svaralternativa for å kome i gang. 👍🏻\n• Hald oversikt over deltakinga ved å spore svara.\n• Last ned undersøkingsresultata for å dele dei med kollegaene.",
   "$manifest.name": "Avstemming",
-  "$manifest.activities.activityTypes[0].description": "Påminningsvarsel om undersøking",
-  "$manifest.activities.activityTypes[1].description": "Nokon svarer på avstemminga di",
-  "$manifest.activities.activityTypes[2].description": "Undersøkingsresultata er klare",
-  "$manifest.activities.activityTypes[3].description": "Dagleg samandrag av status for undersøkings-resultat",
-  "$manifest.msTeamsProps.description.full": "Still eit spørsmål og få andre si meining",
-  "$manifest.msTeamsProps.description.short": "Still eit spørsmål",
+  "$manifest.views.LaunchView.header": "Opprett ei undersøking",
+  "$manifest.description": "Still eit spørsmål og få andre si meining",
+  "$manifest.msTeamsProps.name.short": "Avstemming",
   "$manifest.msTeamsProps.name.full": "Avstemming",
-  "$manifest.msTeamsProps.name.short": "Avstemming"
+  "$manifest.msTeamsProps.description.short": "Still eit spørsmål og få andre si meining",
+  "$manifest.msTeamsProps.description.full": "Få meiningane til teamet ved å opprette ei undersøking i ein chat eller kanal.​ Finn appen i «…» under boksen for meldingsskriving​. Skriv inn spørsmålet og svaralternativa for å kome i gang. Hald oversikt over deltakinga ved å spore svara. Last ned undersøkingsresultata for å dele dei med kollegaene."
 }

@@ -47,9 +47,8 @@ export class ShimmerContainer extends React.PureComponent<IShimmerProps> {
                 if (i != 0) {
                     lineShimmer.push(<div className="height20"></div>);
                 }
-                lineShimmer.push(<div className="comment shim-br animate" style={{
-                    width: (this.props.width && this.props.width.length > i && this.props.width[i] ? this.props.width[i] : "100%")
-                }}></div>);
+                let width = this.props.width && (this.props.width.length > i) && this.props.width[i];
+                lineShimmer.push(<div className="comment shim-br animate" style={{ width: width || "100%" }}></div>);
             }
         }
         return (

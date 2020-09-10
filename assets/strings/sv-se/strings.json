@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} och {3} andra svarade",
   "CreateNewPoll": "Skapa en ny omröstning",
   "ResultsTitle": "Resultatvy",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Skapa en ny omröstning",
-  "$manifest.composeExtensions[0].commands[0].title": "Skapa en ny omröstning",
-  "$manifest.description": "Ta reda på teamets åsikter genom att skapa en omröstning i en chatt eller kanal.\n• Hitta appen i \"…\" under skrivrutan för meddelanden\n• Skriv din fråga och ange alternativen, och sedan är det färdigt 👍🏻\n• Håll koll på deltagandet genom att spåra svar\n• Ladda ned omröstningsresultatet och dela det med kollegorna",
   "$manifest.name": "Omröstning",
-  "$manifest.activities.activityTypes[0].description": "Påminnelse om omröstning",
-  "$manifest.activities.activityTypes[1].description": "Någon svarar på din omröstning",
-  "$manifest.activities.activityTypes[2].description": "Resultatet av omröstningen är klar",
-  "$manifest.activities.activityTypes[3].description": "Daglig sammandrag av omröstningens svar",
-  "$manifest.msTeamsProps.description.full": "Ställ en fråga och få reda på vad människor tycker",
-  "$manifest.msTeamsProps.description.short": "Ställ en fråga",
+  "$manifest.views.LaunchView.header": "Skapa omröstning",
+  "$manifest.description": "Ställ en fråga och få reda på vad människor tycker",
+  "$manifest.msTeamsProps.name.short": "Omröstning",
   "$manifest.msTeamsProps.name.full": "Omröstning",
-  "$manifest.msTeamsProps.name.short": "Omröstning"
+  "$manifest.msTeamsProps.description.short": "Ställ en fråga och få reda på vad människor tycker",
+  "$manifest.msTeamsProps.description.full": "Ta reda på teamets åsikter genom att skapa en omröstning i en chatt eller kanal.​Hitta appen i \"…\" under skrivrutan för meddelanden​. Skriv din fråga och ange alternativen, och sedan är det färdigt. Håll koll på deltagandet genom att spåra svar. Ladda ned omröstningsresultatet och dela det med kollegorna."
 }

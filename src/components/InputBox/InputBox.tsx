@@ -53,7 +53,8 @@ export class InputBox extends React.Component<IInputBoxProps> {
         }
         return (
             <Flex column>
-                {(this.props.showError && !Utils.isEmpty(this.props.errorText)) && <Text align="end" error>{this.props.errorText}</Text>}
+                {(this.props.showError && !Utils.isEmpty(this.props.errorText)) &&
+                    <Text align="end" error>{this.props.errorText}</Text>}
                 {this.props.prefixJSX ? this.getInputItem() : this.getInput()}
             </Flex>
         );

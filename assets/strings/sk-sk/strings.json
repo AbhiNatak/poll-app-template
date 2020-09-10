@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} a {3} ďalší odpovedali",
   "CreateNewPoll": "Vytvoriť novú anketu",
   "ResultsTitle": "Zobrazenie výsledkov",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Vytvoriť novú anketu",
-  "$manifest.composeExtensions[0].commands[0].title": "Vytvoriť novú anketu",
-  "$manifest.description": "Získajte názor tímu vytvorením ankety v chate alebo kanáli.\n• Vyhľadajte aplikáciu v ponuke … pod poľom na písanie správ\n• Zadajte otázku a možnosti a môžete ísť na to 👍🏻\n• Majte prehľad o účasti sledovaním odpovedí\n• Stiahnite si výsledky ankety a zdieľajte ich s kolegami",
   "$manifest.name": "Anketa",
-  "$manifest.activities.activityTypes[0].description": "Oznámenie pripomenutia ankety",
-  "$manifest.activities.activityTypes[1].description": "Niekto reaguje na vašu anketu",
-  "$manifest.activities.activityTypes[2].description": "Výsledok ankety je vonku",
-  "$manifest.activities.activityTypes[3].description": "Denný súhrn stavu odpovedí na anketu",
-  "$manifest.msTeamsProps.description.full": "Položte ostatným otázku a zistite ich názor",
-  "$manifest.msTeamsProps.description.short": "Položte otázku",
+  "$manifest.views.LaunchView.header": "Vytvoriť anketu",
+  "$manifest.description": "Položte ostatným otázku a zistite ich názor",
+  "$manifest.msTeamsProps.name.short": "Anketa",
   "$manifest.msTeamsProps.name.full": "Anketa",
-  "$manifest.msTeamsProps.name.short": "Anketa"
+  "$manifest.msTeamsProps.description.short": "Položte ostatným otázku a zistite ich názor",
+  "$manifest.msTeamsProps.description.full": "Získajte názor tímu vytvorením ankety v chate alebo kanáli.​ Vyhľadajte aplikáciu v ponuke „…“ pod poľom na písanie správ​. Zadajte otázku a možnosti a môžete ísť na to. Majte prehľad o účasti sledovaním odpovedí. Stiahnite si výsledky ankety a zdieľajte ich s kolegami"
 }

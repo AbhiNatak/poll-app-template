@@ -7,9 +7,10 @@ export class ActionSdkHelper {
      * API to fetch current action context
      */
     public static async getActionContext() {
+        let request = new actionSDK.GetContext.Request();
         try {
-            let response = await actionSDK.executeApi(new actionSDK.GetContext.Request()) as actionSDK.GetContext.Response;
-            Logger.logInfo("fetchCurrentContext - Response: " + JSON.stringify(response));
+            let response = await actionSDK.executeApi(request) as actionSDK.GetContext.Response;
+            Logger.logInfo(`fetchCurrentContext success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, context: response.context };
         } catch (error) {
             Logger.logError(`fetchCurrentContext failed, Error: ${error.category}, ${error.code}, ${error.message}`);
@@ -25,7 +26,7 @@ export class ActionSdkHelper {
         let request = new actionSDK.CreateAction.Request(action);
         try {
             let response = await actionSDK.executeApi(request) as actionSDK.GetContext.Response;
-            Logger.logInfo("createActionInstance - Response: " + JSON.stringify(response));
+            Logger.logInfo(`createActionInstance success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
         } catch (error) {
             Logger.logError(`createActionInstance failed, Error: ${error.category}, ${error.code}, ${error.message}`);
         }
@@ -42,9 +43,10 @@ export class ActionSdkHelper {
         let request = new actionSDK.GetActionDataRows.Request(actionId, creatorId, continuationToken, pageSize);
         try {
             let response = await actionSDK.executeApi(request) as actionSDK.GetActionDataRows.Response;
+            Logger.logInfo(`getActionDataRows success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, dataRows: response.dataRows, continuationToken: response.continuationToken };
         } catch (error) {
-            Logger.logError(`fetchMyResponse failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getActionDataRows failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -54,12 +56,13 @@ export class ActionSdkHelper {
     *   @param subscription - action subscription: actionSDK.ActionSdkContext.subscription
     */
     public static async getSubscriptionMemberCount(subscription: actionSDK.Subscription) {
-        let getSubscriptionCount = new actionSDK.GetSubscriptionMemberCount.Request(subscription);
+        let request = new actionSDK.GetSubscriptionMemberCount.Request(subscription);
         try {
-            let response = await actionSDK.executeApi(getSubscriptionCount) as actionSDK.GetSubscriptionMemberCount.Response;
+            let response = await actionSDK.executeApi(request) as actionSDK.GetSubscriptionMemberCount.Response;
+            Logger.logInfo(`getSubscriptionMemberCount success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, memberCount: response.memberCount };
         } catch (error) {
-            Logger.logError(`fetchMemberCount failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getSubscriptionMemberCount failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -69,12 +72,13 @@ export class ActionSdkHelper {
     * @param {actionId} action id for which we want to get details
     */
     public static async getAction(actionId?: string) {
+        let request = new actionSDK.GetAction.Request(actionId);
         try {
-            let response = await actionSDK.executeApi(new actionSDK.GetAction.Request(actionId)) as actionSDK.GetAction.Response;
-            Logger.logInfo("fetchActionInstance success, response: " + JSON.stringify(response));
+            let response = await actionSDK.executeApi(request) as actionSDK.GetAction.Response;
+            Logger.logInfo(`getAction success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, action: response.action };
         } catch (error) {
-            Logger.logError(`fetchActionInstance failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getAction failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -88,9 +92,10 @@ export class ActionSdkHelper {
         let request = new actionSDK.GetActionDataRowsSummary.Request(actionId, addDefaultAggregates);
         try {
             let response = await actionSDK.executeApi(request) as actionSDK.GetActionDataRowsSummary.Response;
+            Logger.logInfo(`getActionDataRowsSummary success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, summary: response.summary };
         } catch (error) {
-            Logger.logError(`fetchActionInstanceSummary failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getActionDataRowsSummary failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -101,12 +106,13 @@ export class ActionSdkHelper {
      * @param userId user id to get details
      */
     public static async getSubscriptionMembers(subscription, userIds) {
+        let request = new actionSDK.GetSubscriptionMembers.Request(subscription, userIds);
         try {
-            let request = new actionSDK.GetSubscriptionMembers.Request(subscription, userIds);
             let response = await actionSDK.executeApi(request) as actionSDK.GetSubscriptionMembers.Response;
+            Logger.logInfo(`getSubscriptionMembers success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, members: response.members, memberIdsNotFound: response.memberIdsNotFound };
         } catch (error) {
-            Logger.logError(`fetchUserDetails failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getSubscriptionMembers failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -117,12 +123,13 @@ export class ActionSdkHelper {
      * @param subscriptionId subscriptionId
      */
     public static async getNonResponders(actionId: string, subscriptionId: string) {
-        let requestNonResponders = new actionSDK.GetActionSubscriptionNonParticipants.Request(actionId, subscriptionId);
+        let request = new actionSDK.GetActionSubscriptionNonParticipants.Request(actionId, subscriptionId);
         try {
-            let response = await actionSDK.executeApi(requestNonResponders) as actionSDK.GetActionSubscriptionNonParticipants.Response;
+            let response = await actionSDK.executeApi(request) as actionSDK.GetActionSubscriptionNonParticipants.Response;
+            Logger.logInfo(`getNonResponders success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, nonParticipants: response.nonParticipants };
         } catch (error) {
-            Logger.logError(`fetchNonReponders failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`getNonResponders failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { sucess: false, error: error };
         }
     }
@@ -132,13 +139,13 @@ export class ActionSdkHelper {
      * @param data object of data we want modify
      */
     public static async updateActionInstance(actionUpdateInfo: actionSDK.ActionUpdateInfo) {
-        let getUpdateActionRequest = new actionSDK.UpdateAction.Request(actionUpdateInfo);
+        let request = new actionSDK.UpdateAction.Request(actionUpdateInfo);
         try {
-            let response = await actionSDK.executeApi(getUpdateActionRequest) as actionSDK.UpdateAction.Response;
-            Logger.logInfo("UpdateAction Success, Response: " + JSON.stringify(response));
+            let response = await actionSDK.executeApi(request) as actionSDK.UpdateAction.Response;
+            Logger.logInfo(`updateActionInstance success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, updateSuccess: response.success };
         } catch (error) {
-            Logger.logError(`UpdateAction failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`updateActionInstance failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -156,12 +163,13 @@ export class ActionSdkHelper {
      * @param actionId action instance id
      */
     public static async deleteActionInstance(actionId) {
+        let request = new actionSDK.DeleteAction.Request(actionId);
         try {
-            let request = new actionSDK.DeleteAction.Request(actionId);
             let response = await actionSDK.executeApi(request) as actionSDK.DeleteAction.Response;
+            Logger.logInfo(`deleteActionInstance success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true, deleteSuccess: response.success };
         } catch (error) {
-            Logger.logError(`deletePoll failed, Error: ${error.category}, ${error.code}, ${error.message}`);
+            Logger.logError(`deleteActionInstance failed, Error: ${error.category}, ${error.code}, ${error.message}`);
             return { success: false, error: error };
         }
     }
@@ -174,7 +182,8 @@ export class ActionSdkHelper {
     public static async downloadCSV(actionId, fileName) {
         let request = new actionSDK.DownloadActionDataRowsResult.Request(actionId, fileName);
         try {
-            await actionSDK.executeApi(request);
+            let response = actionSDK.executeApi(request);
+            Logger.logInfo(`downloadCSV success - Request: ${JSON.stringify(request)} Response: ${JSON.stringify(response)}`);
             return { success: true };
         } catch (error) {
             Logger.logError(`downloadCSV failed, Error: ${error.category}, ${error.code}, ${error.message}`);

@@ -1,13 +1,6 @@
 import * as React from "react";
 import {
-    addChoice,
-    updateTitle,
-    deleteChoice,
-    updateChoiceText,
-    callActionInstanceCreationAPI,
-    updateSettings,
-    goToPage,
-    shouldValidateUI
+    addChoice, updateTitle, deleteChoice, updateChoiceText, callActionInstanceCreationAPI, updateSettings, goToPage, shouldValidateUI
 } from "./../../actions/CreationActions";
 import "./creation.scss";
 import getStore, { Page } from "./../../store/CreationStore";
@@ -37,10 +30,10 @@ export default class CreationPage extends React.Component<any, any> {
     private validationErrorQuestionRef: HTMLElement;
 
     render() {
-        if (getStore().progressState === ProgressState.NotStarted
-            || getStore().progressState == ProgressState.InProgress) {
+        let progressState = getStore().progressState;
+        if (progressState === ProgressState.NotStarted || progressState == ProgressState.InProgress) {
             return <Loader />;
-        } else if (getStore().progressState === ProgressState.Failed) {
+        } else if (progressState === ProgressState.Failed) {
             ActionSdkHelper.hideLoadingIndicator();
             return (
                 <ErrorView
@@ -122,9 +115,7 @@ export default class CreationPage extends React.Component<any, any> {
             } else {
                 for (let error in optionsError) {
                     if (!Utils.isEmpty(error)) {
-                        accessibilityAnnouncementString = Localizer.getString(
-                            "BlankChoiceError"
-                        );
+                        accessibilityAnnouncementString = Localizer.getString("BlankChoiceError");
                         focusChoiceOnError = true;
                         break;
                     }
@@ -149,7 +140,7 @@ export default class CreationPage extends React.Component<any, any> {
             <Flex column>
                 <InputBox
                     fluid multiline
-                    maxLength={240}
+                    maxLength={Constants.POLL_TITLE_MAX_LENGTH}
                     inputRef={(element) => {
                         this.validationErrorQuestionRef = element;
                     }}
@@ -164,13 +155,14 @@ export default class CreationPage extends React.Component<any, any> {
                     aria-placeholder={Localizer.getString("PollTitlePlaceholder")}
                     onChange={(e) => {
                         updateTitle((e.target as HTMLInputElement).value);
-                        shouldValidateUI(false); // setting this flag to false as we don't want to valaidate input everytime value changes
+                        shouldValidateUI(false); // setting this flag to false to not validate input everytime value changes
                     }}
                 />
                 <div className="indentation">
                     <ChoiceContainer optionsError={optionsError} options={choiceOptions} limit={getStore().maxOptions}
                         focusOnError={focusChoiceOnError}
                         renderForMobile={UxUtils.renderingForMobile()}
+                        maxLength={Constants.POLL_CHOICE_MAX_LENGTH}
                         onDeleteChoice={(i) => {
                             shouldValidateUI(false);
                             deleteChoice(i);
@@ -193,11 +185,13 @@ export default class CreationPage extends React.Component<any, any> {
      */
     renderFooterSettingsSection() {
         return (
-            <div className="settings-summary-footer" {...UxUtils.getTabKeyProps()} ref={(element) => {
-                this.settingsFooterComponentRef = element;
-            }} onClick={() => {
-                goToPage(Page.Settings);
-            }}>
+            <div className="settings-summary-footer" {...UxUtils.getTabKeyProps()}
+                ref={(element) => {
+                    this.settingsFooterComponentRef = element;
+                }}
+                onClick={() => {
+                    goToPage(Page.Settings);
+                }}>
                 <SettingsIcon className="settings-icon" outline={true} styles={({ theme: { siteVariables } }) => ({
                     color: siteVariables.colorScheme.brand.foreground,
                 })} />

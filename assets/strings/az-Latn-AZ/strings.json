@@ -24,7 +24,7 @@
   "Settings": "Settings",
   "BlankChoiceError": "Choice cannot be left blank",
   "You": "You",
-  "YetToRespond": "{0} Yet To Respond",
+  "YetToRespond": "{0} Hələ Cavab Verməyənlər",
   "ResponseFetchError": "Fetching Response Failed. Try again.",
   "Back": "Back",
   "ViewResponses": "View Responses",
@@ -84,7 +84,7 @@
   "Next": "Next",
   "DeleteChoiceX": "Delete Choice {0}",
   "ChangeDueBy": "Change Due By",
-  "DialogTalkback": "{0} dialogue. {1}",
+  "DialogTalkback": "{0} dialog. {1}",
   "NotRespondedLabel": "You did not respond",
   "NotRespondedLabel.comment": "Message for non creators of poll when result visibility is set to creator only and poll is closed or expired and user has not responded",
   "PollDeleted": "This poll has been deleted",
@@ -103,10 +103,10 @@
   "CreateNewPoll": "Create a new poll",
   "ResultsTitle": "Result view",
   "$manifest.name": "Poll",
-  "$manifest.views.LaunchView.header": "Create Poll",
-  "$manifest.description": "Ask a question and get people's opinion",
+  "$manifest.views.LaunchView.header": "Səsvermə Yaradın",
+  "$manifest.description": "Sual verin və insanların fikrini öyrənin",
   "$manifest.msTeamsProps.name.short": "Poll",
   "$manifest.msTeamsProps.name.full": "Poll",
-  "$manifest.msTeamsProps.description.short": "Ask a question and get people's opinion",
-  "$manifest.msTeamsProps.description.full": "Get your team's opinion by creating a poll in a chat or channel.​ Find the app in '…' under the message compose box​. Enter your question and choices and you're good to go. Stay on top of participation by tracking responses. Download poll result to share with your co-workers."
+  "$manifest.msTeamsProps.description.short": "Sual verin və insanların fikrini öyrənin",
+  "$manifest.msTeamsProps.description.full": "Çat və ya kanalda sorğu yaratmaqla komandanızın fikrini öyrənin.​ Mesaj yarat xanasının altında '…' bölməsində proqramı tapın​. Suallarınızı və seçimləri daxil edin və sorğunu başalda bilərsiniz. Cavabları izləməklə iştirak haqqında məlumat alın. Sorğu nəticələrini həmkarlarınızla paylaşmaq üçün endirin."
 }

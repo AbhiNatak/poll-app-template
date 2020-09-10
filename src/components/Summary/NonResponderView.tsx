@@ -1,11 +1,13 @@
 import * as React from "react";
+import "./summary.scss";
 import getStore from "../../store/SummaryStore";
-import { Flex, Loader, FocusZone, ListItem, Avatar } from "@fluentui/react-northstar";
+import { Flex, Loader, FocusZone, Text, Avatar } from "@fluentui/react-northstar";
 import { observer } from "mobx-react";
 import { fetchNonReponders } from "../../actions/SummaryActions";
 import { ProgressState } from "./../../utils/SharedEnum";
 import { RecyclerViewComponent, RecyclerViewType } from "../RecyclerViewComponent";
 import { UxUtils } from "./../../utils/UxUtils";
+import { Utils } from "./../../utils/Utils";
 
 interface IUserInfoViewProps {
     userName: string;
@@ -44,19 +46,14 @@ export class NonResponderView extends React.Component {
                     <RecyclerViewComponent
                         data={rowsWithUser}
                         rowHeight={48}
-                        onRowRender={(
-                            type: RecyclerViewType,
-                            index: number,
-                            userProps: IUserInfoViewProps
-                        ): JSX.Element => {
+                        onRowRender={(type: RecyclerViewType, index: number, userProps: IUserInfoViewProps): JSX.Element => {
                             return (
-                                <div aria-label={userProps.accessibilityLabel}  {...UxUtils.getListItemProps()}>
-                                    <ListItem className="zero-padding"
-                                        index={index}
-                                        media={<Avatar name={(userProps.userName).toUpperCase()} size="medium" aria-hidden="true" />}
-                                        header={userProps.userName}
-                                    />
-                                </div>
+                                <Flex aria-label={userProps.accessibilityLabel} className="user-info-view overflow-hidden" vAlign="center" gap="gap.small" {...UxUtils.getListItemProps()}>
+                                    <Avatar className="user-profile-pic" name={userProps.userName} size="medium" aria-hidden="true" />
+                                    <Flex aria-hidden={!Utils.isEmpty(userProps.accessibilityLabel)} column className="overflow-hidden">
+                                         <Text truncated size="medium">{userProps.userName}</Text>
+                                    </Flex>
+                                </Flex>
                             );
                         }}
                     />

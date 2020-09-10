@@ -1,5 +1,6 @@
 import * as React from "react";
 import { RecyclerListView, DataProvider, LayoutProvider } from "recyclerlistview/web";
+import { Flex } from "@fluentui/react-northstar";
 
 export interface IRecyclerViewComponentProps<T> {
     rowHeight: number;
@@ -39,15 +40,17 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
     render() {
         // for each item in list rowRenderer method will be called that will provide the UI element to render for that item
         return (
-            <RecyclerListView
-                key={this.props.gridWidth}
-                rowHeight={this.props.rowHeight}
-                layoutProvider={this.layoutProvider}
-                dataProvider={this.dataProvider}
-                rowRenderer={(type: RecyclerViewType, data: T, index: number): JSX.Element => {
-                    return this.props.onRowRender(type, index, data);
-                }}
-            />
+            <Flex fill column className="recycler-container">
+                <RecyclerListView
+                    key={this.props.gridWidth}
+                    rowHeight={this.props.rowHeight}
+                    layoutProvider={this.layoutProvider}
+                    dataProvider={this.dataProvider}
+                    rowRenderer={(type: RecyclerViewType, data: T, index: number): JSX.Element => {
+                        return this.props.onRowRender(type, index, data);
+                    }}
+                />
+            </Flex>
         );
     }
 
@@ -66,11 +69,7 @@ export class RecyclerViewComponent<T> extends React.Component<IRecyclerViewCompo
                 }
             },
             (type: number, dim: any) => {
-                if (this.props.gridWidth) {
-                    dim.width = this.props.gridWidth;
-                } else {
-                    dim.width = window.innerWidth;
-                }
+                dim.width = this.props.gridWidth || window.innerWidth;
                 dim.height = this.props.rowHeight;
             }
         );

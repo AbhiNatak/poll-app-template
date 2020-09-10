@@ -18,6 +18,7 @@ export interface IChoiceContainerProps {
     options: IChoiceContainerOption[];
     optionsError?: string[];
     limit?: number;
+    maxLength?: number;
     renderForMobile?: boolean;
     focusOnError?: boolean;
     inputClassName?: string;
@@ -45,7 +46,8 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
     getDeleteIconProps(i: number): ShorthandValue<BoxProps> {
         if (this.props.options.length > 2) {
             return {
-                content: <TrashCanIcon className="choice-trash-can" outline={true} aria-hidden="false" title={this.props.options[i].deleteChoiceLabel}
+                content: <TrashCanIcon className="choice-trash-can" outline={true} aria-hidden="false"
+                    title={this.props.options[i].deleteChoiceLabel}
                     onClick={() => {
                         if (this.currentFocus == this.props.options.length - 1) {
                             setTimeout((() => {
@@ -53,7 +55,8 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                             }).bind(this), 0);
                         }
                         this.props.onDeleteChoice(i);
-                    }} />,
+                    }}
+                />,
                 ...UxUtils.getTabKeyProps()
             };
         }
@@ -83,6 +86,7 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                         }}
                         fluid
                         input={{ className }}
+                        maxLength={this.props.maxLength}
                         icon={this.getDeleteIconProps(i)}
                         showError={errorString.length > 0}
                         errorText={errorString}
@@ -90,7 +94,8 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                         value={this.props.options[i].value}
                         placeholder={this.props.options[i].choicePlaceholder}
                         onKeyDown={(e) => {
-                            if (!e.repeat && (e.keyCode || e.which) == Constants.CARRIAGE_RETURN_ASCII_VALUE && this.props.options.length < maxOptions) {
+                            if (!e.repeat && (e.keyCode || e.which) == Constants.CARRIAGE_RETURN_ASCII_VALUE
+                                && this.props.options.length < maxOptions) {
                                 if (i == this.props.options.length - 1) {
                                     this.props.onAddChoice();
                                     this.currentFocus = this.props.options.length;
@@ -119,12 +124,17 @@ export class ChoiceContainer extends React.PureComponent<IChoiceContainerProps> 
                 }}>
                 {items}
                 {this.props.options.length < maxOptions &&
-                    <div ref={(e) => {
-                        this.addButtonRef = e;
-                    }} className={"add-options"} {...UxUtils.getTabKeyProps()} onClick={(e) => {
-                        this.props.onAddChoice();
-                        this.currentFocus = this.props.options.length;
-                    }}>
+                    <div
+                        ref={(e) => {
+                            this.addButtonRef = e;
+                        }}
+                        className={"add-options"}
+                        {...UxUtils.getTabKeyProps()}
+                        onClick={(e) => {
+                            this.props.onAddChoice();
+                            this.currentFocus = this.props.options.length;
+                        }}
+                    >
                         <AddIcon className="plus-icon" outline size="medium" styles={({ theme: { siteVariables } }) => ({
                             color: siteVariables.colorScheme.brand.foreground,
                         })} />

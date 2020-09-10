@@ -36,10 +36,7 @@ export class ActionRootView extends React.Component<any, IActionRootViewState> {
         }
 
         document.body.className = this.getClassNames();
-        document.body.setAttribute(
-            "data-hostclienttype",
-            this.state.hostContext.hostClientType
-        );
+        document.body.setAttribute("data-hostclienttype", this.state.hostContext.hostClientType);
 
         let isRTL = Utils.isRTL(this.state.hostContext.locale);
         document.body.dir = isRTL ? "rtl" : "ltr";
@@ -80,10 +77,8 @@ export class ActionRootView extends React.Component<any, IActionRootViewState> {
             case "dark":
                 classNames.push("theme-dark");
                 break;
-            case "default":
-                classNames.push("theme-default");
-                break;
             default:
+                classNames.push("theme-default");
                 break;
         }
 

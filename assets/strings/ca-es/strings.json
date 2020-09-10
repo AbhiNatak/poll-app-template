@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} i {3} persones més han respost",
   "CreateNewPoll": "Creació d'un sondeig",
   "ResultsTitle": "Visualització del resultat",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Crea un sondeig",
-  "$manifest.composeExtensions[0].commands[0].title": "Crea un sondeig",
-  "$manifest.description": "Obteniu l'opinió del vostre equip creant una enquesta en un xat o canal.\n• Cerqueu l'aplicació a \"…\" sota el quadre de redacció de missatges\n• Introduïu la pregunta i les opcions, i ja haureu acabat👍🏻\n• Manteniu-vos al dia de la participació fent un seguiment de les respostes\n• Baixeu els resultats de l'enquesta per compartir-los amb els companys de feina",
   "$manifest.name": "Sondeig",
-  "$manifest.activities.activityTypes[0].description": "Notificació de recordatori del sondeig",
-  "$manifest.activities.activityTypes[1].description": "Algú respon al sondeig",
-  "$manifest.activities.activityTypes[2].description": "S’ha publicat el resultat del sondeig",
-  "$manifest.activities.activityTypes[3].description": "Resum diari de l'estat de resposta al sondeig",
-  "$manifest.msTeamsProps.description.full": "Feu una pregunta i rebeu l'opinió dels usuaris",
-  "$manifest.msTeamsProps.description.short": "Feu una pregunta",
+  "$manifest.views.LaunchView.header": "Creació d'una enquesta",
+  "$manifest.description": "Feu una pregunta i rebeu l'opinió dels usuaris",
+  "$manifest.msTeamsProps.name.short": "Sondeig",
   "$manifest.msTeamsProps.name.full": "Sondeig",
-  "$manifest.msTeamsProps.name.short": "Sondeig"
+  "$manifest.msTeamsProps.description.short": "Feu una pregunta i rebeu l'opinió dels usuaris",
+  "$manifest.msTeamsProps.description.full": "Obteniu l'opinió del vostre equip creant una enquesta en un xat o canal.​ Cerqueu l'aplicació a \"…\" sota el quadre de redacció de missatges​. Introduïu la pregunta i les opcions, i ja haureu acabat. Manteniu-vos al dia de la participació fent un seguiment de les respostes. Baixeu els resultats de l'enquesta per compartir-los amb els companys de feina."
 }

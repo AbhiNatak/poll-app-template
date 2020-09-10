@@ -3,18 +3,12 @@ import { observer } from "mobx-react";
 import getStore, { ViewType } from "./../../store/SummaryStore";
 import "./summary.scss";
 import {
-    closePoll,
-    pollCloseAlertOpen,
-    updateDueDate,
-    pollExpiryChangeAlertOpen,
-    setDueDate,
-    pollDeleteAlertOpen,
-    deletePoll,
-    setCurrentView,
-    downloadCSV,
-    setProgressStatus
+    closePoll, pollCloseAlertOpen, updateDueDate, pollExpiryChangeAlertOpen, setDueDate, pollDeleteAlertOpen, deletePoll,
+    setCurrentView, downloadCSV, setProgressStatus
 } from "./../../actions/SummaryActions";
-import { Flex, Dialog, Loader, Text, Avatar, ButtonProps, BanIcon, TrashCanIcon, CalendarIcon, MoreIcon, SplitButton, Divider } from "@fluentui/react-northstar";
+import {
+    Flex, Dialog, Loader, Text, Avatar, ButtonProps, BanIcon, TrashCanIcon, CalendarIcon, MoreIcon, SplitButton, Divider
+} from "@fluentui/react-northstar";
 import * as html2canvas from "html2canvas";
 import { Utils } from "../../utils/Utils";
 import { Localizer } from "../../utils/Localizer";
@@ -67,17 +61,15 @@ export default class SummaryView extends React.Component<any, any> {
 
         // User name
         let currentUserProfile: actionSDK.SubscriptionMember = getStore().context
-            ? getStore().userProfile[getStore().context.userId]
-            : null;
+            ? getStore().userProfile[getStore().context.userId] : null;
 
-        let myUserName = (currentUserProfile && currentUserProfile.displayName) ? currentUserProfile.displayName : Localizer.getString("You");
+        let myUserName = (currentUserProfile && currentUserProfile.displayName)
+            ? currentUserProfile.displayName : Localizer.getString("You");
 
         // Showing shimmer effect till we get data from API
-        if (
-            getStore().progressStatus.myActionInstanceRow !=
-            ProgressState.Completed ||
-            getStore().progressStatus.actionInstance != ProgressState.Completed
-        ) {
+        let progressStatus = getStore().progressStatus;
+        if (progressStatus.myActionInstanceRow != ProgressState.Completed ||
+            progressStatus.actionInstance != ProgressState.Completed) {
             return (
                 <Flex className="my-response" gap="gap.small" vAlign="center">
                     <ShimmerContainer showProfilePic>
@@ -93,8 +85,8 @@ export default class SummaryView extends React.Component<any, any> {
                 </Flex>
             );
         } else if (getStore().myRow && getStore().myRow.columnValues) {
-            myResponse = getStore().actionInstance.dataTables[0].dataColumns[0]
-                .options[getStore().myRow.columnValues[0]].displayName;
+            // getting poll choice selected by current user from actionInstance
+            myResponse = getStore().actionInstance.dataTables[0].dataColumns[0].options[getStore().myRow.columnValues[0]].displayName;
 
             return (
                 <>
@@ -113,6 +105,7 @@ export default class SummaryView extends React.Component<any, any> {
                             <Flex column className="overflow-hidden">
                                 <Text
                                     truncated
+                                    title = {myResponse}
                                     content={Localizer.getString("YourResponse", myResponse)}
                                 />
                             </Flex>
@@ -146,11 +139,8 @@ export default class SummaryView extends React.Component<any, any> {
         let showShimmer: boolean = false;
         let optionsWithResponseCount: IBarChartItem[] = [];
         let rowCount: number = 0;
-        if (
-            getStore().progressStatus.actionInstanceSummary !=
-            ProgressState.Completed ||
-            getStore().progressStatus.actionInstance != ProgressState.Completed
-        ) {
+        let progressStatus = getStore().progressStatus;
+        if (progressStatus.actionInstanceSummary != ProgressState.Completed || progressStatus.actionInstance != ProgressState.Completed) {
             showShimmer = true;
 
             let item: IBarChartItem = {
@@ -190,67 +180,49 @@ export default class SummaryView extends React.Component<any, any> {
         } else {
             return (
                 <>
-                    <Text weight="bold" className="primary-text">
-                        {getStore().actionInstance &&
-                            getStore().actionInstance.dataTables[0].dataColumns[0]
-                                .displayName}
+                    <Text weight="bold" className="primary-text word-break">
+                        {getStore().actionInstance && getStore().actionInstance.dataTables[0].dataColumns[0].displayName}
                     </Text>
-                    {this.canCurrentUserViewResults()
-                        ? barChartComponent
-                        : this.getNonCreatorErrorView()}
+                    {this.canCurrentUserViewResults() ? barChartComponent : this.getNonCreatorErrorView()}
                 </>
             );
         }
     }
 
     private getOptionsWithResponseCount(): IBarChartItem[] {
-        if (
-            getStore().progressStatus.actionInstance == ProgressState.Completed &&
-            getStore().progressStatus.actionInstanceSummary == ProgressState.Completed
-        ) {
+        let progressStatus = getStore().progressStatus;
+        if (progressStatus.actionInstance == ProgressState.Completed &&
+            progressStatus.actionInstanceSummary == ProgressState.Completed) {
             let optionsWithResponseCount: IBarChartItem[] = [];
 
-            for (let option of getStore().actionInstance.dataTables[0].dataColumns[0]
-                .options) {
+            for (let option of getStore().actionInstance.dataTables[0].dataColumns[0].options) {
                 optionsWithResponseCount.push({
                     id: option.name,
                     title: option.displayName,
                     quantity: 0,
+                    titleClassName: "word-break"
                 });
             }
 
-            if (
-                getStore().actionSummary &&
-                getStore().actionSummary.defaultAggregates &&
-                getStore().actionSummary.defaultAggregates.hasOwnProperty(
-                    getStore().actionInstance.dataTables[0].dataColumns[0].name
-                )
-            ) {
-                let pollResultData = JSON.parse(
-                    getStore().actionSummary.defaultAggregates[
-                    getStore().actionInstance.dataTables[0].dataColumns[0].name
-                    ]
-                );
+            let defaultAggregates = getStore().actionSummary && getStore().actionSummary.defaultAggregates;
+            if (defaultAggregates && defaultAggregates.hasOwnProperty(getStore().actionInstance.dataTables[0].dataColumns[0].name)) {
+
+                let pollResultData = JSON.parse(defaultAggregates[getStore().actionInstance.dataTables[0].dataColumns[0].name]);
                 const optionsCopy = optionsWithResponseCount;
                 for (let i = 0; i < optionsWithResponseCount.length; i++) {
                     let option = optionsWithResponseCount[i];
                     let optionCount = pollResultData[option.id] || 0;
-
-                    let percentage: number = Math.round(
-                        (optionCount / optionsWithResponseCount.length) * 100
-                    );
+                    let percentage: number = Math.round((optionCount / optionsWithResponseCount.length) * 100);
                     let percentageString: string = percentage + "%";
+
                     optionsCopy[i] = {
                         id: option.id,
                         title: option.title,
                         quantity: optionCount,
-                        className: "loser",
-                        accessibilityLabel: Localizer.getString(
-                            "OptionResponseAccessibility",
-                            option.title,
-                            optionCount,
-                            percentageString
-                        ),
+                        className: " loser",
+                        titleClassName: option.titleClassName,
+                        accessibilityLabel: Localizer.getString("OptionResponseAccessibility",
+                            option.title, optionCount, percentageString)
                     };
                 }
 
@@ -265,11 +237,9 @@ export default class SummaryView extends React.Component<any, any> {
      * Return Ui component with total participation of poll
      */
     private getTopContainer(): JSX.Element {
-        if (
-            getStore().progressStatus.memberCount == ProgressState.Failed ||
-            getStore().progressStatus.actionInstance == ProgressState.Failed ||
-            getStore().progressStatus.actionInstanceSummary == ProgressState.Failed
-        ) {
+        let progressStatus = getStore().progressStatus;
+        if (progressStatus.memberCount == ProgressState.Failed || progressStatus.actionInstance == ProgressState.Failed ||
+            progressStatus.actionInstanceSummary == ProgressState.Failed) {
             return (
                 <ErrorView
                     title={Localizer.getString("GenericError")}
@@ -278,16 +248,11 @@ export default class SummaryView extends React.Component<any, any> {
             );
         }
 
-        let rowCount: number = getStore().actionSummary
-            ? getStore().actionSummary.rowCount
-            : 0;
-        let memberCount: number = getStore().memberCount
-            ? getStore().memberCount
-            : 0;
+        let rowCount: number = getStore().actionSummary ? getStore().actionSummary.rowCount : 0;
+        let memberCount: number = getStore().memberCount ? getStore().memberCount : 0;
         let participationInfoItems: IBarChartItem[] = [];
-        let participationPercentage = memberCount
-            ? Math.round((rowCount / memberCount) * 100)
-            : 0;
+        let participationPercentage = memberCount ? Math.round((rowCount / memberCount) * 100) : 0;
+
         participationInfoItems.push({
             id: "participation",
             title: Localizer.getString("Participation", participationPercentage),
@@ -295,35 +260,21 @@ export default class SummaryView extends React.Component<any, any> {
             quantity: rowCount,
             hideStatistics: true,
         });
-        let participation: string =
-            rowCount == 1
-                ? Localizer.getString(
-                    "ParticipationIndicatorSingular",
-                    rowCount,
-                    memberCount
-                )
-                : Localizer.getString(
-                    "ParticipationIndicatorPlural",
-                    rowCount,
-                    memberCount
-                );
+        let participation: string = (rowCount == 1)
+            ? Localizer.getString("ParticipationIndicatorSingular", rowCount, memberCount)
+            : Localizer.getString("ParticipationIndicatorPlural", rowCount, memberCount);
 
         let showShimmer: boolean = false;
-        if (
-            getStore().progressStatus.memberCount != ProgressState.Completed ||
-            getStore().progressStatus.actionInstance != ProgressState.Completed ||
-            getStore().progressStatus.actionInstanceSummary != ProgressState.Completed
-        ) {
+
+        if (progressStatus.memberCount != ProgressState.Completed || progressStatus.actionInstance != ProgressState.Completed ||
+            progressStatus.actionInstanceSummary != ProgressState.Completed) {
             showShimmer = true;
         }
         return (
             <>
                 <div
                     role="group"
-                    aria-label={Localizer.getString(
-                        "Participation",
-                        participationPercentage
-                    )}
+                    aria-label={Localizer.getString("Participation", participationPercentage)}
                 >
                     <BarChartComponent
                         items={participationInfoItems}
@@ -405,59 +356,24 @@ export default class SummaryView extends React.Component<any, any> {
             minute: "numeric",
         };
 
-        if (!getStore().actionInstance) {
-            return Localizer.getString(
-                "dueByDate",
-                UxUtils.formatDate(
-                    new Date(),
-                    getStore().context && getStore().context.locale
-                        ? getStore().context.locale
-                        : Utils.DEFAULT_LOCALE,
-                    options
-                )
-            );
+        let contextLocale = (getStore().context && getStore().context.locale) || Utils.DEFAULT_LOCALE;
+        let actionInstance = getStore().actionInstance;
+
+        if (!actionInstance) {
+            return Localizer.getString("dueByDate", UxUtils.formatDate(new Date(), contextLocale, options));
         }
 
         if (this.isPollActive()) {
-            return Localizer.getString(
-                "dueByDate",
-                UxUtils.formatDate(
-                    new Date(getStore().actionInstance.expiryTime),
-                    getStore().context && getStore().context.locale
-                        ? getStore().context.locale
-                        : Utils.DEFAULT_LOCALE,
-                    options
-                )
-            );
+            return Localizer.getString("dueByDate", UxUtils.formatDate(new Date(actionInstance.expiryTime), contextLocale, options));
         }
 
-        if (getStore().actionInstance.status == actionSDK.ActionStatus.Closed) {
-            let expiry: number = getStore().actionInstance.updateTime
-                ? getStore().actionInstance.updateTime
-                : getStore().actionInstance.expiryTime;
-            return Localizer.getString(
-                "ClosedOn",
-                UxUtils.formatDate(
-                    new Date(expiry),
-                    getStore().context && getStore().context.locale
-                        ? getStore().context.locale
-                        : Utils.DEFAULT_LOCALE,
-                    options
-                )
-            );
+        if (actionInstance.status == actionSDK.ActionStatus.Closed) {
+            let expiry: number = actionInstance.updateTime ? actionInstance.updateTime : actionInstance.expiryTime;
+            return Localizer.getString("ClosedOn", UxUtils.formatDate(new Date(expiry), contextLocale, options));
         }
 
-        if (getStore().actionInstance.status == actionSDK.ActionStatus.Expired) {
-            return Localizer.getString(
-                "ExpiredOn",
-                UxUtils.formatDate(
-                    new Date(getStore().actionInstance.expiryTime),
-                    getStore().context && getStore().context.locale
-                        ? getStore().context.locale
-                        : Utils.DEFAULT_LOCALE,
-                    options
-                )
-            );
+        if (actionInstance.status == actionSDK.ActionStatus.Expired) {
+            return Localizer.getString("ExpiredOn", UxUtils.formatDate(new Date(actionInstance.expiryTime), contextLocale, options));
         }
     }
 
@@ -465,33 +381,18 @@ export default class SummaryView extends React.Component<any, any> {
      * Method for UI component of download button
      */
     private getFooterView(): JSX.Element {
-        if (getStore().progressStatus.actionInstance != ProgressState.Completed) {
-            return null;
-        }
-        if (UxUtils.renderingForMobile()) {
-            return null;
-        }
-
-        if (this.canCurrentUserViewResults() === false) {
+        let progressStatus = getStore().progressStatus;
+        if ((progressStatus.actionInstance != ProgressState.Completed) || (UxUtils.renderingForMobile())
+            || (this.canCurrentUserViewResults() === false)) {
             return null;
         }
 
-        let content =
-            getStore().progressStatus.downloadData == ProgressState.InProgress ? (
-                <Loader size="small" />
-            ) : (
-                    Localizer.getString("Download")
-                );
+        let content = (progressStatus.downloadData == ProgressState.InProgress)
+            ? (<Loader size="small" />) : (Localizer.getString("Download"));
 
         let menuItems = [];
-
-        menuItems.push(
-            this.getDownloadSplitButtonItem("download_image", "DownloadImage")
-        );
-
-        menuItems.push(
-            this.getDownloadSplitButtonItem("download_responses", "DownloadResponses")
-        );
+        menuItems.push(this.getDownloadSplitButtonItem("download_image", "DownloadImage"));
+        menuItems.push(this.getDownloadSplitButtonItem("download_responses", "DownloadResponses"));
 
         return menuItems.length > 0 ? (
             <Flex className="footer-layout" gap={"gap.smaller"} hAlign="end">
@@ -503,7 +404,6 @@ export default class SummaryView extends React.Component<any, any> {
                         content: { content },
                         className: "download-button",
                     }}
-
                     primary
                     toggleButton={{ "aria-label": "more-options" }}
                     onMainButtonClick={() => this.downloadImage()}
@@ -512,10 +412,7 @@ export default class SummaryView extends React.Component<any, any> {
         ) : null;
     }
 
-    private getDownloadSplitButtonItem(
-        key: string,
-        menuLabel: string
-    ) {
+    private getDownloadSplitButtonItem(key: string, menuLabel: string) {
         let menuItem: AdaptiveMenuItem = {
             key: key,
             content: <Text content={Localizer.getString(menuLabel)} />,
@@ -532,19 +429,15 @@ export default class SummaryView extends React.Component<any, any> {
 
     private downloadImage() {
         let bodyContainerDiv = document.getElementById("bodyContainer") as HTMLDivElement;
-        let backgroundColorOfResultsImage: string = UxUtils.getBackgroundColorForTheme(
-            getStore().context.theme
-        );
+        let backgroundColorOfResultsImage: string = UxUtils.getBackgroundColorForTheme(getStore().context.theme);
         (html2canvas as any)(bodyContainerDiv, {
             width: bodyContainerDiv.scrollWidth,
             height: bodyContainerDiv.scrollHeight,
             backgroundColor: backgroundColorOfResultsImage,
         }).then((canvas) => {
             let fileName: string =
-                Localizer.getString(
-                    "PollResult",
-                    getStore().actionInstance.dataTables[0].dataColumns[0].displayName
-                ).substring(0, Constants.ACTION_RESULT_FILE_NAME_MAX_LENGTH) + ".png";
+                Localizer.getString("PollResult", getStore().actionInstance.dataTables[0].dataColumns[0].displayName)
+                    .substring(0, Constants.ACTION_RESULT_FILE_NAME_MAX_LENGTH) + ".png";
             let base64Image = canvas.toDataURL("image/png");
             if (window.navigator.msSaveBlob) {
                 window.navigator.msSaveBlob(canvas.msToBlob(), fileName);
@@ -563,17 +456,12 @@ export default class SummaryView extends React.Component<any, any> {
                 }}
                 open={getStore().isChangeExpiryAlertOpen}
                 onOpen={(e, { open }) => pollExpiryChangeAlertOpen(open)}
-                cancelButton={this.getDialogButtonProps(
-                    Localizer.getString("ChangeDueDate"),
-                    Localizer.getString("Cancel")
-                )}
+                cancelButton={
+                    this.getDialogButtonProps(Localizer.getString("ChangeDueDate"), Localizer.getString("Cancel"))
+                }
                 confirmButton={
                     getStore().progressStatus.updateActionInstance ==
-                        ProgressState.InProgress ? (
-                            <Loader size="small" />
-                        ) : (
-                            this.getDueDateDialogConfirmationButtonProps()
-                        )
+                        ProgressState.InProgress ? (<Loader size="small" />) : (this.getDueDateDialogConfirmationButtonProps())
                 }
                 content={
                     <Flex gap="gap.smaller" column>
@@ -608,22 +496,13 @@ export default class SummaryView extends React.Component<any, any> {
         );
     }
 
-    private getDialogButtonProps(
-        dialogDescription: string,
-        buttonLabel: string
-    ): ButtonProps {
+    private getDialogButtonProps(dialogDescription: string, buttonLabel: string): ButtonProps {
         let buttonProps: ButtonProps = {
             content: buttonLabel,
         };
 
         if (UxUtils.renderingForMobile()) {
-            Object.assign(buttonProps, {
-                "aria-label": Localizer.getString(
-                    "DialogTalkback",
-                    dialogDescription,
-                    buttonLabel
-                ),
-            });
+            Object.assign(buttonProps, { "aria-label": Localizer.getString("DialogTalkback", dialogDescription, buttonLabel) });
         }
         return buttonProps;
     }
@@ -636,13 +515,8 @@ export default class SummaryView extends React.Component<any, any> {
                 1000 <=
                 60,
         };
-        Object.assign(
-            confirmButtonProps,
-            this.getDialogButtonProps(
-                Localizer.getString("ChangeDueDate"),
-                Localizer.getString("Change")
-            )
-        );
+        Object.assign(confirmButtonProps, this.getDialogButtonProps(
+            Localizer.getString("ChangeDueDate"), Localizer.getString("Change")));
         return confirmButtonProps;
     }
 
@@ -656,13 +530,10 @@ export default class SummaryView extends React.Component<any, any> {
                 className="triple-dot-menu"
                 key="poll_options"
                 renderAs={
-                    UxUtils.renderingForMobile()
-                        ? AdaptiveMenuRenderStyle.ACTIONSHEET
-                        : AdaptiveMenuRenderStyle.MENU
+                    UxUtils.renderingForMobile() ? AdaptiveMenuRenderStyle.ACTIONSHEET : AdaptiveMenuRenderStyle.MENU
                 }
                 content={
                     <MoreIcon title={Localizer.getString("MoreOptions")} outline aria-hidden={false} role="button" />
-
                 }
                 menuItems={menuItems}
                 dismissMenuAriaLabel={Localizer.getString("DismissMenu")}
@@ -678,16 +549,11 @@ export default class SummaryView extends React.Component<any, any> {
                 content: Localizer.getString("ChangeDueBy"),
                 icon: <CalendarIcon outline={true} />,
                 onClick: () => {
-                    if (
-                        getStore().progressStatus.updateActionInstance !=
-                        ProgressState.InProgress
-                    ) {
-                        setProgressStatus({
-                            updateActionInstance: ProgressState.NotStarted,
-                        });
+                    if (getStore().progressStatus.updateActionInstance != ProgressState.InProgress) {
+                        setProgressStatus({ updateActionInstance: ProgressState.NotStarted });
                     }
                     pollExpiryChangeAlertOpen(true);
-                },
+                }
             };
             menuItemList.push(changeExpiry);
 
@@ -696,16 +562,11 @@ export default class SummaryView extends React.Component<any, any> {
                 content: Localizer.getString("ClosePoll"),
                 icon: <BanIcon outline={true} />,
                 onClick: () => {
-                    if (
-                        getStore().progressStatus.deleteActionInstance !=
-                        ProgressState.InProgress
-                    ) {
-                        setProgressStatus({
-                            closeActionInstance: ProgressState.NotStarted,
-                        });
+                    if (getStore().progressStatus.deleteActionInstance != ProgressState.InProgress) {
+                        setProgressStatus({ closeActionInstance: ProgressState.NotStarted });
                     }
                     pollCloseAlertOpen(true);
-                },
+                }
             };
             menuItemList.push(closePoll);
         }
@@ -715,16 +576,11 @@ export default class SummaryView extends React.Component<any, any> {
                 content: Localizer.getString("DeletePoll"),
                 icon: <TrashCanIcon outline={true} />,
                 onClick: () => {
-                    if (
-                        getStore().progressStatus.deleteActionInstance !=
-                        ProgressState.InProgress
-                    ) {
-                        setProgressStatus({
-                            deleteActionInstance: ProgressState.NotStarted,
-                        });
+                    if (getStore().progressStatus.deleteActionInstance != ProgressState.InProgress) {
+                        setProgressStatus({ deleteActionInstance: ProgressState.NotStarted });
                     }
                     pollDeleteAlertOpen(true);
-                },
+                }
             };
             menuItemList.push(deletePoll);
         }
@@ -733,25 +589,20 @@ export default class SummaryView extends React.Component<any, any> {
 
     private isCurrentUserCreator(): boolean {
         return (
-            getStore().actionInstance &&
-            getStore().context &&
-            getStore().context.userId == getStore().actionInstance.creatorId
+            getStore().actionInstance && getStore().context && (getStore().context.userId == getStore().actionInstance.creatorId)
         );
     }
 
     private isPollActive(): boolean {
         return (
-            getStore().actionInstance &&
-            getStore().actionInstance.status == actionSDK.ActionStatus.Active
+            getStore().actionInstance && (getStore().actionInstance.status == actionSDK.ActionStatus.Active)
         );
     }
 
     private canCurrentUserViewResults(): boolean {
         return (
             getStore().actionInstance &&
-            (this.isCurrentUserCreator() ||
-                getStore().actionInstance.dataTables[0].rowsVisibility ==
-                actionSDK.Visibility.All)
+            (this.isCurrentUserCreator() || getStore().actionInstance.dataTables[0].rowsVisibility == actionSDK.Visibility.All)
         );
     }
 
@@ -764,20 +615,14 @@ export default class SummaryView extends React.Component<any, any> {
                 }}
                 open={getStore().isPollCloseAlertOpen}
                 onOpen={(e, { open }) => pollCloseAlertOpen(open)}
-                cancelButton={this.getDialogButtonProps(
-                    Localizer.getString("ClosePoll"),
-                    Localizer.getString("Cancel")
-                )}
+                cancelButton={
+                    this.getDialogButtonProps(Localizer.getString("ClosePoll"), Localizer.getString("Cancel"))
+                }
                 confirmButton={
                     getStore().progressStatus.closeActionInstance ==
-                        ProgressState.InProgress ? (
-                            <Loader size="small" />
-                        ) : (
-                            this.getDialogButtonProps(
-                                Localizer.getString("ClosePoll"),
-                                Localizer.getString("Confirm")
-                            )
-                        )
+                        ProgressState.InProgress
+                        ? (<Loader size="small" />)
+                        : (this.getDialogButtonProps(Localizer.getString("ClosePoll"), Localizer.getString("Confirm")))
                 }
                 content={
                     <Flex gap="gap.smaller" column>
@@ -811,20 +656,14 @@ export default class SummaryView extends React.Component<any, any> {
                 }}
                 open={getStore().isDeletePollAlertOpen}
                 onOpen={(e, { open }) => pollDeleteAlertOpen(open)}
-                cancelButton={this.getDialogButtonProps(
-                    Localizer.getString("DeletePoll"),
-                    Localizer.getString("Cancel")
-                )}
+                cancelButton={
+                    this.getDialogButtonProps(Localizer.getString("DeletePoll"), Localizer.getString("Cancel"))
+                }
                 confirmButton={
                     getStore().progressStatus.deleteActionInstance ==
-                        ProgressState.InProgress ? (
-                            <Loader size="small" />
-                        ) : (
-                            this.getDialogButtonProps(
-                                Localizer.getString("DeletePoll"),
-                                Localizer.getString("Confirm")
-                            )
-                        )
+                        ProgressState.InProgress
+                        ? (<Loader size="small" />)
+                        : (this.getDialogButtonProps(Localizer.getString("DeletePoll"), Localizer.getString("Confirm")))
                 }
                 content={
                     <Flex gap="gap.smaller" column>

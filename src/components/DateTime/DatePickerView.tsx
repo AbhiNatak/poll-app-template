@@ -161,11 +161,13 @@ export class DatePickerView extends React.Component<IDatePickerViewProps, IDateP
 
         let inputWrapperProps = {
             tabIndex: -1,
-            "aria-label": (this.props.renderForMobile && this.state.selectedDate) ? this.state.selectedDate.toLocaleDateString(this.props.locale, {
-                month: "short",
-                day: "numeric",
-                year: "numeric"
-            }) + ". " + this.props.placeholder : null,
+            "aria-label": (this.props.renderForMobile && this.state.selectedDate)
+                ? this.state.selectedDate.toLocaleDateString(this.props.locale, {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric"
+                }) + ". " + this.props.placeholder
+                : null,
             onClick: () => {
                 this.onDatePickerPreviewTap();
             },

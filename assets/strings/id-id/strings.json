@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} dan {3} lainnya merespons",
   "CreateNewPoll": "Buat polling baru",
   "ResultsTitle": "Tampilan hasil",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Buat Polling baru",
-  "$manifest.composeExtensions[0].commands[0].title": "Buat Polling baru",
-  "$manifest.description": "Kumpulkan pendapat dari tim Anda dengan membuat polling dalam obrolan atau saluran.\n• Temukan aplikasi di \"…\" di bawah kotak tulis pesan\n• Masukkan pertanyaan dan pilihan Anda dan Anda siap melanjutkan👍🏻\n• Tetap berada di bagian atas partisipasi dengan melacak respons\n• Unduh hasil polling untuk dibagikan kepada rekan kerja Anda",
   "$manifest.name": "Polling",
-  "$manifest.activities.activityTypes[0].description": "Pemberitahuan pengingat polling",
-  "$manifest.activities.activityTypes[1].description": "Seseorang merespons polling Anda",
-  "$manifest.activities.activityTypes[2].description": "Hasil polling telah keluar",
-  "$manifest.activities.activityTypes[3].description": "Ringkasan harian status respons polling",
-  "$manifest.msTeamsProps.description.full": "Ajukan pertanyaan dan dapatkan opini pengguna",
-  "$manifest.msTeamsProps.description.short": "Ajukan pertanyaan",
+  "$manifest.views.LaunchView.header": "Buat Polling",
+  "$manifest.description": "Ajukan pertanyaan dan dapatkan pendapat orang",
+  "$manifest.msTeamsProps.name.short": "Polling",
   "$manifest.msTeamsProps.name.full": "Polling",
-  "$manifest.msTeamsProps.name.short": "Polling"
+  "$manifest.msTeamsProps.description.short": "Ajukan pertanyaan dan dapatkan pendapat orang",
+  "$manifest.msTeamsProps.description.full": "Dapatkan pendapat tim dengan membuat polling dalam obrolan atau saluran.​ Temukan aplikasi di '…' di bawah kotak tulis pesan​. Masukkan pertanyaan serta pilihan, dan Anda siap. Pantau terus partisipasi dengan melacak respons. Unduh hasil polling untuk dibagikan dengan rekan kerja."
 }

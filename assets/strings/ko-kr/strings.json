@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} 님 외 {3}명이 응답했습니다.",
   "CreateNewPoll": "새 투표 만들기",
   "ResultsTitle": "결과 보기",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "새 투표 만들기",
-  "$manifest.composeExtensions[0].commands[0].title": "새 투표 만들기",
-  "$manifest.description": "채팅 또는 채널에서 투표를 만들어 팀의 의견을 확인하세요.\n• 메시지 작성 상자의 \"…\"에서 앱을 찾습니다.\n• 질문 및 선택 사항을 입력하면 준비가 된 것입니다.👍🏻\n• 응답을 추적하여 참여를 파악합니다.\n• 투표 결과를 다운로드하여 동료와 공유합니다.",
   "$manifest.name": "투표",
-  "$manifest.activities.activityTypes[0].description": "투표 미리 알림",
-  "$manifest.activities.activityTypes[1].description": "누군가 사용자의 투표에 응답합니다.",
-  "$manifest.activities.activityTypes[2].description": "투표 결과가 나왔습니다.",
-  "$manifest.activities.activityTypes[3].description": "투표 응답 상태의 일 단위 요약",
-  "$manifest.msTeamsProps.description.full": "질문하고 사람들의 의견을 받습니다.",
-  "$manifest.msTeamsProps.description.short": "질문을 하세요.",
+  "$manifest.views.LaunchView.header": "투표 만들기",
+  "$manifest.description": "질문하고 사람들의 의견을 받습니다.",
+  "$manifest.msTeamsProps.name.short": "투표",
   "$manifest.msTeamsProps.name.full": "투표",
-  "$manifest.msTeamsProps.name.short": "투표"
+  "$manifest.msTeamsProps.description.short": "질문하고 사람들의 의견을 받습니다.",
+  "$manifest.msTeamsProps.description.full": "채팅 또는 채널에서 투표를 만들어 팀의 의견을 확인하세요.​ 메시지 작성 상자의 ‘…’에서 앱을 찾습니다.​ 질문 및 선택 사항을 입력하면 준비가 된 것입니다. 응답을 추적하여 참여를 파악합니다. 투표 결과를 다운로드하여 동료와 공유합니다."
 }

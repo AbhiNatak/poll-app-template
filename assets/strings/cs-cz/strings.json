@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Uživatelé {0}, {1}, {2} a další ({3}) odpověděli.",
   "CreateNewPoll": "Vytvořit nové hlasování",
   "ResultsTitle": "Zobrazení výsledků",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Vytvořit nové hlasování",
-  "$manifest.composeExtensions[0].commands[0].title": "Vytvořit nové hlasování",
-  "$manifest.description": "Zjistěte názor týmu vytvořením hlasování v chatu nebo kanálu.\n• Najděte aplikaci v „…“ pod polem pro psaní zpráv.\n• Zadejte otázku a volby a budete hotovi.👍🏻\n• Mějte přehled o účasti sledováním odpovědí.\n• Stáhněte si výsledky hlasování a nasdílejte je se spolupracovníky.",
   "$manifest.name": "Hlasování",
-  "$manifest.activities.activityTypes[0].description": "Oznámení s připomenutím hlasování",
-  "$manifest.activities.activityTypes[1].description": "Někdo odpoví v rámci vašeho hlasování.",
-  "$manifest.activities.activityTypes[2].description": "Výsledek hlasování je k dispozici.",
-  "$manifest.activities.activityTypes[3].description": "Denní přehled stavu odpovědí v hlasování",
-  "$manifest.msTeamsProps.description.full": "Můžete se ostatních na něco zeptat a získat jejich názor.",
-  "$manifest.msTeamsProps.description.short": "Položit dotaz",
+  "$manifest.views.LaunchView.header": "Vytvořit hlasování",
+  "$manifest.description": "Můžete se ostatních na něco zeptat a získat jejich názor.",
+  "$manifest.msTeamsProps.name.short": "Hlasování",
   "$manifest.msTeamsProps.name.full": "Hlasování",
-  "$manifest.msTeamsProps.name.short": "Hlasování"
+  "$manifest.msTeamsProps.description.short": "Můžete se ostatních na něco zeptat a získat jejich názor.",
+  "$manifest.msTeamsProps.description.full": "Zjistěte názor týmu vytvořením hlasování v chatu nebo kanálu.​ Najděte aplikaci v nabídce „…“ pod polem pro psaní zpráv​. Zadejte otázku a volby a je to. Můžete sledovat odpovědi, a mít tak přehled o účasti. Výsledky hlasování si můžete stáhnout a podělit se o ně se spolupracovníky."
 }

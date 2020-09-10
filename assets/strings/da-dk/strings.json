@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} og {3} andre svarede",
   "CreateNewPoll": "Opret en ny afstemning",
   "ResultsTitle": "Resultatvisning",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Opret en ny afstemning",
-  "$manifest.composeExtensions[0].commands[0].title": "Opret en ny afstemning",
-  "$manifest.description": "Få dit teams mening ved at oprette en afstemning i en chat eller en kanal.\n• Find appen i \"…\" under feltet til oprettelse af meddelelse\n• Angiv dit spørgsmål og dine valg, og du er klar til at komme i gang👍🏻\n• Hold styr på deltagelse ved at spore svar\n• Download afstemningsresultatet for at dele det med dine kolleger",
   "$manifest.name": "Afstemning",
-  "$manifest.activities.activityTypes[0].description": "Besked om påmindelse om afstemning",
-  "$manifest.activities.activityTypes[1].description": "Nogen besvarer din afstemning",
-  "$manifest.activities.activityTypes[2].description": "Afstemningsresultatet er kommet",
-  "$manifest.activities.activityTypes[3].description": "Daglig statusoversigt over afstemningssvar",
-  "$manifest.msTeamsProps.description.full": "Stil et spørgsmål, og få folks mening",
-  "$manifest.msTeamsProps.description.short": "Stil et spørgsmål",
+  "$manifest.views.LaunchView.header": "Opret afstemning",
+  "$manifest.description": "Stil et spørgsmål, og få folks mening",
+  "$manifest.msTeamsProps.name.short": "Afstemning",
   "$manifest.msTeamsProps.name.full": "Afstemning",
-  "$manifest.msTeamsProps.name.short": "Afstemning"
+  "$manifest.msTeamsProps.description.short": "Stil et spørgsmål, og få folks mening",
+  "$manifest.msTeamsProps.description.full": "Få dit teams mening ved at oprette en afstemning i en chat eller en kanal.​ Find appen i \"…\" under feltet til oprettelse af en meddelelse​ Angiv dit spørgsmål og dine valg – så er du klar til at komme i gang. Hold styr på deltagelsen ved at spore svar. Download afstemningsresultatet for at dele det med dine kolleger."
 }

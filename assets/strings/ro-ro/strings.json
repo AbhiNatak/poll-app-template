@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} și încă {3} au răspuns",
   "CreateNewPoll": "Creare sondaj nou",
   "ResultsTitle": "Vizualizare rezultat",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Creați un sondaj nou",
-  "$manifest.composeExtensions[0].commands[0].title": "Creați un sondaj nou",
-  "$manifest.description": "Obțineți opinia echipei prin crearea unui sondaj într-un chat sau într-un canal.\n• Găsiți aplicația în \"…\" sub caseta de compunere a mesajului\n• Introduceți întrebarea și opțiunile și sunteți gata de plecare 👍🏻\n• Rămâneți pe partea de sus a participării prin urmărirea răspunsurilor\n• Descărcați rezultatul sondajului pentru a partaja cu colaboratorii dvs.",
   "$manifest.name": "Sondaj",
-  "$manifest.activities.activityTypes[0].description": "Notificare memento sondaj",
-  "$manifest.activities.activityTypes[1].description": "Cineva răspunde la sondaj",
-  "$manifest.activities.activityTypes[2].description": "S-a aflat rezultatul sondajului",
-  "$manifest.activities.activityTypes[3].description": "Rezumat zilnic al stării de răspuns a sondajului",
-  "$manifest.msTeamsProps.description.full": "Adresați o întrebare și aflați părerea celorlalți",
-  "$manifest.msTeamsProps.description.short": "Adresați o întrebare",
+  "$manifest.views.LaunchView.header": "Creați un sondaj",
+  "$manifest.description": "Adresați o întrebare și aflați părerea celorlalți",
+  "$manifest.msTeamsProps.name.short": "Sondaj",
   "$manifest.msTeamsProps.name.full": "Sondaj",
-  "$manifest.msTeamsProps.name.short": "Sondaj"
+  "$manifest.msTeamsProps.description.short": "Adresați o întrebare și aflați părerea celorlalți",
+  "$manifest.msTeamsProps.description.full": "Obțineți opinia echipei prin crearea unui sondaj într-un chat sau într-un canal.​Găsiți aplicația în „…” sub caseta de compunere a mesajului​. Introduceți întrebarea și opțiunile și sunteți gata. Rămâneți la curent cu participarea prin urmărirea răspunsurilor. Descărcați rezultatul sondajului pentru a partaja cu colegii dvs."
 }

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}、{1}、{2} 和其他 {3} 人已答复",
   "CreateNewPoll": "新建投票",
   "ResultsTitle": "结果视图",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "新建投票",
-  "$manifest.composeExtensions[0].commands[0].title": "新建投票",
-  "$manifest.description": "通过在聊天或频道中创建投票，收集团队的意见。\n• 在消息撰写框下的“…”中找到应用\n• 输入问题和选项即可 👍🏻\n• 通过跟踪答复掌握参与情况\n• 下载投票结果与同事共享",
   "$manifest.name": "投票",
-  "$manifest.activities.activityTypes[0].description": "投票提醒通知",
-  "$manifest.activities.activityTypes[1].description": "有人回复了你的投票",
-  "$manifest.activities.activityTypes[2].description": "投票结果已超时",
-  "$manifest.activities.activityTypes[3].description": "投票响应状态每日摘要",
-  "$manifest.msTeamsProps.description.full": "进行提问并听取大家的意见",
-  "$manifest.msTeamsProps.description.short": "提问",
+  "$manifest.views.LaunchView.header": "创建投票",
+  "$manifest.description": "进行提问并听取大家的意见",
+  "$manifest.msTeamsProps.name.short": "投票",
   "$manifest.msTeamsProps.name.full": "投票",
-  "$manifest.msTeamsProps.name.short": "投票"
+  "$manifest.msTeamsProps.description.short": "进行提问并听取大家的意见",
+  "$manifest.msTeamsProps.description.full": "通过在聊天或频道中创建投票，收集团队的意见。​在消息撰写框下的“…”中找到应用。​输入问题和选项即可。通过跟踪答复掌握参与情况。下载投票结果与同事共享。"
 }

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0},‏ {1},‏ {2} ו- {3} אנשים נוספים הגיבו",
   "CreateNewPoll": "צור משאל חדש",
   "ResultsTitle": "תצוגת תוצאות",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "צור משאל חדש",
-  "$manifest.composeExtensions[0].commands[0].title": "צור משאל חדש",
-  "$manifest.description": "קבל את חוות דעתו של הצוות שלך על-ידי יצירת תשאול בצ'אט או בערוץ.​\n• חפש את היישום ב-\"…\" תחת התיבה של כתיבת הודעה​\n• הזן את השאלה והאפשרויות שלך ואתה מוכן לצאת לדרך 👍🏻​\n• הישאר בשליטה על ההשתתפות על-ידי מעקב אחר תגובות​\n• הורד את תוצאת התשאול כדי לשתף עם העמיתים שלך",
   "$manifest.name": "משאל",
-  "$manifest.activities.activityTypes[0].description": "הודעת תזכורת לגבי המשאל",
-  "$manifest.activities.activityTypes[1].description": "מישהו מגיב למשאל שלך",
-  "$manifest.activities.activityTypes[2].description": "תוצאת המשאל התפרסמה",
-  "$manifest.activities.activityTypes[3].description": "תקציר יומי של מצב התגובות למשאל",
-  "$manifest.msTeamsProps.description.full": "שאל שאלה וקבל חוות דעת של אנשים",
-  "$manifest.msTeamsProps.description.short": "שאל שאלה",
+  "$manifest.views.LaunchView.header": "צור משאל",
+  "$manifest.description": "שאל שאלה וקבל חוות דעת של אנשים",
+  "$manifest.msTeamsProps.name.short": "משאל",
   "$manifest.msTeamsProps.name.full": "משאל",
-  "$manifest.msTeamsProps.name.short": "משאל"
+  "$manifest.msTeamsProps.description.short": "שאל שאלה וקבל חוות דעת של אנשים",
+  "$manifest.msTeamsProps.description.full": "קבל את חוות דעתו של הצוות שלך על-ידי יצירת תשאול בצ'אט או בערוץ.​ חפש את היישום ב- ‘…‘ תחת התיבה של כתיבת הודעה​. הזן את השאלה והאפשרויות שלך ואתה מוכן לצאת לדרך. הישאר בשליטה על ההשתתפות על-ידי מעקב אחר תגובות. הורד את תוצאת התשאול כדי לשתף עם העמיתים שלך."
 }

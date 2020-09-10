@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} ve {3} kişi daha yanıtladı",
   "CreateNewPoll": "Yeni anket oluştur",
   "ResultsTitle": "Sonuç görünümü",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Yeni Anket oluştur",
-  "$manifest.composeExtensions[0].commands[0].title": "Yeni Anket oluştur",
-  "$manifest.description": "Bir sohbet veya kanalda anket oluşturarak ekibinizin görüşlerini alın.\n• Uygulamayı \"…\" içinde ileti oluşturma kutusunun altında bulun\n• Sorunuzu ve seçimlerinizi girin, işte hepsi bu 👍🏻\n• Yanıtları izleyerek katılım konusunda bilgi sahibi olun\n• İş arkadaşlarınızla paylaşmak için anket sonucunu indirin",
   "$manifest.name": "Anket",
-  "$manifest.activities.activityTypes[0].description": "Anket anımsatıcısı bildirimi",
-  "$manifest.activities.activityTypes[1].description": "Birisi anketinize yanıt veriyor",
-  "$manifest.activities.activityTypes[2].description": "Anket sonucu yayınlandı",
-  "$manifest.activities.activityTypes[3].description": "Anket yanıt durumunun günlük özeti",
-  "$manifest.msTeamsProps.description.full": "Soru sorma ve başkalarının fikirlerini öğrenme",
-  "$manifest.msTeamsProps.description.short": "Bir soru sorun",
+  "$manifest.views.LaunchView.header": "Anket Oluştur",
+  "$manifest.description": "Soru sorma ve başkalarının fikirlerini öğrenme",
+  "$manifest.msTeamsProps.name.short": "Anket",
   "$manifest.msTeamsProps.name.full": "Anket",
-  "$manifest.msTeamsProps.name.short": "Anket"
+  "$manifest.msTeamsProps.description.short": "Soru sorma ve başkalarının fikirlerini öğrenme",
+  "$manifest.msTeamsProps.description.full": "Bir sohbet veya kanalda anket oluşturarak ekibinizin görüşlerini alın.​ Uygulamayı ileti oluşturma kutusunun alında, \"…\" menüsünde bulun​ Sorunuzu ve seçimlerinizi girin, işte hepsi bu. Yanıtları izleyerek katılım konusunda bilgi sahibi olun. İş arkadaşlarınızla paylaşmak için anket sonucunu indirin."
 }

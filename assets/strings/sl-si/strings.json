@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Odgovorili so {0}, {1}, {2} in toliko drugih: {3}",
   "CreateNewPoll": "Ustvari novo anketo",
   "ResultsTitle": "Prikaži rezultat",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Ustvari novo anketo",
-  "$manifest.composeExtensions[0].commands[0].title": "Ustvari novo anketo",
-  "$manifest.description": "Pridobite mnenje svoje ekipe, tako da v klepetu ali kanalu ustvarite anketo.\n• Aplikacijo poiščite v razdelku »… « pod poljem za sestavljanje sporočil\n• Vnesite vprašanje in možne odgovore, in že ste nared 👍🏻\n• Spremljajte sodelovanje, tako da sledite odgovorom\n• Prenesite rezultate ankete, ki jih želite deliti s sodelavci",
   "$manifest.name": "Anketa",
-  "$manifest.activities.activityTypes[0].description": "Obvestilo o opomniku ankete",
-  "$manifest.activities.activityTypes[1].description": "Nekdo odgovarja na anketo",
-  "$manifest.activities.activityTypes[2].description": "Rezultat ankete je znan",
-  "$manifest.activities.activityTypes[3].description": "Dnevni povzetek stanja odzivov na anketo",
-  "$manifest.msTeamsProps.description.full": "Vprašajte in pridobite mnenje ljudi",
-  "$manifest.msTeamsProps.description.short": "Postavite vprašanje",
+  "$manifest.views.LaunchView.header": "Ustvarjanje ankete",
+  "$manifest.description": "Vprašajte in pridobite mnenje ljudi",
+  "$manifest.msTeamsProps.name.short": "Anketa",
   "$manifest.msTeamsProps.name.full": "Anketa",
-  "$manifest.msTeamsProps.name.short": "Anketa"
+  "$manifest.msTeamsProps.description.short": "Vprašajte in pridobite mnenje ljudi",
+  "$manifest.msTeamsProps.description.full": "Pridobite mnenje svoje ekipe, tako da v klepetu ali kanalu ustvarite anketo.​ Aplikacijo poiščite v razdelku »… « pod poljem za sestavljanje sporočil​ Vnesite vprašanje in možne odgovore, in že ste nared. Spremljajte sodelovanje, tako da sledite odgovorom. Prenesite rezultate ankete, ki jih želite deliti s sodelavci."
 }

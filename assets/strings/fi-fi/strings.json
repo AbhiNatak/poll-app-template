@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} ja {3} muuta vastasi",
   "CreateNewPoll": "Luo uusi äänestys",
   "ResultsTitle": "Tulosnäkymä",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Luo uusi äänestys",
-  "$manifest.composeExtensions[0].commands[0].title": "Luo uusi äänestys",
-  "$manifest.description": "Selvitä tiimisi mielipiteet luomalla äänestys keskustelussa tai kanavalla.\n• Löydät sovelluksen kohdasta \"…\" viestin luomisruudussa\n• Kirjoita kysymykset ja valinnat, niin kaikki on valmista👍🏻\n• Pysy ajan tasalla osallistumisesta seuraamalla vastauksia\n• Lataamalla äänestyksen tulokset voit jakaa ne työtovereillesi",
   "$manifest.name": "Äänestys",
-  "$manifest.activities.activityTypes[0].description": "Äänestyksen muistutusilmoitus",
-  "$manifest.activities.activityTypes[1].description": "Joku vastaa äänestykseen",
-  "$manifest.activities.activityTypes[2].description": "Äänestyksen tulokset ovat valmiit",
-  "$manifest.activities.activityTypes[3].description": "Äänestyksen vastaustilan päivittäinen kooste",
-  "$manifest.msTeamsProps.description.full": "Esitä kysymys ja selvitä ihmisten mielipiteet",
-  "$manifest.msTeamsProps.description.short": "Esitä kysymys",
+  "$manifest.views.LaunchView.header": "Luo kysely",
+  "$manifest.description": "Esitä kysymys ja selvitä ihmisten mielipiteet",
+  "$manifest.msTeamsProps.name.short": "Äänestys",
   "$manifest.msTeamsProps.name.full": "Äänestys",
-  "$manifest.msTeamsProps.name.short": "Äänestys"
+  "$manifest.msTeamsProps.description.short": "Esitä kysymys ja selvitä ihmisten mielipiteet",
+  "$manifest.msTeamsProps.description.full": "Selvitä tiimisi mielipiteet luomalla äänestys keskustelussa tai kanavalla.​ Löydät sovelluksen kohdasta \"…\" viestin luomisruudussa​. Kirjoita kysymykset ja valinnat, niin kaikki on valmista. Pysy ajan tasalla osallistumisesta seuraamalla vastauksia. Lataamalla äänestyksen tulokset voit jakaa ne työtovereillesi."
 }

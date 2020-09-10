@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} en {3} anderen hebben gereageerd",
   "CreateNewPoll": "Nieuwe enquête maken",
   "ResultsTitle": "Resultaatweergave",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Nieuwe peiling maken",
-  "$manifest.composeExtensions[0].commands[0].title": "Nieuwe peiling maken",
-  "$manifest.description": "Vraag naar de mening van uw team door een peiling te maken in een chat of kanaal.\n• Zoek de app in '…' onder het vak voor het opstellen van een bericht\n• Voer uw vraag en keuzen in en u bent klaar 👍🏻\n• Houd de deelname in de gaten door antwoorden bij te houden\n• Download de resultaten van de peiling om ze te delen met uw collega's",
   "$manifest.name": "Peiling",
-  "$manifest.activities.activityTypes[0].description": "Herinneringsmelding voor peiling",
-  "$manifest.activities.activityTypes[1].description": "Iemand reageert op uw peiling",
-  "$manifest.activities.activityTypes[2].description": "Het resultaat van de peiling is er",
-  "$manifest.activities.activityTypes[3].description": "Dagelijkse samenvatting van de antwoordstatus van de peiling",
-  "$manifest.msTeamsProps.description.full": "Een vraag stellen en de mening van anderen horen",
-  "$manifest.msTeamsProps.description.short": "Een vraag stellen",
+  "$manifest.views.LaunchView.header": "Peiling maken",
+  "$manifest.description": "Een vraag stellen en de mening van anderen horen",
+  "$manifest.msTeamsProps.name.short": "Peiling",
   "$manifest.msTeamsProps.name.full": "Poll",
-  "$manifest.msTeamsProps.name.short": "Peiling"
+  "$manifest.msTeamsProps.description.short": "Een vraag stellen en de mening van anderen horen",
+  "$manifest.msTeamsProps.description.full": "Vraag naar de mening van uw team door een peiling te maken in een chat of kanaal.​ Zoek de app in '…' onder het vak voor het opstellen van een bericht​ Voer uw vraag en keuzen in en u bent klaar. Houd de deelname in de gaten door antwoorden bij te houden. Download de resultaten van de peiling om ze te delen met uw collega's."
 }

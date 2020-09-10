@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} og {3} í viðbót svöruðu",
   "CreateNewPoll": "Búa til nýja kosningu",
   "ResultsTitle": "Niðurstöðuyfirlit",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Búa til nýja kosningu",
-  "$manifest.composeExtensions[0].commands[0].title": "Búa til nýja kosningu",
-  "$manifest.description": "Fáðu skoðanir frá teyminu þínu með því að búa til skoðanakönnun í spjalli eða rás.​\n• Finndu forritið í “…” undir skilaboðareitnum​\n• Skrifaðu inn spurningar og valmöguleika og þú ert reiðubúin(n) 👍🏻​\n• Haltu utan um þátttökuna með því að fylgjast með svörum​\n• Hlaðaðu niður niðurstöðum hennar og deildu með vinnufélögum þínum",
   "$manifest.name": "Kosning",
-  "$manifest.activities.activityTypes[0].description": "Tilkynning um áminningu vegna skoðanakönnunar",
-  "$manifest.activities.activityTypes[1].description": "Einhver svarar skoðanakönnun þinni",
-  "$manifest.activities.activityTypes[2].description": "Niðurstaða skoðanakönnunar er komin út",
-  "$manifest.activities.activityTypes[3].description": "Dagleg vinnsla á stöðu svörunar úr skoðanakönnun",
-  "$manifest.msTeamsProps.description.full": "Spyrðu spurningar og fáðu álit fólks",
-  "$manifest.msTeamsProps.description.short": "Spyrja spurningar",
+  "$manifest.views.LaunchView.header": "Búa til könnun",
+  "$manifest.description": "Spyrðu spurningar og fáðu álit fólks",
+  "$manifest.msTeamsProps.name.short": "Kosning",
   "$manifest.msTeamsProps.name.full": "Kosning",
-  "$manifest.msTeamsProps.name.short": "Kosning"
+  "$manifest.msTeamsProps.description.short": "Spyrðu spurningar og fáðu álit fólks",
+  "$manifest.msTeamsProps.description.full": "Fáðu skoðanir frá teyminu þínu með því að búa til skoðanakönnun í spjalli eða rás.​ Finndu forritið í „...“ undir skilaboðareitnum​. Skrifaðu inn spurningar og valmöguleika og þú ert reiðubúin(n). Haltu utan um þátttökuna með því að fylgjast með svörum. Sæktu niðurstöður könnunarinnar og deildu með vinnufélögum þínum."
 }

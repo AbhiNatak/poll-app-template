@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} et {3} autres ont répondu",
   "CreateNewPoll": "Créer un nouveau sondage",
   "ResultsTitle": "Affichage des résultats",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Créer un nouveau sondage",
-  "$manifest.composeExtensions[0].commands[0].title": "Créer un nouveau sondage",
-  "$manifest.description": "Obtenez l’opinion de votre équipe en créant un sondage dans une section de clavardage ou d’un canal.​\n• Recherchez l’application dans «…» sous la section de composition du message​\n• Entrez votre question et vos choix et vous êtes prêt👍🏻​\n• Maintenez votre position au dessus de toute participation en suivant les réponses​\n• Télécharger les résultats du sondage pour les partager avec vos collègues",
   "$manifest.name": "Sondage",
-  "$manifest.activities.activityTypes[0].description": "Notification de rappel de sondage",
-  "$manifest.activities.activityTypes[1].description": "Une personne répond à votre sondage",
-  "$manifest.activities.activityTypes[2].description": "Les résultats du sondage sont prêts",
-  "$manifest.activities.activityTypes[3].description": "Synthèse quotidienne sur l'état des réponses au sondage",
-  "$manifest.msTeamsProps.description.full": "Poser une question et solliciter l'avis des autres",
-  "$manifest.msTeamsProps.description.short": "Poser une question",
+  "$manifest.views.LaunchView.header": "Créer un sondage",
+  "$manifest.description": "Poser une question et obtenez l'avis des autres",
+  "$manifest.msTeamsProps.name.short": "Sondage",
   "$manifest.msTeamsProps.name.full": "Sondage",
-  "$manifest.msTeamsProps.name.short": "Sondage"
+  "$manifest.msTeamsProps.description.short": "Poser une question et obtenez l'avis des autres",
+  "$manifest.msTeamsProps.description.full": "Obtenez l’opinion de votre équipe en créant un sondage dans une session de clavardage ou un canal.​ Recherchez l’application dans «…» sous la zone de composition du message​. Entrez votre question et vos choix et le tour est joué. Effectuer un suivi des réponses afin de maintenir une emprise ferme sur votre participation. Téléchargez les résultats du sondage pour les partager avec vos collègues."
 }

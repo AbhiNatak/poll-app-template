@@ -3,10 +3,7 @@ import { ResponderView } from "./ResponderView";
 import getStore, { ViewType } from "./../../store/SummaryStore";
 import { NonResponderView } from "./NonResponderView";
 import { Flex, ChevronStartIcon, Text, Menu, ArrowLeftIcon } from "@fluentui/react-northstar";
-import {
-    setCurrentView,
-    goBack
-} from "./../../actions/SummaryActions";
+import { setCurrentView, goBack } from "./../../actions/SummaryActions";
 import { observer } from "mobx-react";
 import { Localizer } from "../../utils/Localizer";
 import { Constants } from "./../../utils/Constants";
@@ -25,16 +22,8 @@ export class TabView extends React.Component<any, any> {
     render() {
         let participation: string =
             getStore().actionSummary.rowCount == 1
-                ? Localizer.getString(
-                    "ParticipationIndicatorSingular",
-                    getStore().actionSummary.rowCount,
-                    getStore().memberCount
-                )
-                : Localizer.getString(
-                    "ParticipationIndicatorPlural",
-                    getStore().actionSummary.rowCount,
-                    getStore().memberCount
-                );
+                ? Localizer.getString("ParticipationIndicatorSingular", getStore().actionSummary.rowCount, getStore().memberCount)
+                : Localizer.getString("ParticipationIndicatorPlural", getStore().actionSummary.rowCount, getStore().memberCount);
 
         return (
             <Flex column className="tabview-container no-mobile-footer">
@@ -50,11 +39,7 @@ export class TabView extends React.Component<any, any> {
                     underlined
                     primary
                 />
-                {getStore().currentView == ViewType.ResponderView ? (
-                    <ResponderView />
-                ) : (
-                        <NonResponderView />
-                    )}
+                {getStore().currentView == ViewType.ResponderView ? (<ResponderView />) : (<NonResponderView />)}
                 {this.getFooterElement()}
             </Flex>
         );

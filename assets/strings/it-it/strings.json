@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} e altre {3} persone hanno risposto",
   "CreateNewPoll": "Crea un nuovo sondaggio",
   "ResultsTitle": "Visualizzazione risultato",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Crea un nuovo Sondaggio",
-  "$manifest.composeExtensions[0].commands[0].title": "Crea un nuovo Sondaggio",
-  "$manifest.description": "Crea un sondaggio in una chat o in un canale per ricevere le opinioni del team.\n• Trova l'app in \"…\" nella casella di composizione del messaggio\n• Inserisci la domanda, le relative scelte e continua 👍🏻\n• Rimani aggiornato sul livello di partecipazione tenendo traccia delle risposte\n• Scarica i risultati del sondaggio per condividerli con i colleghi",
   "$manifest.name": "Sondaggio",
-  "$manifest.activities.activityTypes[0].description": "Notifica promemoria sondaggio",
-  "$manifest.activities.activityTypes[1].description": "Qualcuno risponde al sondaggio",
-  "$manifest.activities.activityTypes[2].description": "Il risultato del sondaggio è disponibile",
-  "$manifest.activities.activityTypes[3].description": "Riepilogo giornaliero dello stato delle risposte al sondaggio",
-  "$manifest.msTeamsProps.description.full": "Fai una domanda e ottieni l'opinione delle persone",
-  "$manifest.msTeamsProps.description.short": "Fai una domanda",
+  "$manifest.views.LaunchView.header": "Crea sondaggio",
+  "$manifest.description": "Fai una domanda e ottieni l'opinione delle persone",
+  "$manifest.msTeamsProps.name.short": "Sondaggio",
   "$manifest.msTeamsProps.name.full": "Sondaggio",
-  "$manifest.msTeamsProps.name.short": "Sondaggio"
+  "$manifest.msTeamsProps.description.short": "Fai una domanda e ottieni l'opinione delle persone",
+  "$manifest.msTeamsProps.description.full": "Crea un sondaggio in una chat o in un canale per ricevere le opinioni del team.​ Trova l'app in \"…\" nella casella di composizione del messaggio​ Inserisci la domanda, le relative scelte e continua. Rimani aggiornato sul livello di partecipazione tenendo traccia delle risposte. Scarica i risultati del sondaggio per condividerli con i colleghi."
 }

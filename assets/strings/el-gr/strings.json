@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Οι χρήστες {0}, {1}, {2} και {3} ακόμα απάντησαν",
   "CreateNewPoll": "Δημιουργία νέας ψηφοφορίας",
   "ResultsTitle": "Προβολή αποτελεσμάτων",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Δημιουργία νέας ψηφοφορίας",
-  "$manifest.composeExtensions[0].commands[0].title": "Δημιουργία νέας ψηφοφορίας",
-  "$manifest.description": "Λάβετε τη γνώμη της ομάδας σας, δημιουργώντας μια ψηφοφορία σε μια συνομιλία ή ένα κανάλι.\n• Βρείτε την εφαρμογή στο \"…\" κάτω από το πλαίσιο σύνταξης μηνύματος\n• Πληκτρολογήστε την ερώτησή σας και τις επιλογές σας και είστε έτοιμοι👍🏻\n• Παραμείνετε ενημερωμένοι για τη συμμετοχή με την παρακολούθηση αποκρίσεων\n• Λήψη αποτελέσματος ψηφοφορίας για κοινή χρήση με τους συναδέλφους σας",
   "$manifest.name": "Ψηφοφορία",
-  "$manifest.activities.activityTypes[0].description": "Ειδοποίηση υπενθύμισης ψηφοφορίας",
-  "$manifest.activities.activityTypes[1].description": "Κάποιος απαντά στην ψηφοφορία σας",
-  "$manifest.activities.activityTypes[2].description": "Το αποτέλεσμα ψηφοφορίας δημοσιεύτηκε",
-  "$manifest.activities.activityTypes[3].description": "Ημερήσια σύνοψη της κατάστασης απαντήσεων στην ψηφοφορία",
-  "$manifest.msTeamsProps.description.full": "Κάντε μια ερώτηση και μάθετε την άποψη των άλλων ατόμων",
-  "$manifest.msTeamsProps.description.short": "Κάντε μια ερώτηση",
+  "$manifest.views.LaunchView.header": "Δημιουργία ψηφοφορίας",
+  "$manifest.description": "Κάντε μια ερώτηση και μάθετε την άποψη των άλλων ατόμων",
+  "$manifest.msTeamsProps.name.short": "Ψηφοφορία",
   "$manifest.msTeamsProps.name.full": "Ψηφοφορία",
-  "$manifest.msTeamsProps.name.short": "Ψηφοφορία"
+  "$manifest.msTeamsProps.description.short": "Κάντε μια ερώτηση και μάθετε την άποψη των άλλων ατόμων",
+  "$manifest.msTeamsProps.description.full": "Μάθετε τη γνώμη της ομάδας σας, δημιουργώντας μια ψηφοφορία σε μια συνομιλία ή ένα κανάλι.​• Βρείτε την εφαρμογή στο \"…\" κάτω από το πλαίσιο σύνταξης μηνύματος​• Πληκτρολογήστε την ερώτηση και τις επιλογές σας και είστε έτοιμοι. Κατεβάστε το αποτέλεσμα της ψηφοφορίας για κοινή χρήση με τους συναδέλφους σας."
 }

@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} ja veel {3} kasutajat vastasid",
   "CreateNewPoll": "Uue küsitluse loomine",
   "ResultsTitle": "Tulemivaade",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Koosta uus küsitlus",
-  "$manifest.composeExtensions[0].commands[0].title": "Koosta uus küsitlus",
-  "$manifest.description": "Töörühma liikmete arvamuste teadasaamiseks saate tekstvestluses või kanalis luua küsitluse.\n• Otsige rakendus üles sõnumi koostamise välja all asuva ikooni „…“ kaudu\n• Sisestage küsimus ja vastusevariandid ja võibki alustada 👍🏻\n• Vastuste jälgimine aitab osalusel silma peal hoida\n• Töökaaslastega jagamiseks saab küsitluse tulemused alla laadida",
   "$manifest.name": "Küsitlus",
-  "$manifest.activities.activityTypes[0].description": "Küsitluse meeldetuletuse teatis",
-  "$manifest.activities.activityTypes[1].description": "Keegi vastab teie küsitlusele",
-  "$manifest.activities.activityTypes[2].description": "Küsitluse tulemused on teada",
-  "$manifest.activities.activityTypes[3].description": "Küsitluse vastuste oleku päevakokkuvõte",
-  "$manifest.msTeamsProps.description.full": "Esitage küsimus ja vaadake, mida inimesed arvavad",
-  "$manifest.msTeamsProps.description.short": "Esitage küsimus",
+  "$manifest.views.LaunchView.header": "Küsitluse loomine",
+  "$manifest.description": "Esitage küsimus ja vaadake, mida inimesed arvavad",
+  "$manifest.msTeamsProps.name.short": "Küsitlus",
   "$manifest.msTeamsProps.name.full": "Küsitlus",
-  "$manifest.msTeamsProps.name.short": "Küsitlus"
+  "$manifest.msTeamsProps.description.short": "Esitage küsimus ja vaadake, mida inimesed arvavad",
+  "$manifest.msTeamsProps.description.full": "Töörühma liikmete arvamuste teadasaamiseks saate tekstvestluses või kanalis luua küsitluse.​ Otsige rakendus üles sõnumi koostamise välja all asuva ikooni „…“ kaudu​. Sisestage küsimus ja vastusevariandid ja võibki alustada. Vastuste jälgimine aitab osalusel silma peal hoida. Töökaaslastega jagamiseks saab küsitluse tulemused alla laadida."
 }

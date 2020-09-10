@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "Użytkownicy {0}, {1}, {2} i {3} innych udzielili odpowiedzi",
   "CreateNewPoll": "Utwórz nową ankietę",
   "ResultsTitle": "Widok wyników",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Utwórz nową ankietę",
-  "$manifest.composeExtensions[0].commands[0].title": "Utwórz nową ankietę",
-  "$manifest.description": "Poznaj opinie swojego zespołu, tworząc sondę na czacie lub kanale.\n• Znajdź aplikację w folderze „…” poniżej pola redagowania wiadomości\n• Wprowadź pytania oraz możliwe wybory i gotowe 👍🏻\n• Monitoruj uczestnictwo przez śledzenie odpowiedzi\n• Pobierz wyniki sondy, aby udostępnić je współpracownikom",
   "$manifest.name": "Ankieta",
-  "$manifest.activities.activityTypes[0].description": "Powiadomienie z przypomnieniem o sondzie",
-  "$manifest.activities.activityTypes[1].description": "Ktoś odpowie na sondę",
-  "$manifest.activities.activityTypes[2].description": "Dostępne są wyniki sondy",
-  "$manifest.activities.activityTypes[3].description": "Podsumowanie dzienne stanu odpowiedzi na sondę",
-  "$manifest.msTeamsProps.description.full": "Zadaj pytanie i uzyskaj opinię innych osób",
-  "$manifest.msTeamsProps.description.short": "Zadaj pytanie",
+  "$manifest.views.LaunchView.header": "Utwórz ankietę",
+  "$manifest.description": "Zadaj pytanie i uzyskaj opinię innych osób",
+  "$manifest.msTeamsProps.name.short": "Ankieta",
   "$manifest.msTeamsProps.name.full": "Ankieta",
-  "$manifest.msTeamsProps.name.short": "Ankieta"
+  "$manifest.msTeamsProps.description.short": "Zadaj pytanie i uzyskaj opinię innych osób",
+  "$manifest.msTeamsProps.description.full": "Poznaj opinie swojego zespołu, tworząc sondę na czacie lub kanale.​ Znajdź aplikację w folderze „…” poniżej pola redagowania wiadomości​. Wprowadź pytania oraz możliwe wybory i gotowe. Monitoruj uczestnictwo przez śledzenie odpowiedzi. Pobierz wyniki sondy, aby udostępnić je współpracownikom."
 }

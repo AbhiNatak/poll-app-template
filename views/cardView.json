@@ -8,6 +8,7 @@
                 "id": "expiry",
                 "type": "TextBlock",
                 "text": "${if(equals(action.status, 'Active'), formatString(strings.dueByDate, ('' + dateString(action.expiryTime, 'SHORT') + ' ' + timeString(action.expiryTime))),strings.PollExpired)}",
+                "_$text.comment": "checking if action is active or not",
                 "color": "${if(equals(action.status, 'Active'), 'default','attention')}",
                 "size": "small",
                 "wrap": true
@@ -26,10 +27,10 @@
                 "id": "Title",
                 "type": "TextBlock",
                 "text": "**${action.dataTables[0].dataColumns[0].displayName}**",
-                "size": "large",
-                "maxLines": 3,
+                "_$text.comment": "display poll title",
                 "wrap": true,
                 "weight": "bolder",
+                "size": "large",
                 "spacing": "small"
             },
             {
@@ -41,6 +42,7 @@
                         "id": "${action.dataTables[0].dataColumns[0].name}",
                         "type": "Input.ChoiceSet",
                         "style": "expanded",
+                        "wrap": "true",
                         "isMultiSelect": false,
                         "choices": [
                             {
@@ -53,70 +55,83 @@
                 ]
             },
             {
-                "id": "NoResponder",
-                "type": "TextBlock",
-                "$when": "${equals(summary.rowCreatorCount, 0)}",
-                "text": "${strings.BeTheFirstOneToRespond}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
-            },
-            {
-                "id": "OneResponded",
-                "type": "TextBlock",
-                "$when": "${equals(summary.rowCreatorCount, 1)}",
-                "text": "${formatString(strings.OneResponded, responders[0].displayName)}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
-            },
-            {
-                "id": "TwoResponded",
-                "type": "TextBlock",
-                "$when": "${equals(summary.rowCreatorCount, 2)}",
-                "text": "${formatString(strings.TwoResponded, responders[0].displayName, responders[1].displayName)}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
-            },
-            {
-                "id": "ThreeResponded",
-                "type": "TextBlock",
-                "$when": "${equals(summary.rowCreatorCount, 3)}",
-                "text": "${formatString(strings.ThreeResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName)}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
-            },
-            {
-                "id": "FourResponded",
-                "type": "TextBlock",
-                "$when": "${equals(summary.rowCreatorCount, 4)}",
-                "text": "${formatString(strings.ThreeAndOneOtherResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName)}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
-            },
-            {
-                "id": "MoreResponded",
-                "type": "TextBlock",
-                "$when": "${greater(summary.rowCreatorCount, 4)}",
-                "text": "${formatString(strings.ThreeAndOthersResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName, sub(summary.rowCreatorCount - 3))}",
-                "size": "small",
-                "weight": "bolder",
-                "maxLines": 2,
-                "wrap": true,
-                "spacing": "small"
+                "id": "Responder",
+                "$when": "${equals(action.dataTables[0].rowsVisibility, 'All')}",
+                "type": "Container",
+                "items": [
+                    {
+                        "id": "NoResponder",
+                        "type": "TextBlock",
+                        "$when": "${equals(summary.rowCreatorCount, 0)}",
+                        "_$when.comment": "when no one responeded on poll",
+                        "text": "${strings.BeTheFirstOneToRespond}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    },
+                    {
+                        "id": "OneResponded",
+                        "type": "TextBlock",
+                        "$when": "${equals(summary.rowCreatorCount, 1)}",
+                        "_$when.comment": "when the count of responder is 1",
+                        "text": "${formatString(strings.OneResponded, responders[0].displayName)}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    },
+                    {
+                        "id": "TwoResponded",
+                        "type": "TextBlock",
+                        "$when": "${equals(summary.rowCreatorCount, 2)}",
+                        "_$when.comment": "when the count of responders is 2",
+                        "text": "${formatString(strings.TwoResponded, responders[0].displayName, responders[1].displayName)}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    },
+                    {
+                        "id": "ThreeResponded",
+                        "type": "TextBlock",
+                        "$when": "${equals(summary.rowCreatorCount, 3)}",
+                        "_$when.comment": "when the count of responders is 3",
+                        "text": "${formatString(strings.ThreeResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName)}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    },
+                    {
+                        "id": "FourResponded",
+                        "type": "TextBlock",
+                        "$when": "${equals(summary.rowCreatorCount, 4)}",
+                        "_$when.comment": "when the count of responders is 4",
+                        "text": "${formatString(strings.ThreeAndOneOtherResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName)}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    },
+                    {
+                        "id": "MoreResponded",
+                        "type": "TextBlock",
+                        "$when": "${greater(summary.rowCreatorCount, 4)}",
+                        "_$when.comment": "when the count of responder is greater than 4",
+                        "text": "${formatString(strings.ThreeAndOthersResponded, responders[0].displayName, responders[1].displayName, responders[2].displayName, sub(summary.rowCreatorCount, 3))}",
+                        "size": "small",
+                        "weight": "bolder",
+                        "maxLines": 2,
+                        "wrap": true,
+                        "spacing": "small"
+                    }
+                ]
             }
         ],
         "actions": [

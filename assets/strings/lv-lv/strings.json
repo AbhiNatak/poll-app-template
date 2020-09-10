@@ -102,16 +102,11 @@
   "ThreeAndOthersResponded": "{0}, {1}, {2} un {3} citi atbildēja",
   "CreateNewPoll": "Izveidot jaunu balsošanu",
   "ResultsTitle": "Rezultātu skats",
-  "$manifest.composeExtensions[0].commands[0].taskInfo.title": "Jaunas aptaujas izveidošana",
-  "$manifest.composeExtensions[0].commands[0].title": "Jaunas aptaujas izveidošana",
-  "$manifest.description": "Iegūstiet savas komandas viedokli, izveidojot balsošanas aptauju tērzēšanas sarunā vai kanālā.\n• Atrodiet programmu, izmantojot \"…\" zem ziņojuma sastādīšanas lodziņa\n• Ievadiet savu jautājumu un izvēles iespējas, un aptauja ir gatava izmantošanai👍🏻\n• Uzmaniet dalību, izsekojot atbildes\n• Lejupielādējiet aptaujas rezultātus, lai koplietotu tos ar kolēģiem",
   "$manifest.name": "Aptauja",
-  "$manifest.activities.activityTypes[0].description": "Balsošanas aptaujas atgādinājuma paziņojums",
-  "$manifest.activities.activityTypes[1].description": "Kāds atbild uz jūsu balsošanas aptauju",
-  "$manifest.activities.activityTypes[2].description": "Balsošanas aptaujas rezultāts ir pieejams",
-  "$manifest.activities.activityTypes[3].description": "Balsošanas aptaujas statusa ikdienas īssavilkums",
-  "$manifest.msTeamsProps.description.full": "Uzdodiet jautājumu un saņemiet lietotāju viedokli",
-  "$manifest.msTeamsProps.description.short": "Uzdot jautājumu",
+  "$manifest.views.LaunchView.header": "Izveidot aptauju",
+  "$manifest.description": "Uzdodiet jautājumu un saņemiet lietotāju viedokli",
+  "$manifest.msTeamsProps.name.short": "Aptauja",
   "$manifest.msTeamsProps.name.full": "Aptauja",
-  "$manifest.msTeamsProps.name.short": "Aptauja"
+  "$manifest.msTeamsProps.description.short": "Uzdodiet jautājumu un saņemiet lietotāju viedokli",
+  "$manifest.msTeamsProps.description.full": "Iegūstiet savas komandas viedokli, izveidojot balsošanas aptauju tērzēšanas sarunā vai kanālā.​ Atrodiet programmu, izmantojot \"…\" zem ziņojuma sastādīšanas lodziņa​. Ievadiet savu jautājumu un izvēles iespējas, un aptauja ir gatava izmantošanai. Uzmaniet dalību, izsekojot atbildes. Lejupielādējiet aptaujas rezultātus, lai koplietotu tos ar kolēģiem."
 }
